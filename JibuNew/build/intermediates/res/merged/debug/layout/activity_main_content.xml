@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res/com.jibu.app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    
+    	<com.jibu.app.view.RoundProgressBar
+    	    android:layout_marginTop="60dp"
+            android:id="@+id/id_roundProgressBar"
+            android_custom:style="STROKE"
+            android:layout_width="250dip"
+            android:layout_height="250dip"
+            android:layout_centerHorizontal="true"
+            android_custom:max="10000"
+            android_custom:paddingBottom="60dip"
+            android_custom:paddingTop="50dip"
+            android_custom:roundColor="#33bbbbbb"
+            android_custom:roundProgressColor="#ffffffff"
+            android_custom:roundWidth="4dip"
+            android_custom:textBottom="@string/target"
+            android_custom:textColor="#ffffff"
+            android_custom:textIsDisplayable="true"
+            android_custom:textSize="50.0dp"
+            android_custom:textTop="@string/loading" />
+	  
+    	
+      <TextView
+          android:id="@+id/id_textview_no_move"
+          android:layout_width="25dp"
+          android:layout_height="25dp"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"
+          android:layout_marginBottom="130dp"
+          android:gravity="center_horizontal"
+          android:background="@drawable/shanglajiantou" />
+
+</RelativeLayout>

@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\loading_animation.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\loading_animation.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\activity_2_enter_out.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\activity_2_enter_out.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\slide_up_out.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\slide_up_out.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_shareboard_animation_in.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\umeng_socialize_shareboard_animation_in.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\update_loading_progressbar_anim.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\update_loading_progressbar_anim.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_fade_in.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\umeng_socialize_fade_in.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\activity_2_enter_in.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\activity_2_enter_in.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_slide_out_from_bottom.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\umeng_socialize_slide_out_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_top.xml",
+        "source": "E:\\project\\JibuNew\\build\\intermediates\\exploded-aar\\project.Android-PullToRefresh-master\\library\\unspecified\\res\\anim\\slide_out_to_top.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\push_left_in.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "E:\\project\\JibuNew\\build\\intermediates\\exploded-aar\\project.Android-PullToRefresh-master\\library\\unspecified\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\finish_down_over.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\finish_down_over.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_fade_out.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\umeng_socialize_fade_out.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_slide_in_from_bottom.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\umeng_socialize_slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\push_right_in.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\push_left_out.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\push_right_out.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\decelerate_cubic.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\decelerate_cubic.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\reverse_anim.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\reverse_anim.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\push_out.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\push_out.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_shareboard_animation_out.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\umeng_socialize_shareboard_animation_out.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\slide_up_in.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\slide_up_in.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\rotating.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\rotating.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\push_in.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\push_in.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\activity_finish.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\activity_finish.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "E:\\project\\JibuNew\\build\\intermediates\\exploded-aar\\project.Android-PullToRefresh-master\\library\\unspecified\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\loading_hide_animation.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\loading_hide_animation.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_top.xml",
+        "source": "E:\\project\\JibuNew\\build\\intermediates\\exploded-aar\\project.Android-PullToRefresh-master\\library\\unspecified\\res\\anim\\slide_in_from_top.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\anim\\activity_back.xml",
+        "source": "E:\\project\\JibuNew\\res\\anim\\activity_back.xml"
+    }
+]

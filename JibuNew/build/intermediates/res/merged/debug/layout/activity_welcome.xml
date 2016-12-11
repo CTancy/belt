@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.sinolife.o2o"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout 
+        android:id="@+id/id_relativelayout_welcome"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        >
+        
+        <ImageView
+       
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/welcome_bg"
+         >
+    	</ImageView>
+        
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/welcome_logo"/>
+        <TextView 
+            android:id="@+id/id_textview_version"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15.0dp"
+            android:textSize="14.0dp"
+            android:textColor="#fff"
+            android:gravity="center_horizontal"
+            android:text="@string/version_code_value"
+            />
+        
+    </RelativeLayout>
+    
+
+  
+</LinearLayout>

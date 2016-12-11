@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:id="@+id/id_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.jibu.app.view.HistogramView
+                android:id="@+id/id_histogramview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.0dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10.0dp"
+                android:layout_marginLeft="10.0dp"
+                android:layout_marginRight="10.0dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/tongji_bg2"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:id="@+id/id_linearlayout_biaodu_1"
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="5.0dp"
+                                android:layout_height="2.5dp"
+                                android:background="@drawable/icon_kedu" />
+
+                            <TextView
+                                android:id="@+id/id_textview_biaodu_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date"
+                                android:textColor="#fff"
+                                android:textSize="10.0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/id_linearlayout_biaodu_2"
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="5.0dp"
+                                android:layout_height="2.5dp"
+                                android:background="@drawable/icon_kedu" />
+
+                            <TextView
+                                android:id="@+id/id_textview_biaodu_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date"
+                                android:textColor="#fff"
+                                android:textSize="10.0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/id_linearlayout_biaodu_3"
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="5.0dp"
+                                android:layout_height="2.5dp"
+                                android:background="@drawable/icon_kedu" />
+
+                            <TextView
+                                android:id="@+id/id_textview_biaodu_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date"
+                                android:textColor="#fff"
+                                android:textSize="10.0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/id_linearlayout_biaodu_4"
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="5.0dp"
+                                android:layout_height="2.5dp"
+                                android:background="@drawable/icon_kedu" />
+
+                            <TextView
+                                android:id="@+id/id_textview_biaodu_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date"
+                                android:textColor="#fff"
+                                android:textSize="10.0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/id_linearlayout_biaodu_5"
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="5.0dp"
+                                android:layout_height="2.5dp"
+                                android:background="@drawable/icon_kedu" />
+
+                            <TextView
+                                android:id="@+id/id_textview_biaodu_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date"
+                                android:textColor="#fff"
+                                android:textSize="10.0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/id_linearlayout_biaodu_6"
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="5.0dp"
+                                android:layout_height="2.5dp"
+                                android:background="@drawable/icon_kedu" />
+
+                            <TextView
+                                android:id="@+id/id_textview_biaodu_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date"
+                                android:textColor="#fff"
+                                android:textSize="10.0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/id_linearlayout_biaodu_7"
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="5.0dp"
+                                android:layout_height="2.5dp"
+                                android:background="@drawable/icon_kedu" />
+
+                            <TextView
+                                android:id="@+id/id_textview_biaodu_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date"
+                                android:textColor="#fff"
+                                android:textSize="10.0dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/id_textview_tongji_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10.0dp"
+                            android:text="@string/date_week"
+                            android:textColor="#fff"
+                            android:textSize="16.0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/tongji_bg3"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        android:layout_weight="50"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="100"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|right"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:layout_width="14.5dp"
+                                    android:layout_height="21.0dp"
+                                    android:background="@drawable/icon_no_move" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/id_textview_tongji_no_move"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="689"
+                                    android:textColor="#444"
+                                    android:textSize="20.0dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/sit_time"
+                                    android:textColor="#888"
+                                    android:textSize="12.0dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:background="#aaaaaa" />
+
+                        <LinearLayout
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="100"
+                            android:gravity="center"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|right"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:layout_width="14.5dp"
+                                    android:layout_height="21.0dp"
+                                    android:background="@drawable/icon_no_move_index" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/id_textview_tongji_no_move_index"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="689"
+                                    android:textColor="#444"
+                                    android:textSize="20.0dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/long_sit"
+                                    android:textColor="#888"
+                                    android:textSize="12.0dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        android:layout_weight="1"
+                        android:background="#aaaaaa" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        android:layout_weight="50"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="100"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|right"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:layout_width="14.5dp"
+                                    android:layout_height="21.0dp"
+                                    android:background="@drawable/icon_move" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/id_textview_tongji_move"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="689"
+                                    android:textColor="#444"
+                                    android:textSize="20.0dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/sports_time_min"
+                                    android:textColor="#888"
+                                    android:textSize="12.0dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:background="#aaaaaa" />
+
+                        <LinearLayout
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="100"
+                            android:gravity="center"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|right"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:layout_width="14.5dp"
+                                    android:layout_height="21.5dp"
+                                    android:background="@drawable/icon_step" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/id_textview_tongji_step"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="689"
+                                    android:textColor="#444"
+                                    android:textSize="20.0dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/step"
+                                    android:textColor="#888"
+                                    android:textSize="12.0dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        android:layout_weight="1"
+                        android:background="#aaaaaa" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        android:layout_weight="50"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="100"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|right"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:layout_width="16.5dp"
+                                    android:layout_height="21.0dp"
+                                    android:background="@drawable/icon_length" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/id_textview_tongji_length"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="689"
+                                    android:textColor="#444"
+                                    android:textSize="20.0dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/distance"
+                                    android:textColor="#888"
+                                    android:textSize="12.0dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:background="#aaaaaa" />
+
+                        <LinearLayout
+                            android:layout_width="0.0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="100"
+                            android:gravity="center"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|right"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:layout_width="13.5dp"
+                                    android:layout_height="18.0dp"
+                                    android:background="@drawable/icon_cal" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="0.0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/id_textview_tongji_cal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="689"
+                                    android:textColor="#444"
+                                    android:textSize="20.0dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/caluly"
+                                    android:textColor="#888"
+                                    android:textSize="12.0dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>

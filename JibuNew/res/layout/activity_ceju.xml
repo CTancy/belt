@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/id_rl_ceju"
+    >
+    
+    <LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/ceju"
+                            android:textColor="#fff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        android:visibility="visible"
+                        style="@style/CommonTitleRightBg" >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:visibility="visible"
+                            android:background="@drawable/ceju_history_icon" />
+                    </LinearLayout>
+                </LinearLayout>
+        <LinearLayout
+            android:id="@+id/id_ll_juli"
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@id/id_linearlayout_title"
+		    android:layout_marginLeft="20dp"
+		    android:layout_marginTop="50dp"
+		    android:orientation="vertical">
+       	  <TextView 
+    	    android:id="@+id/id_textview_juli1"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="match_parent"
+    	    android:textSize="17sp"
+    	    android:textColor="@color/white"
+    	    android:text="@string/juli_m"
+    	    />
+		   
+		   <TextView 
+    	    android:id="@+id/id_textview_juli2"
+    	    android:background="#33ffffff"
+    	    android:layout_width="100dp"
+    	    android:layout_height="match_parent"
+    	    android:layout_marginTop="3dp"
+    	    android:gravity="right"
+    	    android:textSize="17sp"
+    	    android:textColor="@color/white"
+    	    android:text="0.00"
+    	    />
+        </LinearLayout>        
+		
+		<LinearLayout
+		    android:id="@+id/id_ll_ceju_ing"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true"
+		    android:layout_below="@id/id_linearlayout_title"
+		    android:orientation="vertical"
+		    android:layout_marginTop="100dp"
+		    >
+		   <TextView 
+    	    android:id="@+id/id_textview_ceju1"
+    	    android:gravity="center"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="match_parent"
+    	    android:textSize="18sp"
+    	    android:textColor="@color/white"
+    	    android:text="@string/ceju_ing"
+    	    />
+		   
+		   <TextView 
+    	    android:id="@+id/id_textview_ceju2"
+    	    android:gravity="center"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="match_parent"
+    	    android:layout_marginTop="10dp"
+    	    android:textSize="12sp"
+    	    android:textColor="@color/white"
+    	    android:text="@string/ceju_ing_info"
+    	    />
+		</LinearLayout>
+		
+		
+		<LinearLayout 
+		    android:id="@+id/id_ll_ceju_info"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_alignParentBottom="true"
+		    android:layout_marginBottom="150dp"
+		    android:layout_marginRight="30dp"
+		    android:orientation="vertical">
+		    <TextView
+		        android:id="@+id/id_textview_bushu"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="13sp"
+		        android:textColor="@color/white"
+		        android:text="@string/bushu"
+		        ></TextView>
+		   <TextView
+		        android:id="@+id/id_textview_yongshi"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="13sp"
+		        android:textColor="@color/white"
+		        android:text="@string/yongshi"
+		        ></TextView>
+		   <TextView
+		        android:id="@+id/id_textview_sudu"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="13sp"
+		        android:textColor="@color/white"
+		        android:text="@string/sudu"
+		        ></TextView>
+		   <TextView
+		        android:id="@+id/id_textview_pinlv"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="13sp"
+		        android:textColor="@color/white"
+		        android:text="@string/pinlv"
+		        ></TextView>
+		   <TextView
+		        android:id="@+id/id_textview_buchang"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="13sp"
+		        android:textColor="@color/white"
+		        android:text="@string/buchang"
+		        ></TextView>
+		    		    		    		    		    
+		</LinearLayout>
+		<Button
+		    android:id="@+id/id_button_kaishiceju"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_centerHorizontal="true"
+		    android:paddingLeft="30dp"
+		    android:paddingRight="30dp"
+		    android:layout_marginBottom="30dp"
+		    android:textSize="18sp"
+		    android:textColor="@color/white"
+		    android:text="@string/begin_ceju" />
+    		
+</RelativeLayout>

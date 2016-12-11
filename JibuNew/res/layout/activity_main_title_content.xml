@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_linearlayout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg3"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/activity_main_title"></include>
+    
+   <!-- <include layout="@layout/activity_main_slideup"></include> --> 
+   
+    <com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/id_pull_refresh_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrMode="both" />
+</LinearLayout>

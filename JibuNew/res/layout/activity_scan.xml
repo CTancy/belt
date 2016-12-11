@@ -1,0 +1,182 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CommonBg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/id_linearlayout_title"
+        style="@style/CommonTitleBg" >
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_left"
+            style="@style/CommonTitleLeftBg" >
+
+            <ImageView style="@style/CommonTitleBack" />
+       
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_center"
+            style="@style/CommonTitleCenterBg" >
+
+            <TextView
+                android:id="@+id/id_textview_title_center"
+                style="@style/CommonTitleText"
+                android:text="@string/connect_ebelt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_right"
+            style="@style/CommonTitleRightBg"
+             >
+
+            <TextView
+                android:id="@+id/id_textview_title_right"
+                style="@style/CommonTitleTextRight"
+                android:text="@string/step_over" />
+        </LinearLayout>
+    </LinearLayout>
+<ScrollView 
+    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    
+    >
+    <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >    
+    
+    <RelativeLayout 
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="304.0dp"
+            android:gravity="center"
+            >
+        <ImageView 
+            android:layout_width="304.0dp"
+            android:layout_height="304.0dp"
+            
+            android:src="@drawable/quan_4"
+            />
+        </LinearLayout>
+         <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="304.0dp"
+            android:gravity="center"
+            >
+        <ImageView 
+            android:layout_width="242.0dp"
+            android:layout_height="242.0dp"
+            
+            android:src="@drawable/quan_3"
+            />
+        </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="304.0dp"
+            android:gravity="center"
+            >
+        <ImageView 
+            android:layout_width="194.0dp"
+            android:layout_height="194.0dp"
+            
+            android:src="@drawable/quan_2"
+            />
+        </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="304.0dp"
+            android:gravity="center"
+            >
+        <ImageView 
+            android:layout_width="153.0dp"
+            android:layout_height="153.0dp"
+            
+            android:src="@drawable/quan_1"
+            />
+        </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="304.0dp"
+            android:gravity="center"
+            >
+        <ImageView 
+            android:id="@+id/id_imageview_pidai"
+            android:layout_width="103.5dp"
+            android:layout_height="103.5dp"
+            
+            android:src="@drawable/belt"
+            />
+        </LinearLayout>
+         
+    </RelativeLayout>
+    
+    <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dp"
+            android:gravity="center"
+            >
+        <ImageView 
+            android:layout_width="51.0dp"
+            android:layout_height="55.0dp"
+            
+            android:src="@drawable/phone"
+            />
+        </LinearLayout>
+        
+    <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dp"
+            android:gravity="center"
+            >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#929094"
+            android:textSize="16.0dp"
+            android:text="@string/let_phone_close_to_ebelt"
+            />
+
+        </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+       		android:layout_marginTop="50.0dp"
+            android:gravity="center"
+            >
+        <!-- 
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#929094"
+            android:textSize="16.0dp"
+            android:text="@string/click_ebelt_scan"
+            />
+ 		-->
+ 		<TextView 
+ 		    android:id="@+id/id_textview_connect_at_scan"
+ 		    android:layout_height="40dp"
+ 		    android:layout_width="100dp"
+ 		    android:textSize="14sp"
+ 		    android:textColor="@color/white"
+ 		    android:text="@string/connect"
+ 		    android:gravity="center"
+ 		    android:background="@drawable/connect_yaodai"
+ 			/>
+ 		
+ 		
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

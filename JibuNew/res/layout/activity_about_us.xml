@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+    
+    			<LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    android:background="#ffffff"
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            android:id="@+id/id_revert"
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/about_us"
+                            android:textColor="#000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        android:visibility="invisible"
+                        style="@style/CommonTitleRightBg" >
+                        <TextView
+                            style="@style/CommonTitleText"
+                            android:textColor="#63B8FF" 
+                            android:text="@string/complete"/>
+                    </LinearLayout>
+                </LinearLayout>
+               
+    			<LinearLayout 
+    			    android:layout_width="match_parent"
+    			    android:layout_height="151dp"
+    			    android:gravity="center"
+    			    >
+    			    <ImageView 
+    			        android:layout_width="63dp"
+    			        android:layout_height="83dp"
+    			        android:background="@drawable/icon_logo">
+    			        
+    			    </ImageView>
+    			        
+    			</LinearLayout>
+    			
+    			
+    			<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:background="#dddddd" />
+    			
+    			<RelativeLayout 
+    			    android:id="@+id/id_rl_ebelt_website"
+    			    android:layout_width="match_parent"
+    			    android:layout_height="46dp"
+    			    android:gravity="center_vertical"
+    			    >
+    			    <ImageView
+    			        android:layout_width="15dp"
+    			        android:layout_height="15.5dp"
+    			        android:layout_marginTop="0.5dp"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="16dp"
+    			        android:background="@drawable/website">
+    			        
+    			    </ImageView>
+    			    
+    			    <TextView
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="43dp"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:textSize="15sp"
+    			        android:textColor="#25222a"
+    			        android:text="@string/ebelt_website">
+    			        
+    			    </TextView>
+                        
+    			    <TextView 
+    			        android:layout_alignParentRight="true"
+    			        android:layout_marginRight="8dp"
+    			        android:layout_height="11dp"
+    			        android:layout_width="6.5dp"
+    			        android:layout_marginTop="4.5dp"
+    			        android:background="@drawable/my_next"
+    			        android:gravity="center"
+    			        >
+                     </TextView>   
+
+    			    <TextView
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentRight="true"
+    			        android:layout_marginRight="27.5dp"
+    			        android:alpha="0.5"
+    			        android:text="@string/ebelt_website_address"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+    			   
+    			</RelativeLayout>
+    			
+    			<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="43dp"
+                    android:background="#dddddd" />
+    			
+    			
+    			<!-- 微信服务号 -->
+    			<RelativeLayout 
+    			    android:layout_width="match_parent"
+    			    android:layout_height="46dp"
+    			    android:gravity="center_vertical"
+    			    >
+
+    			    <ImageView
+    			        android:layout_width="17dp"
+    			        android:layout_height="14dp"
+    			        android:layout_marginTop="3dp"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="16dp"
+    			        android:background="@drawable/weixin_icon" >
+    			        
+    			    </ImageView>
+    			    
+    			    <TextView
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="43dp"
+    			        android:text="@string/weixin_fuwuhao"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+
+    			    <TextView
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentRight="true"
+    			        android:layout_marginRight="16dp"
+    			        android:alpha="0.5"
+    			        android:text="@string/e_belt"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+    			   
+    			</RelativeLayout>
+    			
+    			<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="43dp"
+                    android:background="#dddddd" />
+    			    			
+    			<!-- 固件版本 -->  
+    			
+    			<RelativeLayout 
+    			    android:layout_width="match_parent"
+    			    android:layout_height="46dp"
+    			    android:gravity="center_vertical"
+    			    >
+
+    			    <ImageView
+    			        android:layout_width="16dp"
+    			        android:layout_height="9dp"
+    			        android:layout_marginTop="4.5dp"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="16dp"
+    			        android:src="@drawable/fireware" >
+    			        
+    			    </ImageView>
+    			    
+    			    <TextView
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="43dp"
+    			        android:text="@string/fireware_version"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+
+    			    <TextView
+    			        android:id="@+id/id_textview_fireware_version"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentRight="true"
+    			        android:layout_marginRight="16dp"
+    			        android:alpha="0.5"
+    			        android:text="@string/ebelt_website_address"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+    			   
+    			</RelativeLayout>  		
+    			
+    			
+    			<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="43dp"
+                    android:background="#dddddd" />	
+                    
+    			<!-- app版本 -->
+    			
+    			<RelativeLayout 
+    			    android:layout_width="match_parent"
+    			    android:layout_height="46dp"
+    			    android:gravity="center_vertical"
+    			    >
+
+    			    <ImageView
+    			        android:layout_width="15dp"
+    			        android:layout_height="15.5dp"
+    			        android:layout_marginTop="0.5dp"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="16dp"
+    			        android:background="@drawable/app" >
+    			        
+    			    </ImageView>
+    			    
+    			    <TextView
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="43dp"
+    			        android:text="@string/app_version"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+
+    			    <TextView
+    			        android:id="@+id/id_textview_app_version"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentRight="true"
+    			        android:layout_marginRight="16dp"
+    			        android:alpha="0.5"
+    			        android:text="@string/app_version_value"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+    			   
+    			</RelativeLayout>
+    			<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="43dp"
+                    android:background="#dddddd" />
+    			
+    			<!-- 去评分 -->	
+                    
+
+    			
+    			<RelativeLayout
+    			    android:id="@+id/id_rl_to_score"
+    			    android:layout_width="match_parent"
+    			    android:layout_height="46dp"
+    			    android:gravity="center_vertical"
+    			    >
+
+    			    <ImageView
+    			        android:layout_width="15dp"
+    			        android:layout_height="15.5dp"
+    			        android:layout_marginTop="0.5dp"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="16dp"
+    			        android:background="@drawable/to_score" >
+    			        
+    			    </ImageView>
+    			    
+    			    <TextView
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_alignParentLeft="true"
+    			        android:layout_marginLeft="43dp"
+    			        android:text="@string/to_score"
+    			        android:textColor="#25222a"
+    			        android:textSize="15sp" >
+    			        
+    			    </TextView>   
+    			   <TextView 
+    			        android:layout_alignParentRight="true"
+    			        android:layout_marginRight="8dp"
+    			        android:layout_height="11dp"
+    			        android:layout_width="6.5dp"
+    			        android:layout_marginTop="4.5dp"
+    			        android:background="@drawable/my_next"
+    			        >
+                     </TextView>
+    			</RelativeLayout>
+    			<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:background="#dddddd" />
+</LinearLayout>
+

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jibu.app"
+    android:versionCode="25"
+    android:versionName="2.4.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	- 
+    <!-- 获取设置信息和详情页直接拨打电话需要以下权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+   
+	- 
+  
+   
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+     <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera.flash" />
+    
+    <!-- QQ、QQ空间所需权限 -->
+	<uses-permission android:name="android.permission.GET_TASKS" />
+	
+    <application
+        android:name="com.jibu.app.main.MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name="com.jibu.app.main.WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        
+        
+        <activity
+            android:name="com.jibu.app.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:hardwareAccelerated="true" >
+        </activity>
+       
+		<activity
+            android:name="com.jibu.app.main.ScanActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.jibu.app.main.WaitingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.TongjiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.MoreActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.jibu.app.login.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.jibu.app.login.RegActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.login.LoginAndRegActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.login.ForgetActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.jibu.app.user.BornActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.user.HeightActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.user.PersonalinforActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.user.WaistlineActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.user.WeightActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.YaodaiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.FileSelectActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.MyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.Tongji2Activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.StepSettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.AboutusActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jibu.app.main.ShareActivity"
+            android:screenOrientation="portrait" 
+            ></activity>
+        <activity
+            android:name="com.jibu.app.main.SetupLongSitRemindActivity"
+            android:screenOrientation="portrait"  
+            ></activity>
+        <activity android:name="com.jibu.app.main.TimePickerActivity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"></activity>
+         <service
+            android:name="com.veclink.hw.bleservice.VLBleService"
+            android:enabled="true" />
+        <service
+            android:name="com.veclink.healthy.photo.RecordService"
+            android:enabled="true"/>
+        <activity
+            android:name="com.jibu.app.main.UpdateFirewareActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        
+        <activity
+            android:name="com.jibu.app.main.NoAlarmAreaActivity"
+            android:screenOrientation="portrait">
+            
+        </activity>
+        
+        <!-- ###################注册SDK使用的Activity###################### -->
+        <!--分享编辑页-->
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+
+        <!-- ############ QQ空间和QQ SSO授权的Activity注册 ############ -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 100424468，如果你使用的公用账号，则不需要修改；否则修改成你在QQ开放平台申请的 APP ID-->
+                <data android:scheme="1104885232" /> 
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jibu.app.main.PersonalActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.jibu.app.main.SelectXinRenWiFiActivity"
+            android:screenOrientation="portrait"></activity>
+            
+		<activity
+   			android:name="com.jibu.app.wxapi.WXEntryActivity"
+  			android:theme="@android:style/Theme.Translucent.NoTitleBar"
+  			android:configChanges="keyboardHidden|orientation|screenSize"
+   			android:exported="true"
+   			android:screenOrientation="portrait" />
+        
+
+
+    	<!-- ###################添加UmengAppkey###################### -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+           
+            
+                
+                android:value="55f2dc6867e58e6da400175e"
+         
+             >
+   		<!-- android:value="5657ce44e0f55a69b8000028"  android:value="55f2dc6867e58e6da400175e"  28为测试号 -->
+        </meta-data>
+        
+        <meta-data 
+            android:value="Channel ID" 
+            android:name="UMENG_CHANNEL"
+            />
+        
+    	<!-- 友盟自动更新 -->
+    	<service
+    		android:name="com.umeng.update.net.DownloadingService"
+    		android:process=":DownloadingService" >
+		</service>
+		<activity 
+    		android:name="com.umeng.update.UpdateDialogActivity"
+    		android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+		</activity>
+        
+		<service 
+		    android:name="com.jibu.app.server.AutoSyncService">
+		</service>
+		<activity 
+		    android:name="com.jibu.app.main.AntiLostActivity"
+		    android:screenOrientation="portrait" ></activity>
+		<service
+            android:name="com.jibu.app.server.AntiLostPhoneService"
+            android:enabled="true"></service>
+		<activity
+		    android:name="com.jibu.app.user.NameActivity"
+		    android:screenOrientation="portrait" ></activity>
+		<activity
+		    android:name="com.jibu.app.main.CejuActivity"
+		    android:screenOrientation="portrait">
+		</activity>
+		
+		<activity
+		    android:name="com.jibu.app.main.CejuHistoryActivity"
+		    android:screenOrientation="portrait">
+		    
+		</activity>
+		
+		<activity 
+		    android:name="com.jibu.app.main.SyncDataToYunActivity"
+		    android:screenOrientation="portrait"></activity>
+		<activity
+		    android:name="com.jibu.app.main.AntiLostNewActivity"
+		    android:screenOrientation="portrait"></activity>
+		<activity
+		    android:name="com.jibu.app.main.LostSetupActivity"
+		    android:screenOrientation="portrait"></activity>
+		<activity
+		    android:name="com.jibu.app.main.LostOnlyMainActivity"
+		    android:screenOrientation="portrait"></activity>
+		<service
+		    android:name="mybleservice.BluetoothLeService">
+		    
+		</service>     
+    </application>
+
+</manifest>

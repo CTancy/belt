@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        			<LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    android:background="#1E90FF"
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/no_alert_area"
+                            android:textColor="#fff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        style="@style/CommonTitleRightBg" >
+                        <TextView
+                            style="@style/CommonTitleText"
+                            android:textColor="#fff" 
+                            android:visibility="invisible"
+                            android:text="@string/complete"/>
+                    </LinearLayout>
+                </LinearLayout>
+    			
+    			<RelativeLayout
+                    android:id="@+id/id_relativelayout_no_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    android:background="#fff"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                     >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_no_alarm_switch"
+                        android:layout_width="40.0dp"
+                        android:layout_height="21.0dp"
+                        android:layout_marginTop="14.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/no_alert_area"
+                        android:textColor="#25222a"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+				
+				<TextView
+                    android:id = "@+id/id_textview_close_remind_no_recive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:alpha="0.25"
+                    android:text="@string/no_alert_message"
+                    android:textSize="12sp"
+                    ></TextView>
+
+				
+				<RelativeLayout
+				    android:id="@+id/id_relativelayout_no_alert_select_wifi"
+				    android:layout_marginTop="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    android:background="@drawable/relativelayout_bg" 
+                    android:gravity="center_vertical"
+                     >
+
+
+                    <ImageView
+                        android:id="@+id/id_imageview_no_alert_next"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="6.5dp"
+                        android:layout_height="11.0dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/entry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:text="@string/xinren_wifi"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+
+                    <TextView
+                        android:id="@+id/id_textview_no_alert_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10.0dp"
+                        android:layout_toLeftOf="@id/id_imageview_no_alert_next"
+                        android:text="@string/click_to_add_wi_fi"
+                        android:textColor="#888888"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+
+</LinearLayout>

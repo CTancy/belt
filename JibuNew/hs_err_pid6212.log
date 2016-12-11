@@ -1,0 +1,133 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:127), pid=6212, tid=1896
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (8.0_45-b15) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.45-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000021be000):  JavaThread "Unknown thread" [_thread_in_vm, id=1896, stack(0x00000000021f0000,0x00000000022f0000)]
+
+Stack: [0x00000000021f0000,0x00000000022f0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x32b57a]
+V  [jvm.dll+0x279873]
+V  [jvm.dll+0x27a509]
+V  [jvm.dll+0x2717a6]
+V  [jvm.dll+0x68183]
+V  [jvm.dll+0x68273]
+V  [jvm.dll+0x7d74a]
+V  [jvm.dll+0x7dab6]
+V  [jvm.dll+0xf2157]
+V  [jvm.dll+0xf24e6]
+V  [jvm.dll+0x20f097]
+V  [jvm.dll+0x240e0a]
+V  [jvm.dll+0x15ba41]
+C  [javaw.exe+0x217e]
+C  [javaw.exe+0xcd17]
+C  [javaw.exe+0xcdab]
+C  [kernel32.dll+0x15a4d]
+C  [ntdll.dll+0x2b831]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000021be000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=1896, stack(0x00000000021f0000,0x00000000022f0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.012 loading class java/lang/CharSequence done
+Event: 0.012 loading class java/lang/String done
+Event: 0.012 loading class java/lang/Class
+Event: 0.013 loading class java/lang/reflect/AnnotatedElement
+Event: 0.013 loading class java/lang/reflect/AnnotatedElement done
+Event: 0.013 loading class java/lang/reflect/GenericDeclaration
+Event: 0.013 loading class java/lang/reflect/GenericDeclaration done
+Event: 0.013 loading class java/lang/reflect/Type
+Event: 0.013 loading class java/lang/reflect/Type done
+Event: 0.013 loading class java/lang/Class done
+
+
+Dynamic libraries:
+0x000000013f280000 - 0x000000013f2b7000 	D:\Android\Java\jdk1.8.0_45\bin\javaw.exe
+0x0000000077630000 - 0x00000000777d9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077510000 - 0x0000000077630000 	C:\Windows\system32\kernel32.dll
+0x000007fefd670000 - 0x000007fefd6dc000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feff6c0000 - 0x000007feff79b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe5f0000 - 0x000007fefe68f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefeeb0000 - 0x000007fefeecf000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefed80000 - 0x000007fefeead000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077410000 - 0x000000007750a000 	C:\Windows\system32\USER32.dll
+0x000007fefe780000 - 0x000007fefe7e7000 	C:\Windows\system32\GDI32.dll
+0x000007feff8b0000 - 0x000007feff8be000 	C:\Windows\system32\LPK.dll
+0x000007fefe6b0000 - 0x000007fefe779000 	C:\Windows\system32\USP10.dll
+0x000007fefbe30000 - 0x000007fefc024000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007fefebf0000 - 0x000007fefec61000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefe520000 - 0x000007fefe54e000 	C:\Windows\system32\IMM32.DLL
+0x000007feff7a0000 - 0x000007feff8a9000 	C:\Windows\system32\MSCTF.dll
+0x00000000507a0000 - 0x0000000050872000 	D:\Android\Java\jdk1.8.0_45\jre\bin\msvcr100.dll
+0x00000000694b0000 - 0x0000000069d33000 	D:\Android\Java\jdk1.8.0_45\jre\bin\server\jvm.dll
+0x000007fefba80000 - 0x000007fefba89000 	C:\Windows\system32\WSOCK32.dll
+0x000007feff0b0000 - 0x000007feff0fd000 	C:\Windows\system32\WS2_32.dll
+0x000007fefed70000 - 0x000007fefed78000 	C:\Windows\system32\NSI.dll
+0x000007fefb480000 - 0x000007fefb4bb000 	C:\Windows\system32\WINMM.dll
+0x000007fefc4c0000 - 0x000007fefc4cc000 	C:\Windows\system32\VERSION.dll
+0x00000000777f0000 - 0x00000000777f7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000073750000 - 0x000000007375f000 	D:\Android\Java\jdk1.8.0_45\jre\bin\verify.dll
+0x00000000688e0000 - 0x0000000068909000 	D:\Android\Java\jdk1.8.0_45\jre\bin\java.dll
+0x0000000073010000 - 0x0000000073026000 	D:\Android\Java\jdk1.8.0_45\jre\bin\zip.dll
+0x000007feeb0d0000 - 0x000007feeb1f5000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath:D:\Android\adt-bundle-windows-x86_64-20140702\sdk\platforms\android-19\android.jar 
+java_command: com.jibu.app.view.CountTimer
+java_class_path (initial): D:\project\Jibu\libs\httpmime-4.1.3.jar;D:\project\Jibu\libs\SocialSDK_QQZone_2.jar;D:\project\Jibu\libs\umeng-update-v2.6.0.1.jar;D:\project\Jibu\libs\SocialSDK_QQZone_1.jar;D:\project\Jibu\libs\SocialSDK_WeiXin_1.jar;D:\project\Jibu\libs\umeng_social_sdk.jar;D:\project\Jibu\libs\SocialSDK_QQZone_3.jar;D:\project\Jibu\libs\SocialSDK_Sina.jar;D:\project\Jibu\libs\android-support-v4.jar;D:\project\Jibu\libs\SocialSDK_WeiXin_2.jar;D:\project\Jibu\libs\veclinkblelib.jar;D:\project\Jibu\libs\gson-2.2.4.jar;D:\project\Jibu\bin\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\Android\Java\jdk1.8.0_45
+CLASSPATH=D:\Android\Java\jdk1.8.0_45\lib\dt.jar;D:\Android\Java\jdk1.8.0_45\lib\tools.jar;
+PATH=D:/Android/Java/jdk1.8.0_45/bin/../jre/bin/server;D:/Android/Java/jdk1.8.0_45/bin/../jre/bin;D:/Android/Java/jdk1.8.0_45/bin/../jre/lib/amd64;D:\Android\Java\jdk1.8.0_45\bin;D:\Android\Java\jdk1.8.0_45\jre\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\adt-bundle-windows-x86-20130717\sdk\platform-tools;D:\Android\adt-bundle-windows-x86-20130717\sdk\tools;D:\Android\adt-bundle-windows-x86_64-20140702\sdk\platform-tools;C:\Program Files (x86)\Subversion\bin;C:\Program Files\TortoiseSVN\bin;D:\Android\adt-bundle-windows-x86_64-20140702\eclipse;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.19018)
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, lzcnt, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 8273772k(3331136k free), swap 16545708k(8588124k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.45-b02) for windows-amd64 JRE (1.8.0_45-b15), built on Apr 30 2015 12:40:44 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Oct 20 20:11:51 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

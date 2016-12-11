@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    style="@style/CommonBg2"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/id_linearlayout_title"
+        style="@style/CommonTitleBg" >
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_left"
+            style="@style/CommonTitleLeftBg" >
+
+            <ImageView
+                style="@style/CommonTitleLeftImg"
+                android:background="@drawable/icon_common_back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_center"
+            style="@style/CommonTitleCenterBg2" >
+
+            <LinearLayout
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/id_textview_title_tongji_day"
+                    android:layout_width="35.0dp"
+                    android:layout_height="35.0dp"
+                    android:background="@drawable/tongji_bg"
+                    android:gravity="center"
+                    android:text="@string/day"
+                    android:textColor="#fff"
+                    android:textSize="16.0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/id_textview_title_tongji_week"
+                    android:layout_width="35.0dp"
+                    android:layout_height="35.0dp"
+                    android:gravity="center"
+                    android:text="@string/week"
+                    android:textColor="#fff"
+                    android:textSize="16.0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/id_textview_title_tongji_month"
+                    android:layout_width="35.0dp"
+                    android:layout_height="35.0dp"
+                    android:gravity="center"
+                    android:text="@string/month"
+                    android:textColor="#fff"
+                    android:textSize="16.0dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ViewFlipper
+            android:id="@+id/id_viewflipper_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            
+    </ViewFlipper> 
+    
+    
+
+</LinearLayout>

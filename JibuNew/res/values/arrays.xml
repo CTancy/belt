@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="GetImgType">
+        <item>本机相册</item>
+        <item>照相机</item>
+    </string-array>
+	
+    <string-array name="long_sit_remind_message">
+        <item>再坐下去屁股要起茧了！</item>
+        <item>亲，该起来走走了</item>
+        <item>世界那么美，你应该站起来看看</item>
+        <item>二师兄，师傅和大师兄被抓走了，你怎么还坐着不动啊</item>
+        <item>不想坐失良机？赶紧起来走走！</item>
+        <item>坐享其成行不通的，动起来吧。</item>
+        <item>每多坐1小时，寿命减少22分钟</item>
+    </string-array>
+    
+    <string-array name="anti_lost_phone_remind_message">
+        <item>手机！手机！手机！重要的事情说三遍！</item>
+        <item>你的“钱包”正渐渐远离你</item>
+        <item>手机还没拿呢，快拿上</item>
+        <item>你忍心就这么扔下手机自己去嗨么？</item>
+        <item>你终于回来了，主人</item>
+        <item>我知道，你不会忍心丢下我的</item>
+    </string-array>
+    
+    <string-array name="share_message">
+        <item>久坐</item>
+        <item>运动</item>
+    </string-array>
+    
+    <string-array name="sport_type">
+        <item>运动菜鸟</item>
+        <item>中等运动</item>
+        <item>完成目标</item>
+        <item>暴走三郎</item>
+    </string-array>
+    
+    <string-array name="sport_value">
+        <item>多动的菜鸟才有虫吃！</item>
+        <item>干得不错，向下一个目标前进！</item>
+        <item>完美达成运动目标！</item>
+        <item>我走过的路，可绕地球三圈！</item>
+    </string-array>
+    
+    <string-array name="sit_type">
+        <item>久坐会死星人</item>
+        <item>健康专家</item>
+        <item>不想动大师</item>
+        <item>久坐大禅师</item>
+    </string-array>
+    
+    <string-array name="sit_value">
+        <item>老板说，丑的人一般爱久坐！</item>
+        <item>干得不错，下次再少坐会儿！</item>
+        <item>今天坐了好久好久……</item>
+        <item>已升级为久坐大禅师……</item>
+    </string-array>
+</resources>

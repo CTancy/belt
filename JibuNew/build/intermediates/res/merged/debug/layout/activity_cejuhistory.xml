@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ceju_history_bg"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/history_record"
+                            android:textColor="#fff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        android:visibility="visible"
+                        style="@style/CommonTitleRightBg" >
+                        
+                      	<TextView
+                      	    style="@style/CommonTitleText"
+                      	    ></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+			
+ 				
+ 				
+ 				<ListView 
+				    android:id="@+id/id_listview_ceju_history"
+				    android:layout_width="match_parent"
+				    android:layout_height="match_parent"
+				    android:layout_marginTop="30dp"
+				    >
+				</ListView>
+</LinearLayout>

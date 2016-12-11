@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CommonBg2"
+    android:background="@drawable/main_bg2"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/id_linearlayout_title"
+        style="@style/CommonTitleBg" >
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_left"
+            style="@style/CommonTitleLeftBg" >
+
+            <ImageView
+                style="@style/CommonTitleLeftImg"
+                android:background="@drawable/icon_common_back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_center"
+            style="@style/CommonTitleCenterBg" >
+
+            <TextView
+                android:id="@+id/id_textview_title_center"
+                style="@style/CommonTitleText"
+                android:text="@string/date"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_right"
+            style="@style/CommonTitleRightBg"
+            android:visibility="invisible" >
+
+            <TextView
+                android:id="@+id/id_textview_title_right"
+                style="@style/CommonTitleTextRight"
+                android:text="@string/step_over" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/id_viewflipper_main"
+        android:layout_marginTop="65.0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ViewFlipper>
+
+</LinearLayout>

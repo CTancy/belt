@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    		<LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/fix_name"
+                            android:textColor="#aa000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        style="@style/CommonTitleRightBg" >
+                        <TextView
+                            style="@style/CommonTitleText"
+                            android:textColor="@color/sky_blue" 
+                            android:text="@string/complete"/>
+                    </LinearLayout>
+                </LinearLayout>
+                
+		<!--  
+		 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:background="#dddddd" />
+                    -->
+    	<EditText
+    	    android:id="@+id/id_edittext_name"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="50dp"
+    	    android:gravity="center_vertical" >
+                
+    	</EditText>
+		
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:alpha="0.25"
+                    android:text="@string/invalid_name_length"
+                    android:textSize="12sp"
+                 	></TextView>
+</LinearLayout>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    			<LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    android:background="#ffffff"
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/longsit_setting"
+                            android:textColor="#000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        style="@style/CommonTitleRightBg" >
+                        <TextView
+                            style="@style/CommonTitleText"
+                            android:textColor="#63B8FF" 
+                            android:text="@string/complete"/>
+                    </LinearLayout>
+                </LinearLayout>
+               
+    			
+    			<RelativeLayout
+                    android:id="@+id/id_relativelayout_my_no_move"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    android:background="#fff"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/id_linearlayout_title"
+                     >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_my_no_move"
+                        android:layout_width="6.5dp"
+                        android:layout_height="12.5dp"
+                         android:layout_marginTop="18.75dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="22.0dp"
+                        android:background="@drawable/long_sit_remind" />
+
+                    <ImageView
+                        android:id="@+id/id_imageview_my_no_move_next"
+                        android:layout_width="40.0dp"
+                        android:layout_height="21.0dp"
+                        android:layout_marginTop="14.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/open_remind" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_toRightOf="@id/id_imageview_my_no_move"
+                        android:text="@string/open_longsit_remind"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+                <TextView
+                    android:id = "@+id/id_textview_close_remind_no_recive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/id_relativelayout_my_no_move"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:alpha="0.25"
+                    android:text="@string/close_remind_no_recive"
+                    android:textSize="12sp"
+                    ></TextView>
+               <LinearLayout
+                android:id="@+id/id_linearlayout_remind_kind"
+                android:layout_below="@id/id_textview_close_remind_no_recive"
+                android:layout_width="match_parent"
+                android:layout_height="101dp"
+                android:layout_marginTop="15dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/id_relativelayout_ring_remind"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                     >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_ring"
+                        android:layout_width="13.5dp"
+                        android:layout_height="12.5dp"
+                         android:layout_marginTop="18.75dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="22.0dp"
+                        android:background="@drawable/ring" />
+
+                    <ImageView
+                        android:id="@+id/id_imageview_ring_next"
+                        android:layout_width="40.0dp"
+                        android:layout_height="21.0dp"
+                        android:layout_marginTop="14.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/open_remind" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_toRightOf="@id/id_imageview_ring"
+                        android:text="@string/ring"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+                
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="20.0dp"
+                    android:layout_marginRight="20.0dp"
+                    android:background="#dddddd" />
+                <RelativeLayout
+                    android:id="@+id/id_relativelayout_shock_remind"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                     >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_shock_remind"
+                        android:layout_width="13.5dp"
+                        android:layout_height="12.5dp"
+                         android:layout_marginTop="18.75dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="22.0dp"
+                        android:background="@drawable/shock" />
+
+                    <ImageView
+                        android:id="@+id/id_imageview_my_shock_remind"
+                        android:layout_width="40.0dp"
+                        android:layout_height="21.0dp"
+                        android:layout_marginTop="14.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/open_remind" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_toRightOf="@id/id_imageview_shock_remind"
+                        android:text="@string/shock"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+            </LinearLayout>
+            
+               
+               
+               
+               
+               
+               
+                 
+              <LinearLayout
+                android:id="@+id/id_ll_time_setting"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20.0dp"
+                android:layout_height="152.0dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_below="@id/id_linearlayout_remind_kind" >
+                
+                <RelativeLayout
+                    android:id="@+id/id_relativelayout_time_interval"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                     >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_time_setup"
+                        android:layout_marginTop="18.0dp"
+                        android:layout_width="14.0dp"
+                        android:layout_height="14.0dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="22.0dp"
+                        android:background="@drawable/my_step" />
+
+                    <ImageView
+                        android:id="@+id/id_imageview_time_next"
+                        android:layout_marginTop="19.5dp"
+                        android:layout_width="6.5dp"
+                        android:layout_height="11.0dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/my_next" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_toRightOf="@id/id_imageview_time_setup"
+                        android:text="@string/time_set_up"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+
+                    <TextView
+                        android:id="@+id/id_textview_time_interval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10.0dp"
+                         android:layout_marginTop="17.0dp"
+                        android:layout_toLeftOf="@id/id_imageview_time_next"
+                        android:text="@string/min"
+                        android:textColor="#888888"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="20.0dp"
+                    android:layout_marginRight="20.0dp"
+                    android:background="#dddddd" />
+                <RelativeLayout
+                    android:id="@+id/id_relativelayout_begin_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_begin_time"
+                        android:layout_width="16dp"
+                        android:layout_height="13.5dp"
+                        android:layout_marginTop="18.0dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="22.0dp"
+                        android:background="@drawable/start_time" />
+
+                    <ImageView
+                        android:id="@+id/id_imageview_begin_time_next"
+                        android:layout_width="6.5dp"
+                        android:layout_height="11.0dp"
+                        android:layout_marginTop="19.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/my_next" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_toRightOf="@id/id_imageview_begin_time"
+                        android:text="@string/remind_begin_time"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+					
+                    <TextView
+                        android:id="@+id/id_textview_begin_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10.0dp"
+                         android:layout_marginTop="17.0dp"
+                        android:layout_toLeftOf="@id/id_imageview_begin_time_next"
+                        android:text="9:30"
+                        android:textColor="#888888"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="20.0dp"
+                    android:layout_marginRight="20.0dp"
+                    android:background="#dddddd" />
+
+                <RelativeLayout
+                    android:id="@+id/id_relativelayout_end_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_end_time"
+                        android:layout_width="15dp"
+                        android:layout_height="13.5dp"
+                        android:layout_marginTop="18.75dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="22.0dp"
+                        android:background="@drawable/end_time" />
+
+                    <ImageView
+                        android:id="@+id/id_imageview_end_time_next"
+                        android:layout_width="6.5dp"
+                        android:layout_height="11.0dp"
+                        android:layout_marginTop="19.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/my_next" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_toRightOf="@id/id_imageview_end_time"
+                        android:text="@string/remind_end_time"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp"
+                        />
+                    <TextView
+                        android:id="@+id/id_textview_end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10.0dp"
+                         android:layout_marginTop="17.0dp"
+                        android:layout_toLeftOf="@id/id_imageview_end_time_next"
+                        android:text="23:30"
+                        android:textColor="#888888"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+            </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+          
+       <LinearLayout
+        android:id="@+id/id_linearlayout_title"
+        style="@style/CommonTitleBg" >
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_left"
+            style="@style/CommonTitleLeftBg" >
+
+            <ImageView style="@style/CommonTitleLeftImg" 
+                android:background="@drawable/more"
+                />
+       
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_center"
+            android:orientation="vertical"
+            style="@style/CommonTitleCenterBg" >
+
+            <TextView
+                android:id="@+id/id_textview_title_center"
+                style="@style/CommonTitleText"
+                android:textColor="#fff"
+                android:text="@string/date" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_linearlayout_title_right"
+            style="@style/CommonTitleRightBg"
+             >
+
+            <ImageView style="@style/CommonTitleRightImg" 
+                android:background="@drawable/tongji"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+              <ProgressBar
+        android:id="@+id/id_processbar_refreshing"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        ></ProgressBar>
+       <TextView    
+       android:id="@+id/id_textview_title_update_time"
+       android:layout_width="wrap_content"
+       android:text="19:00"
+       android:textSize="12sp"
+       android:textColor="#cccccc"
+       android:layout_gravity="center_horizontal"
+       android:layout_height="wrap_content"></TextView>
+       
+
+    </LinearLayout>
+      
+
+</LinearLayout>

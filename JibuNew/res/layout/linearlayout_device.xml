@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_linearlayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical" >
+<RelativeLayout
+   
+    	android:id="@+id/id_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dp"
+        android:gravity="center_vertical">
+    <TextView 
+        android:id="@+id/id_textview_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aaa"
+        android:textSize="18.0dp"
+        android:layout_marginLeft="10.0dp"
+        android:gravity="top"
+        android:textColor="#000"
+        />
+    <TextView 
+        android:layout_below="@id/id_textview_device_name"
+        android:id="@+id/id_textview_device_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bbb"
+        android:layout_marginLeft="10.0dp"
+         android:layout_marginTop="5dp"
+        android:textSize="11sp"
+        android:textColor="#000"
+        >
+    </TextView>
+    
+    <ImageView 
+        android:id="@+id/id_imageview_device_xinhao"
+        android:layout_width="20.0dp"
+        android:layout_height="20.0dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10.0dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/xinhao_1"
+        />
+    
+    <TextView 
+        android:id="@+id/id_textview_device_xinhao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-45"
+        android:layout_toLeftOf="@id/id_imageview_device_xinhao"
+        android:textSize="16.0dp"
+        android:layout_centerVertical="true"
+        android:textColor="#aaaaaa"
+        />
+    
+    </RelativeLayout>
+    <ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#aaaaaa"
+        />
+    </LinearLayout>

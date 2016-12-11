@@ -1,0 +1,378 @@
+[
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_fix_ceju.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_fix_ceju.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\popup_info.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\popup_info.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_bak_at_list.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_bak_at_list.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_timer_picker.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_timer_picker.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\load_more.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\load_more.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_full_alert_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_full_alert_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\listview_layout.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\listview_layout.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_view.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_at_view.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_full_curtain.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_full_curtain.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\waveview_layout.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\waveview_layout.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\popup_qiaoji.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\popup_qiaoji.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_welcome.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_welcome.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_tongji2.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_tongji2.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_tongji.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_tongji.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\yc_single_chioce_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\yc_single_chioce_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_no_alarm_area.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_no_alarm_area.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_loading_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_loading_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "E:\\project\\JibuNew\\build\\intermediates\\exploded-aar\\project.Android-PullToRefresh-master\\library\\unspecified\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_listview_head.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_listview_head.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\popup_bind_fail.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\popup_bind_fail.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_scan.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_scan.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_overlay.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_at_overlay.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\share_sport.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\share_sport.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_failed_load_page.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_failed_load_page.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_bind_select_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_bind_select_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\need_this_for_maven.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\need_this_for_maven.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_base_alert_dialog_button.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_base_alert_dialog_button.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_simple_spinner_item.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_simple_spinner_item.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login_and_reg.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_login_and_reg.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\move_no_move.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\move_no_move.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\popup_sel.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\popup_sel.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\height.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\height.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_composer_header.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_composer_header.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_bak_platform_selector_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_bak_platform_selector_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_bak_platform_item_simple.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_bak_platform_item_simple.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_content.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_main_content.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_title.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_main_title.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_base_alert_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_base_alert_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\item_wifi.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\item_wifi.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_events.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\list_item_events.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\tb_munion_aditem.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\tb_munion_aditem.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\tb_munion_adview.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\tb_munion_adview.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_tongji.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_tongji.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\refresh_head.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\refresh_head.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_name.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_name.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_more.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_more.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about_us.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_about_us.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_personal_info.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_personal_info.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_remind_setup.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_remind_setup.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\weight.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\weight.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_full_alert_dialog_item.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_full_alert_dialog_item.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\time_picker_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\time_picker_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_device.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_device.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\simple_spinner_item.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\simple_spinner_item.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\file_list_item.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\file_list_item.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_titile_bar.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_titile_bar.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_bak_at_list_item.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_bak_at_list_item.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\sel_upload_head_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\sel_upload_head_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forget.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_forget.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\personalinfor.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\personalinfor.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\born.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\born.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_slideup.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_main_slideup.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_anti_lost.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_anti_lost.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_reg.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_reg.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_connecting_belt.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\dialog_connecting_belt.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_update_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_update_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_tongji2.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_tongji2.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\yc_single_choice_dialog_listitem.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\yc_single_choice_dialog_listitem.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_syncdatatoyun.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_syncdatatoyun.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_item.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_at_item.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_menu.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_main_menu.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_sync.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_sync.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_step_setting.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_step_setting.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_oauth_dialog.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_oauth_dialog.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\waistline.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\waistline.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_file_select.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_file_select.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_update_fireware.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_update_fireware.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\popup_sel_device.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\popup_sel_device.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_share.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_share.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\item_cejuhistory.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\item_cejuhistory.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_cejuhistory.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_cejuhistory.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_my.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_my.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_share.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_post_share.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_wifi.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_select_wifi.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_shareboard_item.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_socialize_shareboard_item.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "E:\\project\\JibuNew\\build\\intermediates\\exploded-aar\\project.Android-PullToRefresh-master\\library\\unspecified\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_fragment.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_fragment.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_common_download_notification.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\umeng_common_download_notification.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ceju.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_ceju.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_title_content.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_main_title_content.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\linearlayout_save_ceju.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\linearlayout_save_ceju.xml"
+    },
+    {
+        "merged": "E:\\project\\JibuNew\\build\\intermediates\\res\\merged\\debug\\layout\\activity_yaodai.xml",
+        "source": "E:\\project\\JibuNew\\res\\layout\\activity_yaodai.xml"
+    }
+]

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+     >
+     	<LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/anti_lost"
+                            android:textColor="#fff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        style="@style/CommonTitleRightBg" >
+                        <TextView
+                            style="@style/CommonTitleText"
+                            android:textColor="#fff" 
+                            android:visibility="invisible"
+                            android:text="@string/complete"/>
+                    </LinearLayout>
+            </LinearLayout>
+	<ImageView android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/belt"/>
+    <LinearLayout
+        android:id="@+id/login_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="30.0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/fenge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40.0dp"
+        android:layout_above="@id/login_bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:orientation="horizontal" >
+
+        
+        <LinearLayout
+        android:layout_width="0.0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="呼叫" 
+            android:gravity="center"
+            android:background="@drawable/lost_button_bg"
+            android:textColor="@color/sky_blue"
+            android:textSize="16.0dp"
+            android:id="@+id/id_textview_call"/>
+
+       </LinearLayout>
+       
+        <LinearLayout
+        android:layout_width="0.0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:enabled="true"
+            android:text="设置" 
+            android:background="@drawable/lost_button_bg"
+            android:textColor="@color/sky_blue"
+            android:textSize="16.0dp"
+            android:id="@+id/id_textview_setup"/>
+            
+
+       </LinearLayout>
+        
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        >
+        <ImageView 
+            android:id="@+id/id_imageview_user_head"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="40dp"
+            />
+        <TextView 
+            android:id="@+id/id_textview_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/id_imageview_user_head"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="21dp"
+            android:alpha="0.5"
+            android:textSize="13sp"
+            android:text="xxxx"
+            />
+    </RelativeLayout>
+	
+            <ImageView
+                  	android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="63dp"
+                    android:background="#dddddd" />
+    <LinearLayout 
+        android:id="@+id/id_linearlayout_menu_long_sit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/menu1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:textSize="15dp"
+            android:layout_marginLeft="13dp"
+            android:text="@string/long_sit_remind">
+            
+        </TextView>
+        
+    </LinearLayout>
+    
+    
+                <ImageView
+                  	android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="63dp"
+                    android:background="#dddddd" />
+    <LinearLayout 
+        android:id="@+id/id_linearlayout_menu_phone_antilost"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/menu2"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:alpha="0.5"
+            android:text="@string/anti_lost"
+            android:textSize="15dp" >
+            
+        </TextView>
+        
+    </LinearLayout>
+                <ImageView
+                  	android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="63dp"
+                    android:background="#dddddd" />
+    <LinearLayout 
+        android:id="@+id/id_linearlayout_menu_my_ebelt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/menu3"
+            />
+
+        <TextView
+            android:id="@+id/id_textview_my_ebelt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:alpha="0.5"
+            android:text="@string/my_ebelt"
+            android:textSize="15dp" >
+            
+        </TextView>
+        
+    </LinearLayout>
+                <ImageView
+                  	android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="63dp"
+                    android:background="#dddddd" />
+    <LinearLayout 
+        android:id="@+id/id_linearlayout_menu_share"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/menu4"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:textSize="15dp"
+            android:layout_marginLeft="13dp"
+            android:text="@string/share">
+            
+        </TextView>
+        
+    </LinearLayout>
+                <ImageView
+                  	android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="63dp"
+                    android:background="#dddddd" />
+    <LinearLayout 
+        android:id="@+id/id_linearlayout_menu_setup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/menu5"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:alpha="0.5"
+            android:text="@string/setup"
+            android:textSize="15dp" >
+            
+        </TextView>
+        
+    </LinearLayout>
+    
+                    <ImageView
+                  	android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="63dp"
+                    android:background="#dddddd" />
+        <LinearLayout 
+        android:id="@+id/id_linearlayout_menu_ceju"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/menu5"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:alpha="0.5"
+            android:text="@string/ceju"
+            android:textSize="15dp" >
+            
+        </TextView>
+        
+    </LinearLayout>
+    
+                    <ImageView
+                  	android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginLeft="63dp"
+                    android:background="#dddddd" />
+</LinearLayout>

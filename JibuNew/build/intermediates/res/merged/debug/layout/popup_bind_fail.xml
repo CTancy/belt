@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_linearlayout_popup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+     >
+
+    <LinearLayout
+     android:layout_width="230.0dp"
+        android:layout_height="275.0dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/popup_bg"
+        >
+    <TextView 
+        android:layout_width="match_parent"
+    android:layout_height="40.0dp"
+    android:text="@string/click_to_bind_ebelt"
+        android:textColor="#fff"
+        android:textSize="18.0dp"
+        android:gravity="center"
+        
+        />
+    
+
+        <LinearLayout 
+            android:id="@+id/id_linearlayout_devices"
+            android:layout_width="match_parent"
+    android:layout_height="195.0dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+            >
+            
+            <LinearLayout 
+            
+            android:layout_width="match_parent"
+    android:layout_height="50.0dp"
+    android:layout_marginTop="40.0dp"
+    android:orientation="horizontal"
+    android:gravity="center"
+            >
+            <ImageView 
+                
+                android:layout_width="25.0dp"
+                android:layout_height="25.0dp"
+                android:background="@drawable/icon_warning"
+                />
+            <TextView 
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dp"
+                android:text="@string/bind_failed"
+                android:textColor="#ff0000"
+                android:textSize="20.0dp"
+                
+                />
+        </LinearLayout>
+            
+            
+            <TextView 
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dp"
+                android:layout_marginRight="20.0dp"
+                android:layout_marginTop="20.0dp"
+                android:text="@string/check_device_close_phone_to_ebelt"
+                android:textColor="#000000"
+                android:textSize="16.0dp"
+                
+                />
+            
+            
+        </LinearLayout>
+
+    
+    
+    <TextView 
+        android:id="@+id/id_textview_resel"
+        android:layout_width="match_parent"
+    android:layout_height="40.0dp"
+    android:text="@string/rechoose"
+        android:textColor="#57B8F7"
+        android:textSize="18.0dp"
+        
+        android:gravity="center"
+        android:background="@drawable/popup_button_bg"
+        
+        />
+    
+    </LinearLayout>
+
+</LinearLayout>

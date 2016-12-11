@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="unspecified"><source path="E:\project\JibuNew\build\intermediates\exploded-aar\project.Android-PullToRefresh-master\library\unspecified\assets"/></dataSet><dataSet config="main"><source path="E:\project\JibuNew\assets"><file name="D013A_V35.img" path="E:\project\JibuNew\assets\D013A_V35.img"/><file name="D013A_V38.img" path="E:\project\JibuNew\assets\D013A_V38.img"/></source></dataSet><dataSet config="debug"><source path="E:\project\JibuNew\build-types\debug\assets"/></dataSet></merger>

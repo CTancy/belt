@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        			<LinearLayout
+                    android:id="@+id/id_linearlayout_title"
+                    android:background="#1E90FF"
+                    style="@style/CommonTitleBg" >
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_left"
+                        style="@style/CommonTitleLeftBg" >
+
+                        <ImageView
+                            style="@style/CommonTitleLeftImg"
+                            android:background="@drawable/icon_common_back" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_center"
+                        style="@style/CommonTitleCenterBg"
+                        android:visibility="visible"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/id_textview_title_center"
+                            style="@style/CommonTitleText"
+                            android:text="@string/anti_lost"
+                            android:textColor="#fff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id_linearlayout_title_right"
+                        style="@style/CommonTitleRightBg" >
+                        <TextView
+                            style="@style/CommonTitleText"
+                            android:textColor="#fff" 
+                            android:visibility="invisible"
+                            android:text="@string/complete"/>
+                    </LinearLayout>
+                </LinearLayout>
+    			
+    			<RelativeLayout
+                    android:id="@+id/id_relativelayout_anti_lost"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    android:background="#fff"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/id_linearlayout_title"
+                     >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_anti_lost_switch"
+                        android:layout_width="40.0dp"
+                        android:layout_height="21.0dp"
+                        android:layout_marginTop="14.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/open_remind" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/anti_lost_remind"
+                        android:textColor="#25222a"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+                
+    			<!--  -->
+    			<RelativeLayout
+                    android:id="@+id/id_relativelayout_anti_lost_belt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    android:background="#fff"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                     >
+
+                    <ImageView
+                        android:id="@+id/id_imageview_anti_lost_belt_switch"
+                        android:layout_width="40.0dp"
+                        android:layout_height="21.0dp"
+                        android:layout_marginTop="14.5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/open_remind" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:layout_marginTop="17.0dp"
+                        android:layout_alignParentLeft="true"
+                        android:text="皮带提醒"
+                        android:textColor="#25222a"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+    		<RelativeLayout
+    		    	android:id="@+id/id_rl_juliyuanjin"
+    			    android:layout_width="match_parent"
+    			    android:layout_height="100dp"
+    			    android:background="#ffffff" >
+                    
+    			    <TextView 
+    			        android:id="@+id/id_textview_juliyuanjin"
+    			        android:layout_width="wrap_content"
+    			        android:layout_height="wrap_content"
+    			        android:layout_marginTop="15dp"
+    			        android:layout_centerHorizontal="true" 
+    			        android:textSize="15sp"
+    			        android:text="@string/setup_antilost_distance"/>
+    			    
+					<RelativeLayout
+					    android:id="@+id/id_rl_setup_distance"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:layout_below="@+id/id_textview_juliyuanjin"
+					    android:layout_marginTop="20dp"
+					    android:gravity="center_vertical"
+					    >
+                    
+                    <TextView 
+                        	android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="近"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+					<SeekBar
+    			        android:id="@+id/id_seekbar_rssi"
+    			        android:layout_width="match_parent"
+    			        android:layout_height="wrap_content"
+    			        android:layout_marginRight="30dp"
+    			        android:layout_marginLeft="30dp"
+    			        android:progress="50"
+    			         />
+					 <TextView 
+					        android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="远"
+                            android:layout_marginRight="10dp"/>
+					</RelativeLayout>
+
+
+    			</RelativeLayout>
+				
+				
+				<RelativeLayout
+				    android:id="@+id/id_rl_ring_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/relativelayout_bg" 
+                    android:gravity="center_vertical"
+                     >
+
+
+                    <ImageView
+                        android:id="@+id/id_imageview_my_next"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="6.5dp"
+                        android:layout_height="11.0dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/entry" />
+
+                    <TextView
+                        android:id="@+id/id_textview_ring_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:text="@string/ring"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+
+                    <TextView
+                        android:id="@+id/id_textview_ring_filename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10.0dp"
+                        android:layout_toLeftOf="@id/id_imageview_my_next"
+                        android:text="@string/default_path"
+                        android:textColor="#888888"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+
+				
+				<RelativeLayout
+				    android:id="@+id/id_relativelayout_no_alert_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dp"
+                    android:background="@drawable/relativelayout_bg" 
+                    android:gravity="center_vertical"
+                     >
+
+
+                    <ImageView
+                        android:id="@+id/id_imageview_no_alert_next"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="6.5dp"
+                        android:layout_height="11.0dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20.0dp"
+                        android:background="@drawable/entry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:text="@string/no_alert_area"
+                        android:textColor="#333333"
+                        android:textSize="16.0dp" />
+
+                    <TextView
+                        android:id="@+id/id_textview_no_alert_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10.0dp"
+                        android:layout_toLeftOf="@id/id_imageview_no_alert_next"
+                        android:text="@string/open"
+                        android:textColor="#888888"
+                        android:textSize="16.0dp" />
+                </RelativeLayout>
+
+</LinearLayout>
