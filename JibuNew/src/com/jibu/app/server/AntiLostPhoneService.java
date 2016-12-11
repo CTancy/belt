@@ -260,7 +260,7 @@ public class AntiLostPhoneService extends Service {
     	
     	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
 		if (null != notification) {
-			notification.sendRemindNotification();
+			notification.sendRemindNotification(true);
 		}
     }
     

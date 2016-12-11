@@ -32,8 +32,11 @@ public class AntiLostNotification {
 		instance = this;
 	}
 	
+	public void sendRemindNotification() {
+		sendRemindNotification(false);
+	}
 
-	public void sendRemindNotification(){
+	public void sendRemindNotification(boolean isNoStop){
 		if (null == mContext || !flag) return ;
 		
 		flag = false;
@@ -69,8 +72,10 @@ public class AntiLostNotification {
 		notificationManager.notify(0, notification);
 		notificationManager.notify(1, notification_sound_shock);
 		
-		thread = new Thread(new MyThread());
-		thread.start();
+		if (!isNoStop) {
+			thread = new Thread(new MyThread());
+			thread.start();
+		}
 	}
 	
 	private PendingIntent goAPPIntent(Context context){
@@ -122,6 +127,12 @@ public class AntiLostNotification {
 		return (Math.abs(random.nextInt()) % max);
 	}
 	
+	public void stopNotification() {
+        if (notificationManager != null) {
+        	notificationManager.cancel(1);
+        }
+        flag = true;
+	}
 	
     public static synchronized AntiLostNotification getInstance(Context context) {
     	if (null == instance) {

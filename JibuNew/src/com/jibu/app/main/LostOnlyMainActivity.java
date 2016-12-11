@@ -3,6 +3,7 @@ package com.jibu.app.main;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import mybleservice.BluetoothLeService;
 import mybleservice.SampleGattAttributes;
@@ -29,6 +30,7 @@ import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
 import com.jibu.app.R;
+import com.jibu.app.server.AntiLostNotification;
 
 public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     private final static String TAG = LostOnlyMainActivity.class.getSimpleName();
@@ -102,8 +104,19 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
                 displayGattServices(mBluetoothLeService.getSupportedGattServices());
-            } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
+            } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) { 
 //                displayData(intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
+            	Log.e(TAG, "receivce data" + intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
+            	String data = intent.getStringExtra(BluetoothLeService.EXTRA_DATA);
+            	if (data != null) {
+		        	if (data.contains("B1 24")) { //单击
+		            	ToastUtil.toast("单击了设备");
+		            	stopPhoneNotify();
+		        	} else if (data.contains("FD E8")) {
+		            	ToastUtil.toast("双击了设备");
+		            	phoneNotify();
+		        	}
+            	}
             }
         }
     };
@@ -125,12 +138,13 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
         
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        
+        registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-        registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
         if (mBluetoothLeService != null) {
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);
             Log.d(TAG, "Connect request result=" + result);
@@ -139,12 +153,13 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 	@Override
 	protected void onPause() {
 	    super.onPause();
-	    unregisterReceiver(mGattUpdateReceiver);
+//	    unregisterReceiver(mGattUpdateReceiver);
 	}
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unregisterReceiver(mGattUpdateReceiver);
         unbindService(mServiceConnection);
         mBluetoothLeService = null;
     }
@@ -208,8 +223,12 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
                 uuid = gattCharacteristic.getUuid().toString();
                 if (uuid.toLowerCase().contains("ffe2")) {
                 	mAuthNotifyCharacteristic = gattCharacteristic;
+					byte[] bytes = new byte[]{(byte) 0x8a, (byte) 0x92, (byte) 0x18, (byte) 0x1c};
+					mAuthNotifyCharacteristic.setValue(bytes);
+					mBluetoothLeService.writeCharateristic(mAuthNotifyCharacteristic);
                 } else if (uuid.toLowerCase().contains("ffe1")) {
                 	mKeyEnableNotifyCharacteristic = gattCharacteristic;
+                	mBluetoothLeService.setCharacteristicNotification(mKeyEnableNotifyCharacteristic, true);
                 } else if (uuid.toLowerCase().contains("2a06")) {
                 	mAlertCharacteristic = gattCharacteristic;
                 }
@@ -249,6 +268,26 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 			mCallTextView.setText("呼叫");
 		}
     	isCall = !isCall;
+    }
+    
+    private void phoneNotify() {
+//    	final Set<String> selectedWifi = ApplicationSharedPreferences.getNoAlarmArea(getBaseContext());
+//    	final String wifiInfo = NoAlarmAreaActivity.getConnectWifiSsid(getBaseContext());
+//    	final boolean isOpen  =  ApplicationSharedPreferences.getIsOpenNoAlarmArea(getBaseContext());
+//    	if (isOpen && selectedWifi != null && selectedWifi.contains(wifiInfo)) {
+//    		Log.e(TAG, "is in no alarm area!");
+//    		return; 
+//    	}
+//    	
+    	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
+		if (null != notification) {
+			notification.setFlag(true);
+			notification.sendRemindNotification(true);
+		}
+    }
+    private void stopPhoneNotify() {
+    	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
+    	notification.stopNotification();
     }
 	public static void gotoActivity(Context context) {
 		Intent intent = new Intent();
