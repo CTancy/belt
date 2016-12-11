@@ -85,6 +85,9 @@ public class SelectXinRenWiFiActivity extends Activity {
 			selectedWifi2 = new HashSet<String>();
 			//test
 			Iterator it = selectedWifi.iterator();
+			if (null == it) {
+				return;
+			}
 			while(it.hasNext()) {
 				Object o = it.next();
 //				Log.e("TAG saved wifi = ", o.toString()+"\n");

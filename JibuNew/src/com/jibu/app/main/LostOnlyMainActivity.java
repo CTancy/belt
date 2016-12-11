@@ -51,7 +51,8 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     private final String LIST_UUID = "UUID";
 
     private EditText mEditText;
-    private Button  mButton;
+    private Button  mCallButton;
+    private TextView mCallTextView;
     
     private BluetoothGattCharacteristic mAuthNotifyCharacteristic;
     private BluetoothGattCharacteristic mKeyEnableNotifyCharacteristic;
@@ -116,7 +117,7 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 		findViewById(R.id.id_textview_call).setOnClickListener(this);
 		findViewById(R.id.id_textview_setup).setOnClickListener(this);
 		findViewById(R.id.id_textview_my_belt).setOnClickListener(this);
-		
+		mCallTextView =  (TextView) findViewById(R.id.id_textview_call);
 		
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
@@ -150,7 +151,7 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 
 
 
-    boolean isCall = false;
+    boolean isCall = true;
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
@@ -239,11 +240,13 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 				mAlertCharacteristic.setValue(new byte[]{0x01});
 				mBluetoothLeService.writeCharateristic(mAlertCharacteristic);
 			}
+			mCallTextView.setText("Í£Ö¹");
 		} else { //Í£Ö¹
 			if (mAlertCharacteristic != null && mBluetoothLeService != null) {
 				mAlertCharacteristic.setValue(new byte[]{0x00});
 				mBluetoothLeService.writeCharateristic(mAlertCharacteristic);
 			}
+			mCallTextView.setText("ºô½Ð");
 		}
     	isCall = !isCall;
     }
