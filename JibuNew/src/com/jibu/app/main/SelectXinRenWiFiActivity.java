@@ -81,10 +81,12 @@ public class SelectXinRenWiFiActivity extends Activity {
 			mContext = context;
 			WiFis = getWifiInfo();
 			selectedWifi = ApplicationSharedPreferences.getNoAlarmArea(context);
+
+			selectedWifi2 = new HashSet<String>();
+			
 			if (selectedWifi == null) {
 				return;
 			}
-			selectedWifi2 = new HashSet<String>();
 			//test
 			Iterator it = selectedWifi.iterator();
 			while(it.hasNext()) {

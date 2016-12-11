@@ -100,6 +100,8 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
                 mConnected = false;
 //                updateConnectionState(R.string.disconnected);
                 invalidateOptionsMenu();
+                Log.e(TAG, "断开了设备连接");
+                phoneIfNotify();
 //                clearUI();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
@@ -271,14 +273,6 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     }
     
     private void phoneNotify() {
-//    	final Set<String> selectedWifi = ApplicationSharedPreferences.getNoAlarmArea(getBaseContext());
-//    	final String wifiInfo = NoAlarmAreaActivity.getConnectWifiSsid(getBaseContext());
-//    	final boolean isOpen  =  ApplicationSharedPreferences.getIsOpenNoAlarmArea(getBaseContext());
-//    	if (isOpen && selectedWifi != null && selectedWifi.contains(wifiInfo)) {
-//    		Log.e(TAG, "is in no alarm area!");
-//    		return; 
-//    	}
-//    	
     	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
 		if (null != notification) {
 			notification.setFlag(true);
@@ -288,6 +282,24 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     private void stopPhoneNotify() {
     	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
     	notification.stopNotification();
+    }
+    
+    private void phoneIfNotify() {
+    	final Set<String> selectedWifi = ApplicationSharedPreferences.getNoAlarmArea(getBaseContext());
+    	final String wifiInfo = NoAlarmAreaActivity.getConnectWifiSsid(getBaseContext());
+    	final boolean isOpen  =  ApplicationSharedPreferences.getIsOpenNoAlarmArea(getBaseContext());
+    	final boolean isOpenPhoneAlert = ApplicationSharedPreferences.getHasOpenAntiLostRemind(LostOnlyMainActivity.this);
+    	if (isOpen && selectedWifi != null && selectedWifi.contains(wifiInfo) || !isOpenPhoneAlert) {
+    		Log.e(TAG, "is in no alarm area!");
+    		return; 
+    	}
+    
+    	
+    	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
+		if (null != notification) {
+			notification.setFlag(true);
+			notification.sendRemindNotification(true);
+		}
     }
 	public static void gotoActivity(Context context) {
 		Intent intent = new Intent();
