@@ -3,6 +3,9 @@ package com.jibu.app.login;
 
 import java.util.Map;
 import java.util.Set;
+
+import mybleservice.E3AKeeper;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.jibu.app.R;
@@ -13,6 +16,7 @@ import com.jibu.app.entity.MoveData;
 import com.jibu.app.entity.User;
 import com.jibu.app.entity.UserPersonalInfo;
 import com.jibu.app.main.ApplicationSharedPreferences;
+import com.jibu.app.main.LostOnlyMainActivity;
 import com.jibu.app.main.MainActivity;
 import com.jibu.app.main.MainApplication;
 import com.jibu.app.main.ScanActivity;
@@ -420,6 +424,11 @@ public class LoginAndRegActivity extends WaitingActivity implements OnClickListe
 					if(Keeper.getUserHasBindBand(this)){
 						VLBleServiceManager.getInstance().bindService(getApplication());
 						MainActivity.gotoActivity(this);
+					}else if (E3AKeeper.getInstance().hasBindDevice(this)){
+						
+						//MainActivity.gotoActivity(this);
+						LostOnlyMainActivity.gotoActivity(this);
+						
 					}else{
 						ScanActivity.gotoActivity(this);
 						

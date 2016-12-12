@@ -3,6 +3,9 @@ package com.jibu.app.main;
 import java.util.Calendar;
 import java.util.Vector;
 
+import mybleservice.BluetoothLeService;
+import mybleservice.E3AKeeper;
+
 import com.jibu.app.R;
 import com.jibu.app.entity.User;
 import com.umeng.analytics.MobclickAgent;
@@ -65,6 +68,9 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 	private final int DEVICE_DISCONNECTED = 0x22;
 	private final int DEVICE_SYNCPARAMSDONE = 0x23;
 	private final int USER_HAS_CLICK_DEVICE = 0x25;//用户已经敲击设备，设备已回应
+	
+	private final int E3A_DEVICE_HAS_CONNECTED = 0x31;
+	private final int E3A_DEVICE_HAS_DISCONNECTED = 0x32;
 	
 	private static final int REQUEST_ENABLE_BT = 3;
 	
@@ -280,6 +286,10 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		intentFilter.addAction(VLBleService.ACTION_GATT_DISCONNECTED);
 		intentFilter.addAction(VLBleService.ACTION_GATT_SERVICES_DISCOVERED);
 		intentFilter.addAction(VLBleService.ACTION_USER_HAD_CLICK_DEVICE);
+		
+		intentFilter.addAction(BluetoothLeService.ACTION_GATT_CONNECTED);
+		intentFilter.addAction(BluetoothLeService.ACTION_GATT_DISCONNECTED);
+
 		registerReceiver(connectDeviceInfoReceiver, intentFilter);
 	}
 	
@@ -304,6 +314,10 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 				connectHandler.sendEmptyMessage(DEVICE_DISCONNECTED);
 			}else if(action.equals(VLBleService.ACTION_GATT_CONNECTED)){				
 				connectHandler.sendEmptyMessage(DEVICE_CONNECTED);
+			}else if(action.equals(BluetoothLeService.ACTION_GATT_CONNECTED)) {
+				connectHandler.sendEmptyMessage(E3A_DEVICE_HAS_CONNECTED);
+			}else if(action.equals(BluetoothLeService.ACTION_GATT_DISCONNECTED)) {
+				connectHandler.sendEmptyMessage(E3A_DEVICE_HAS_DISCONNECTED);
 			}
 			
 		}
@@ -358,7 +372,16 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 				MainActivity.gotoActivity(ScanActivity.this);
 				ScanActivity.this.finish();
 				break;
-			
+			case E3A_DEVICE_HAS_CONNECTED:
+				LostOnlyMainActivity.gotoActivity(ScanActivity.this);
+				if (connectingDialog != null) {
+					connectingDialog.dismiss();
+				}
+				break;
+			case E3A_DEVICE_HAS_DISCONNECTED:
+				E3AKeeper.getInstance().unBinderDevice(getApplication());
+				showBindFailDialog();
+				break;
 			}
 		}
 	};
@@ -672,6 +695,7 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 
 				case R.id.id_textview_cancel_at_connecting:
 					VLBleServiceManager.getInstance().unBindService(getApplication());
+					E3AKeeper.getInstance().unBinderDevice(getApplication());
 					if (connectingDialog != null) {
 						connectingDialog.dismiss();
 					}
@@ -734,15 +758,20 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		
 		String addr = device.getDevice_address();
 		String name = device.getDevice_name();
+		
+		ShowConnectingDialog();
+
 		//单防丢皮带
 		if (name.equals("E3-A")) {
-	        final Intent intent = new Intent(this, LostOnlyMainActivity.class);
-	        intent.putExtra(LostOnlyMainActivity.EXTRAS_DEVICE_NAME, device.getDevice_name());
-	        intent.putExtra(LostOnlyMainActivity.EXTRAS_DEVICE_ADDRESS, device.getDevice_address());
-	        startActivity(intent);
-	        return ;
+//	        final Intent intent = new Intent(this, LostOnlyMainActivity.class);
+//	        intent.putExtra(LostOnlyMainActivity.EXTRAS_DEVICE_NAME, device.getDevice_name());
+//	        intent.putExtra(LostOnlyMainActivity.EXTRAS_DEVICE_ADDRESS, device.getDevice_address());
+//	        startActivity(intent);
+//	        return ;
+			E3AKeeper.getInstance().setRemoteDevice(device.getDevice_name(), device.getDevice_address());
+			E3AKeeper.getInstance().binderDevice(getApplication());
+			return;
 		}
-		ShowConnectingDialog();
 
 		Keeper.setBindDeviceMacAddress(ScanActivity.this, addr);
 		Keeper.setBindDeviceName(ScanActivity.this, name);

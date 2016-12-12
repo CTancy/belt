@@ -10,6 +10,7 @@
 
                     <LinearLayout
                         android:id="@+id/id_linearlayout_title_left"
+                        android:visibility="invisible"
                         style="@style/CommonTitleLeftBg" >
 
                         <ImageView

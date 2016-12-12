@@ -8,6 +8,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
 
+import mybleservice.E3AKeeper;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -393,6 +395,11 @@ public class WelcomeActivity extends Activity  {
 					if(Keeper.getUserHasBindBand(this)){
 						VLBleServiceManager.getInstance().bindService(getApplication());
 						MainActivity.gotoActivity(this);
+					}else if (E3AKeeper.getInstance().hasBindDevice(this)){
+						
+						//MainActivity.gotoActivity(this);
+						LostOnlyMainActivity.gotoActivity(this);
+						
 					}else{
 						ScanActivity.gotoActivity(this);
 						
@@ -490,6 +497,11 @@ public class WelcomeActivity extends Activity  {
 			if(Keeper.getUserHasBindBand(this)){
 				VLBleServiceManager.getInstance().bindService(getApplication());
 				MainActivity.gotoActivity(this);
+			}else if (E3AKeeper.getInstance().hasBindDevice(this)){
+				
+				//MainActivity.gotoActivity(this);
+				LostOnlyMainActivity.gotoActivity(this);
+				
 			}else{
 				ScanActivity.gotoActivity(this);
 			}

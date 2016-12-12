@@ -1,6 +1,9 @@
 package com.jibu.app.login;
 
 import java.util.Vector;
+
+import mybleservice.E3AKeeper;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -12,6 +15,7 @@ import com.jibu.app.entity.MoveData;
 import com.jibu.app.entity.User;
 import com.jibu.app.entity.UserPersonalInfo;
 import com.jibu.app.main.ApplicationSharedPreferences;
+import com.jibu.app.main.LostOnlyMainActivity;
 import com.jibu.app.main.MainActivity;
 import com.jibu.app.main.MainApplication;
 import com.jibu.app.main.ScanActivity;
@@ -242,11 +246,13 @@ public class LoginActivity extends WaitingActivity implements OnClickListener {
 					if(Keeper.getUserHasBindBand(this)){
 						VLBleServiceManager.getInstance().bindService(getApplication());
 						MainActivity.gotoActivity(this);
-					}else{
-						ScanActivity.gotoActivity(this);
+					}else if (E3AKeeper.getInstance().hasBindDevice(LoginActivity.this)){
 						
 						//MainActivity.gotoActivity(this);
+						LostOnlyMainActivity.gotoActivity(this);
 						
+					} else {
+						ScanActivity.gotoActivity(this);
 					}
 				}
 				this.finish();
