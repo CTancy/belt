@@ -69,7 +69,9 @@ public class E3AKeeper {
         context.registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
 	}
 	public void unBinderDevice(Context context) {
-		context.unbindService(mServiceConnection);
+		if (this.context != null) {
+			this.context.unbindService(mServiceConnection);
+		}
 	}
 	
 	 // Code to manage Service lifecycle.
