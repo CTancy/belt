@@ -120,6 +120,7 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 			}
 			break;
 		case R.id.id_textview_my_belt:
+			YaodaiE3AActivity.gotoActivity(LostOnlyMainActivity.this);
 			break;
 		case R.id.id_textview_setup:
 			LostSetupActivity.gotoAntiLostActivity(LostOnlyMainActivity.this);

@@ -1,5 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android_custom="http://schemas.android.com/apk/res/com.jibu.app"
+        xmlns:android_custom="http://schemas.android.com/apk/res/com.jibu.app"
     style="@style/CommonBg2"
     android:orientation="vertical" >
 

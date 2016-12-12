@@ -239,12 +239,12 @@ public class E3AKeeper {
 	
 	//保存最近一次的登录帐号
 	private final static String PREF_BINDER_NAME = "binder_name";
-	private final static String PREF_BINDER_NAME_ADDRESS = "";
+	private final static String PREF_BINDER_NAME_DEFALUT_VALUE = "";
 	
 	public String getBinderName(Context context) {
 		SharedPreferences preferences = PreferenceManager
 				.getDefaultSharedPreferences(context);
-		return preferences.getString(PREF_BINDER_NAME, PREF_BINDER_NAME_ADDRESS);
+		return preferences.getString(PREF_BINDER_NAME, PREF_BINDER_NAME_DEFALUT_VALUE);
 	}
 	public void setBinderName(Context context, String value) {
 		SharedPreferences preferences = PreferenceManager
@@ -256,11 +256,16 @@ public class E3AKeeper {
 	
 	//判断是否成功绑定过设备
 	public boolean hasBindDevice(Context context) {
-		return !PREF_BINDER_NAME_ADDRESS.equals(getBinderName(context)) 
+		return !PREF_BINDER_NAME_DEFALUT_VALUE.equals(getBinderName(context)) 
 				&& !PREF_BINDER_ADDRESS_DEFFAULT_VALUE.equals(getBinderAddress(context));
 	}
 	
 	public boolean hasContectedDevice() {
 		return mConnected;
+	}
+	
+	public void clearBindDeviceMessage(Context context) {
+		setBinderName(context, PREF_BINDER_NAME_DEFALUT_VALUE);
+		setBinderAddress(context, PREF_BINDER_ADDRESS_DEFFAULT_VALUE);
 	}
 }
