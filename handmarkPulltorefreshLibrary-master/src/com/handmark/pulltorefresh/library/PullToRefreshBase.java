@@ -1398,14 +1398,14 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout
 			switch (this) {
 			case ROTATE:
 			default:
-				return new RotateLoadingLayout(context, mode, scrollDirection,
+				return new JibuLoadingLayout(context, mode, scrollDirection,
 						attrs);
 			case FLIP:
 				if (mode == Mode.PULL_FROM_START) {
-					return new FlipLoadingLayout(context, mode,
+					return new JibuLoadingLayout(context, mode,
 							scrollDirection, attrs);
 				} else {
-					return new FlipLoadingLayout_foot(context, mode,
+					return new JibuLoadingLayout(context, mode,
 							scrollDirection, attrs);
 				}
 			}

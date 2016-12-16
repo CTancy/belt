@@ -23,6 +23,7 @@ public class E3AKeeper {
 	
 	private static E3AKeeper instance = new E3AKeeper();
 	private static String TAG = "E3AKeeper";
+	private boolean hasRegister = false;
 	
 	private Context context;
 	public String name = "";
@@ -67,9 +68,10 @@ public class E3AKeeper {
         context.bindService(gattServiceIntent, mServiceConnection, Context.BIND_AUTO_CREATE);
         
         context.registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
+        hasRegister = true;
 	}
 	public void unBinderDevice(Context context) {
-		if (this.context != null) {
+		if (this.context != null && hasRegister) {
 			this.context.unbindService(mServiceConnection);
 		}
 	}

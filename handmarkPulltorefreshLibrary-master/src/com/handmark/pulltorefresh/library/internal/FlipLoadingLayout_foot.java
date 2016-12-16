@@ -105,7 +105,7 @@ public class FlipLoadingLayout_foot extends LoadingLayout {
 		mHeaderImage.clearAnimation();
 //		logoImage.setVisibility(View.GONE);
 		mHeaderImage.setVisibility(View.INVISIBLE);
-		mHeaderProgress.setVisibility(View.VISIBLE);
+//		mHeaderProgress.setVisibility(View.VISIBLE);
 	}
 
 	@Override
@@ -117,7 +117,7 @@ public class FlipLoadingLayout_foot extends LoadingLayout {
 	protected void resetImpl() {
 //		logoImage.setVisibility(View.GONE);
 		mHeaderImage.clearAnimation();
-		mHeaderProgress.setVisibility(View.GONE);
+//		mHeaderProgress.setVisibility(View.GONE);
 		mHeaderImage.setVisibility(View.VISIBLE);
 	}
 

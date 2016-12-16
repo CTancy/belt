@@ -34,6 +34,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.ILoadingLayout;
@@ -97,7 +98,7 @@ public abstract class LoadingLayout extends FrameLayout implements
 		logoImage = (TextView) mInnerLayout
 				.findViewById(R.id.pull_to_refresh_logo);
 
-		FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mInnerLayout
+		LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mInnerLayout
 				.getLayoutParams();
 
 		switch (mode) {

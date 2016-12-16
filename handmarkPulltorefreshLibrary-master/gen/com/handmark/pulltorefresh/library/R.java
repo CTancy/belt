@@ -9,10 +9,11 @@ package com.handmark.pulltorefresh.library;
 
 public final class R {
     public static final class anim {
-        public static int slide_in_from_bottom=0x7f040000;
-        public static int slide_in_from_top=0x7f040001;
-        public static int slide_out_to_bottom=0x7f040002;
-        public static int slide_out_to_top=0x7f040003;
+        public static int animation_cezou=0x7f040000;
+        public static int slide_in_from_bottom=0x7f040001;
+        public static int slide_in_from_top=0x7f040002;
+        public static int slide_out_to_bottom=0x7f040003;
+        public static int slide_out_to_top=0x7f040004;
     }
     public static final class attr {
         /**  BELOW HERE ARE DEPRECEATED. DO NOT USE. 
@@ -160,18 +161,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class drawable {
         public static int arrow=0x7f020000;
         public static int arrow_new=0x7f020001;
-        public static int default_ptr_flip=0x7f020002;
-        public static int default_ptr_rotate=0x7f020003;
-        public static int indicator_arrow=0x7f020004;
-        public static int indicator_bg_bottom=0x7f020005;
-        public static int indicator_bg_top=0x7f020006;
-        public static int refresh_title=0x7f020007;
+        public static int cezou1=0x7f020002;
+        public static int cezou2=0x7f020003;
+        public static int cezou3=0x7f020004;
+        public static int cezou4=0x7f020005;
+        public static int cezou5=0x7f020006;
+        public static int default_ptr_flip=0x7f020007;
+        public static int default_ptr_rotate=0x7f020008;
+        public static int indicator_arrow=0x7f020009;
+        public static int indicator_bg_bottom=0x7f02000a;
+        public static int indicator_bg_top=0x7f02000b;
+        public static int refresh_title=0x7f02000c;
     }
     public static final class id {
         public static int both=0x7f060003;
         public static int disabled=0x7f060004;
         public static int fl_inner=0x7f06000c;
-        public static int fl_inner1=0x7f06000d;
         public static int flip=0x7f06000a;
         public static int gridview=0x7f060000;
         public static int manualOnly=0x7f060005;
@@ -179,11 +184,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int pullFromEnd=0x7f060007;
         public static int pullFromStart=0x7f060008;
         public static int pullUpFromBottom=0x7f060009;
-        public static int pull_to_refresh_image=0x7f06000e;
-        public static int pull_to_refresh_logo=0x7f060010;
-        public static int pull_to_refresh_progress=0x7f06000f;
-        public static int pull_to_refresh_sub_text=0x7f060012;
-        public static int pull_to_refresh_text=0x7f060011;
+        public static int pull_to_refresh_image=0x7f06000d;
+        public static int pull_to_refresh_logo=0x7f06000f;
+        public static int pull_to_refresh_progress=0x7f060010;
+        public static int pull_to_refresh_sub_text=0x7f060011;
+        public static int pull_to_refresh_text=0x7f06000e;
         public static int rotate=0x7f06000b;
         public static int scrollview=0x7f060002;
         public static int webview=0x7f060001;

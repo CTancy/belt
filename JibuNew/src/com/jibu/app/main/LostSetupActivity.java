@@ -1,6 +1,12 @@
 package com.jibu.app.main;
 
+import mybleservice.E3AKeeper;
+
 import com.jibu.app.R;
+import com.jibu.app.database.UserService;
+import com.jibu.app.entity.User;
+import com.jibu.app.global.JibuGlobal;
+import com.jibu.app.login.LoginAndRegActivity;
 import com.jibu.app.server.AntiLostPhoneService;
 import com.veclink.hw.bleservice.util.Keeper;
 
@@ -8,6 +14,7 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+
 import android.database.Cursor;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -45,6 +52,12 @@ public class LostSetupActivity  extends Activity implements OnClickListener, OnS
 	private final int MIN_PROGRESS = 0;
 	
 	boolean flag = false;
+	
+	MainApplication mainApplication;
+	User user;
+
+	UserService userService;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -57,16 +70,27 @@ public class LostSetupActivity  extends Activity implements OnClickListener, OnS
 		findViewById(R.id.id_rl_ring_set).setOnClickListener(this);
 		findViewById(R.id.id_relativelayout_no_alert_area).setOnClickListener(this);
 		findViewById(R.id.id_relativelayout_anti_lost_belt).setOnClickListener(this);
-		
+		findViewById(R.id.id_textview_my_exit).setOnClickListener(this);
+
 		anti_lost_switch = (ImageView) findViewById(R.id.id_imageview_anti_lost_switch);
 		belt_remind_switch = (ImageView) findViewById(R.id.id_imageview_anti_lost_belt_switch);
 		seekbar_distance = (SeekBar) findViewById(R.id.id_seekbar_rssi);
 		anti_lost_ring_filename = (TextView)findViewById(R.id.id_textview_ring_filename);
 		textview_is_open_no_alarm_area = (TextView) findViewById(R.id.id_textview_no_alert_switch);
-		
+		((TextView) findViewById(R.id.id_textview_app_version)).setText(JibuGlobal.getVersion(this));
+
 		activity = this;
-		initView();
+		mainApplication = (MainApplication) this.getApplication();
+		if (null == mainApplication.user) {
+			WelcomeActivity.gotoActivity(this);
+			this.finish();
+		}  else{
+			user = mainApplication.user;
+			userService = new UserService(this);
+		}
 		
+		initView();
+
 	}
 	
 	@Override
@@ -144,7 +168,9 @@ public class LostSetupActivity  extends Activity implements OnClickListener, OnS
 		case R.id.id_relativelayout_no_alert_area:
 			set_antilost_no_alarm_area();
 			break;
-	
+		case R.id.id_textview_my_exit:
+			exitLogin();
+			break;
 		}
 	}
 	
@@ -348,6 +374,23 @@ public class LostSetupActivity  extends Activity implements OnClickListener, OnS
 	    return data;
 	}
 	
+	private void exitLogin(){
+		
+		mainApplication.user.password = "";
+		userService.updateUser(user);
+		mainApplication.user = null;
+		unBindDevice();
+		LoginAndRegActivity.gotoActivity(this);
+		mainApplication.exitToLogin();
+		
+	}
+	
+	private void unBindDevice() {
+		E3AKeeper.getInstance().unBinderDevice(getApplication());
+		E3AKeeper.getInstance().clearBindDeviceMessage(getApplication());
+	}
+	
+
 	
 }
 

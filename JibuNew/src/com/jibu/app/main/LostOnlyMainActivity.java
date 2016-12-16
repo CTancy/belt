@@ -5,6 +5,7 @@ import java.util.Set;
 import mybleservice.BluetoothLeService;
 import mybleservice.E3AKeeper;
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +24,10 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 
     private boolean hasConnected = false;
     private TextView mCallTextView;
-    
+	private static final int REQUEST_ENABLE_BT = 3;
+
+	private BluetoothAdapter mBluetoothAdapter = null;
+
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
     // ACTION_GATT_DISCONNECTED: disconnected from a GATT server.
@@ -45,9 +49,9 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
                 mCallTextView.setText("连接");
                 if (hasConnected) {
                 	phoneIfNotify();
-                	hasConnected = false;
                 }
-                
+            	hasConnected = false;
+            	
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
             	
@@ -76,20 +80,30 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 		findViewById(R.id.id_textview_setup).setOnClickListener(this);
 		findViewById(R.id.id_textview_my_belt).setOnClickListener(this);
 		mCallTextView =  (TextView) findViewById(R.id.id_textview_call);
-		
+        registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
+        
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+	}
+
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		if (!mBluetoothAdapter.isEnabled()) {
+			Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
+	    }
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
         if (!E3AKeeper.getInstance().hasContectedDevice()) { //绑定设备
         	E3AKeeper.getInstance().binderDevice(getApplication());
         	mCallTextView.setText("连接");
         } else {
         	mCallTextView.setText("呼叫");
         }
-        registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-
 	}
 	@Override
 	protected void onPause() {
