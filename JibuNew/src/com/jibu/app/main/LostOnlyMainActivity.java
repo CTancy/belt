@@ -15,9 +15,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.jibu.app.R;
 import com.jibu.app.server.AntiLostNotification;
+import com.jibu.app.view.RoundProgressBar3;
 
 public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     private final static String TAG = LostOnlyMainActivity.class.getSimpleName();
@@ -27,6 +31,8 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 	private static final int REQUEST_ENABLE_BT = 3;
 
 	private BluetoothAdapter mBluetoothAdapter = null;
+	RoundProgressBar3 progress;
+    Animation mAnimation = null;
 
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
@@ -80,6 +86,10 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 		findViewById(R.id.id_textview_setup).setOnClickListener(this);
 		findViewById(R.id.id_textview_my_belt).setOnClickListener(this);
 		mCallTextView =  (TextView) findViewById(R.id.id_textview_call);
+		progress = (RoundProgressBar3) findViewById(R.id.id_roundProgressBar3);
+		mAnimation = AnimationUtils.loadAnimation(this, R.anim.shandong);
+		progress.setAlpha((float) 0.0);
+		
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
         
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -128,7 +138,7 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
 		case R.id.id_textview_call:
 			if (E3AKeeper.getInstance().hasContectedDevice()) {
 				callDevice();
-			} else {
+			}else {
 	        	E3AKeeper.getInstance().unBinderDevice(getApplication());
 	        	E3AKeeper.getInstance().binderDevice(getApplication());
 			}
@@ -155,9 +165,13 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     public void callDevice() {
     	if (isCall) {// 網請
     		E3AKeeper.getInstance().callDevice();
+    		progress.setAlpha((float) 1.0);
+    		progress.startAnimation(mAnimation);
 			mCallTextView.setText("礿砦");
 		} else { //礿砦
     		E3AKeeper.getInstance().stopDevice();
+			progress.setAlpha((float) 0.0);
+    		progress.clearAnimation();
 			mCallTextView.setText("網請");
 		}
     	isCall = !isCall;

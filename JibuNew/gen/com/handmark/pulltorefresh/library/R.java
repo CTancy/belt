@@ -9,10 +9,10 @@ package com.handmark.pulltorefresh.library;
 public final class R {
 	public static final class anim {
 		public static final int animation_cezou = 0x7f040004;
-		public static final int slide_in_from_bottom = 0x7f040011;
-		public static final int slide_in_from_top = 0x7f040012;
-		public static final int slide_out_to_bottom = 0x7f040013;
-		public static final int slide_out_to_top = 0x7f040014;
+		public static final int slide_in_from_bottom = 0x7f040012;
+		public static final int slide_in_from_top = 0x7f040013;
+		public static final int slide_out_to_bottom = 0x7f040014;
+		public static final int slide_out_to_top = 0x7f040015;
 	}
 	public static final class attr {
 		public static final int ptrAdapterViewBackground = 0x7f010010;
@@ -60,7 +60,7 @@ public final class R {
 	public static final class id {
 		public static final int both = 0x7f060004;
 		public static final int disabled = 0x7f060005;
-		public static final int fl_inner = 0x7f060141;
+		public static final int fl_inner = 0x7f060142;
 		public static final int flip = 0x7f06000b;
 		public static final int gridview = 0x7f060000;
 		public static final int manualOnly = 0x7f060006;
@@ -68,11 +68,11 @@ public final class R {
 		public static final int pullFromEnd = 0x7f060008;
 		public static final int pullFromStart = 0x7f060009;
 		public static final int pullUpFromBottom = 0x7f06000a;
-		public static final int pull_to_refresh_image = 0x7f060142;
-		public static final int pull_to_refresh_logo = 0x7f060144;
-		public static final int pull_to_refresh_progress = 0x7f060145;
-		public static final int pull_to_refresh_sub_text = 0x7f060146;
-		public static final int pull_to_refresh_text = 0x7f060143;
+		public static final int pull_to_refresh_image = 0x7f060143;
+		public static final int pull_to_refresh_logo = 0x7f060145;
+		public static final int pull_to_refresh_progress = 0x7f060146;
+		public static final int pull_to_refresh_sub_text = 0x7f060147;
+		public static final int pull_to_refresh_text = 0x7f060144;
 		public static final int rotate = 0x7f06000c;
 		public static final int scrollview = 0x7f060002;
 		public static final int webview = 0x7f060001;
