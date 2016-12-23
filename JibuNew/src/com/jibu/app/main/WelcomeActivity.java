@@ -26,12 +26,12 @@ import com.jibu.app.login.HttpUtils;
 import com.jibu.app.login.LoginActivity;
 import com.jibu.app.login.LoginAndRegActivity;
 import com.jibu.app.user.PersonalinforActivity;
+import com.szants.hw.bleservice.util.Keeper;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
 import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
 
 
 

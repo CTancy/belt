@@ -20,8 +20,8 @@ import com.jibu.app.user.NameActivity;
 import com.jibu.app.user.WaistlineActivity;
 import com.jibu.app.user.WeightActivity;
 import com.squareup.picasso.Picasso;
+import com.szants.hw.bleservice.util.Keeper;
 import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
 
 import android.app.Activity;
 import android.content.Context;

@@ -309,6 +309,11 @@
 		</service>  
 		<activity android:name="com.jibu.app.main.YaodaiE3AActivity"
 		    android:screenOrientation="portrait"></activity>
+		
+		<service
+            android:name="com.szants.hw.bleservice.AntsBleService"
+            android:enabled="true">
+        </service>
     </application>
 
 </manifest>

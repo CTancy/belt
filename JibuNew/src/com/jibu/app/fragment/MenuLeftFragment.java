@@ -16,7 +16,7 @@ import com.jibu.app.main.SetupLongSitRemindActivity;
 import com.jibu.app.main.ShareActivity;
 import com.jibu.app.main.YaodaiActivity;
 import com.squareup.picasso.Picasso;
-import com.veclink.hw.bleservice.util.Keeper;
+import com.szants.hw.bleservice.util.Keeper;
 
 import android.app.Activity;
 import android.app.Fragment;

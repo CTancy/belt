@@ -22,9 +22,8 @@ import com.jibu.app.main.ScanActivity;
 import com.jibu.app.main.ToastUtil;
 import com.jibu.app.main.WaitingActivity;
 import com.jibu.app.user.PersonalinforActivity;
+import com.szants.hw.bleservice.util.Keeper;
 import com.umeng.analytics.MobclickAgent;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
 
 import android.app.Activity;
 import android.content.Context;
@@ -244,7 +243,7 @@ public class LoginActivity extends WaitingActivity implements OnClickListener {
 					this.finish();
 				}else{
 					if(Keeper.getUserHasBindBand(this)){
-						VLBleServiceManager.getInstance().bindService(getApplication());
+//						VLBleServiceManager.getInstance().bindService(getApplication());
 						MainActivity.gotoActivity(this);
 					}else if (E3AKeeper.getInstance().hasBindDevice(LoginActivity.this)){
 						

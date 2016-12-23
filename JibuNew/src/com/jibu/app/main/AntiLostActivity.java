@@ -2,7 +2,7 @@ package com.jibu.app.main;
 
 import com.jibu.app.R;
 import com.jibu.app.server.AntiLostPhoneService;
-import com.veclink.hw.bleservice.util.Keeper;
+import com.szants.hw.bleservice.util.Keeper;
 
 import android.app.Activity;
 import android.content.ContentResolver;

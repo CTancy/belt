@@ -8,9 +8,8 @@ package com.jibu.app.main;
  */
 
 import com.jibu.app.R;
+import com.szants.hw.bleservice.util.Keeper;
 import com.umeng.analytics.MobclickAgent;
-import com.veclink.hw.bleservice.util.Keeper;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

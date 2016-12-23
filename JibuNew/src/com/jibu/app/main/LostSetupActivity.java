@@ -8,7 +8,7 @@ import com.jibu.app.entity.User;
 import com.jibu.app.global.JibuGlobal;
 import com.jibu.app.login.LoginAndRegActivity;
 import com.jibu.app.server.AntiLostPhoneService;
-import com.veclink.hw.bleservice.util.Keeper;
+import com.szants.hw.bleservice.util.Keeper;
 
 import android.app.Activity;
 import android.content.ContentResolver;

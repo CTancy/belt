@@ -3,6 +3,7 @@ package com.jibu.app.main;
 import java.util.Vector;
 import com.jibu.app.entity.User;
 import com.jibu.app.login.LoginAndRegActivity;
+import com.szants.sdk.AntsBeltSDK;
 
 
 
@@ -31,6 +32,7 @@ public class MainApplication extends Application {
 		context = this;
 
 		listActivity = new Vector<Activity>();
+		AntsBeltSDK.getInstance().init(this);
 	}
 
 	@Override

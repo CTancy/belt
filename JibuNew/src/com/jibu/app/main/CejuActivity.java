@@ -9,7 +9,7 @@ import com.jibu.app.entity.HuanSuanUtil;
 import com.jibu.app.entity.MoveData;
 import com.jibu.app.entity.User;
 import com.jibu.app.server.AutoSyncService;
-import com.veclink.hw.bleservice.util.Keeper;
+import com.szants.hw.bleservice.util.Keeper;
 
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;

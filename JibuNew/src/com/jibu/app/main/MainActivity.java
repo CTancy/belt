@@ -56,6 +56,7 @@ import com.jibu.app.view.RoundProgressBar;
 import com.nineoldandroids.view.ViewHelper;
 import com.veclink.hw.bleservice.VLBleService;
 import com.veclink.hw.bleservice.VLBleServiceManager;
+import com.veclink.hw.bleservice.VLBleServiceManager;
 import com.veclink.hw.bleservice.util.Keeper;
 
 public class MainActivity extends WaitingActivity implements OnClickListener, 

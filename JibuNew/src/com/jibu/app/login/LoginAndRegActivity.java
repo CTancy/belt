@@ -23,6 +23,7 @@ import com.jibu.app.main.ScanActivity;
 import com.jibu.app.main.ToastUtil;
 import com.jibu.app.main.WaitingActivity;
 import com.jibu.app.user.PersonalinforActivity;
+import com.szants.hw.bleservice.util.Keeper;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
@@ -32,8 +33,6 @@ import com.umeng.socialize.controller.listener.SocializeListeners.UMDataListener
 import com.umeng.socialize.exception.SocializeException;
 import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.weixin.controller.UMWXHandler;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
 
 import android.content.Context;
 import android.content.Intent;
@@ -422,7 +421,7 @@ public class LoginAndRegActivity extends WaitingActivity implements OnClickListe
 					this.finish();
 				}else{
 					if(Keeper.getUserHasBindBand(this)){
-						VLBleServiceManager.getInstance().bindService(getApplication());
+//						VLBleServiceManager.getInstance().bindService(getApplication());
 						MainActivity.gotoActivity(this);
 					}else if (E3AKeeper.getInstance().hasBindDevice(this)){
 						

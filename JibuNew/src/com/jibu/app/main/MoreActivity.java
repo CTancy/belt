@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.jibu.app.R;
 import com.jibu.app.entity.User;
-import com.veclink.hw.bleservice.util.Keeper;
+import com.szants.hw.bleservice.util.Keeper;
 
 import android.os.Bundle;
 import android.content.Context;

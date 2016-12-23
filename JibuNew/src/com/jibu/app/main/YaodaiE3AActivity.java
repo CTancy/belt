@@ -18,22 +18,7 @@ import com.jibu.app.database.UserService;
 import com.jibu.app.entity.MoveData;
 import com.jibu.app.entity.User;
 import com.jibu.app.view.RoundProgressBar2;
-import com.veclink.bracelet.bean.BleUserInfoBean;
-import com.veclink.bracelet.bean.BluetoothDeviceBean;
-import com.veclink.bracelet.bean.DeviceInfo;
-import com.veclink.bracelet.bean.DeviceSportAndSleepData;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleQueryFirmareVersionTask;
-import com.veclink.bracelet.bletask.BleQueryPowerValueTask;
-import com.veclink.bracelet.bletask.BleReBootOrResetParamsDeviceRask;
-import com.veclink.bracelet.bletask.BleScanDeviceTask;
-import com.veclink.bracelet.bletask.BleSyncNewDeviceDataTask;
-import com.veclink.bracelet.bletask.BleSyncParamsTask;
-import com.veclink.bracelet.bletask.BleTask;
-import com.veclink.bracelet.bletask.UpdateFirmwareUtil;
-import com.veclink.hw.bledevice.BraceletNewDevice;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
+
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -63,11 +48,6 @@ public class YaodaiE3AActivity extends WaitingActivity implements OnClickListene
 	
 	MainApplication mainApplication;
 	
-	BleCallBack scanDeviceCallBack;
-	
-	BleScanDeviceTask scanTask = null;
-	
-	Vector<BluetoothDeviceBean> devices = null;
 		
 	public User user;
 	
@@ -276,9 +256,6 @@ public class YaodaiE3AActivity extends WaitingActivity implements OnClickListene
 
 	private void initView(){
 		
-		if (Keeper.getUserHasBindBand(YaodaiE3AActivity.this)) {
-			firmware_version = Keeper.getDeviceRomVersion(YaodaiE3AActivity.this);
-		}
 		textViewDc = (TextView)findViewById(R.id.id_textview_dc);
 		textViewXinhao = (TextView)findViewById(R.id.id_textview_xinghao);
 		textViewUpdateTime = (TextView)findViewById(R.id.id_textview_update_time);

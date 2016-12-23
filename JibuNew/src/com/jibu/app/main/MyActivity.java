@@ -16,14 +16,11 @@ import com.jibu.app.server.AutoSyncService;
 import com.jibu.app.user.HeightActivity;
 import com.jibu.app.user.WaistlineActivity;
 import com.jibu.app.user.WeightActivity;
+import com.szants.hw.bleservice.util.Keeper;
 import com.umeng.update.UmengUpdateAgent;
 import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleSyncNewDeviceDataTask;
-import com.veclink.bracelet.bletask.BleTask;
-import com.veclink.hw.bledevice.BraceletNewDevice;
 import com.veclink.hw.bleservice.VLBleServiceManager;
 import com.veclink.hw.bleservice.util.Debug;
-import com.veclink.hw.bleservice.util.Keeper;
 
 import android.os.Bundle;
 import android.os.Handler;

@@ -8,20 +8,16 @@ import mybleservice.E3AKeeper;
 
 import com.jibu.app.R;
 import com.jibu.app.entity.User;
+import com.szants.bracelet.bean.BluetoothDeviceBean;
+import com.szants.bracelet.bletask.BleCallBack;
+import com.szants.bracelet.bletask.BleScanDeviceTask;
+import com.szants.hw.bleservice.util.Keeper;
+import com.szants.sdk.AntsBeltSDK;
+import com.szants.sdk.BindDeviceListener;
+import com.szants.sdk.DeviceStateObserver;
+import com.szants.sdk.ScanDeviceListener;
+import com.szants.sdk.UnBindDeviceListener;
 import com.umeng.analytics.MobclickAgent;
-import com.veclink.bracelet.bean.BleUserInfoBean;
-import com.veclink.bracelet.bean.BluetoothDeviceBean;
-import com.veclink.bracelet.bletask.BleAppConfirmBindSuccess;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleRequestBindDevice;
-import com.veclink.bracelet.bletask.BleScanDeviceTask;
-import com.veclink.bracelet.bletask.BleSyncParamsTask;
-import com.veclink.hw.bleservice.VLBleService;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.profile.BraceletGattAttributes;
-import com.veclink.hw.bleservice.util.Keeper;
-import com.veclink.hw.devicetype.DeviceProductFactory;
-import com.veclink.hw.devicetype.pojo.BaseDeviceProduct;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -108,6 +104,8 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 //		UmengUpdateAgent.update(this);
 		
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+		
+		sdk = AntsBeltSDK.getInstance();
 	}
 
 	@Override
@@ -172,7 +170,7 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		case R.id.id_imageview_pidai:
 		case R.id.id_textview_connect_at_scan:
 			Log.e("sino","ldskfalsjfd");
-//			showWaitCanelable("开始扫描设备");
+			showWaitCanelable("开始扫描设备");
 			startScan();
 			//showBindFailDialog();
 			//showClickDeviceDialog();
@@ -182,110 +180,139 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		
 	}
 	
-	Handler scanBleDeviceHandler = new Handler(){
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				Log.i("log","scanBleDeviceHandler:TASK_START");
-				adapter.clearAllDevieceItem();
-				break;
-
-			case BleCallBack.TASK_PROGRESS:
-				Log.i("log","scanBleDeviceHandler:TASK_PROGRESS");
-				BluetoothDeviceBean device = (BluetoothDeviceBean) msg.obj;
-				if(device.getDevice_name().equals("D013A") || device.getDevice_name().equals("E3-A")) {
-					devices.add(device);
-//					Log.e(TAG, device.getDevice_address());
-					adapter.addDeviceItem(device);
-//					linearLayoutDevicesAddView(device);
-				}
-				break;	
-			case BleCallBack.TASK_FINISH:
-				Log.i("log","scanBleDeviceHandler:TASK_FINISH");
-							
-				if(scanTask!=null){
-					scanTask.stopScanTask();
-					scanTask=null;
-				}
-				if(processbar_searching != null) {
-					processbar_searching.setVisibility(View.INVISIBLE);	
-				}
-				if(textview_searching != null) {
-					textview_searching.setText(R.string.select_devices);
-				}
-				if(devices.size()==0){
-					waitClose();
-					ToastUtil.toast(MainApplication.context, R.string.no_device);
-				}else{
-					
+//	Handler scanBleDeviceHandler = new Handler(){
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//			case BleCallBack.TASK_START:
+//				Log.i("log","scanBleDeviceHandler:TASK_START");
+//				adapter.clearAllDevieceItem();
+//				break;
+//
+//			case BleCallBack.TASK_PROGRESS:
+//				Log.i("log","scanBleDeviceHandler:TASK_PROGRESS");
+//				BluetoothDeviceBean device = (BluetoothDeviceBean) msg.obj;
+////				if(device.getDevice_name().equals("D013A") || device.getDevice_name().equals("E3-A")) {
+//					devices.add(device);
+////					Log.e(TAG, device.getDevice_address());
+//					adapter.addDeviceItem(device);
+////					linearLayoutDevicesAddView(device);
+////				}
+//				break;	
+//			case BleCallBack.TASK_FINISH:
+//				Log.i("log","scanBleDeviceHandler:TASK_FINISH");
+//							
+//				if(scanTask!=null){
+//					scanTask.stopScanTask();
+//					scanTask=null;
+//				}
+//				if(processbar_searching != null) {
+//					processbar_searching.setVisibility(View.INVISIBLE);	
+//				}
+//				if(textview_searching != null) {
+//					textview_searching.setText(R.string.select_devices);
+//				}
+//				if(devices.size()==0){
 //					waitClose();
-//					showDeviceSelDialog();
-					
-					/*
-					setWaitMessage("正在绑定设备");
-					Log.i("sino","开始绑定");
-					
-					
-					BluetoothDeviceBean firstDevice = devices.firstElement();
-					String addr = firstDevice.getDevice_address();
-					String name = firstDevice.getDevice_name();
-					Keeper.setBindDeviceMacAddress(activity, addr);
-					Keeper.setBindDeviceName(activity, name);
-														
-					VLBleServiceManager.setAutoReConnect(true);
-					VLBleServiceManager.getInstance().bindService(getApplication(),new BraceletGattAttributes());
-					
-					*/
-				}
-				
-				break;
-
-			case BleCallBack.TASK_FAILED:
-				ToastUtil.toast(MainApplication.context, R.string.scan_failed);
-				
-				waitClose();
-				
-				if(processbar_searching != null) {
-					processbar_searching.setVisibility(View.INVISIBLE);	
-				}
-				if(textview_searching != null) {
-					textview_searching.setText(R.string.searching_failed);
-				}
-				scanTask=null;
-				break;
-			}
-		}
-	};
+//					ToastUtil.toast(MainApplication.context, R.string.no_device);
+//				}else{
+//					
+////					waitClose();
+////					showDeviceSelDialog();
+//					
+//					/*
+//					setWaitMessage("正在绑定设备");
+//					Log.i("sino","开始绑定");
+//					
+//					
+//					BluetoothDeviceBean firstDevice = devices.firstElement();
+//					String addr = firstDevice.getDevice_address();
+//					String name = firstDevice.getDevice_name();
+//					Keeper.setBindDeviceMacAddress(activity, addr);
+//					Keeper.setBindDeviceName(activity, name);
+//														
+//					VLBleServiceManager.setAutoReConnect(true);
+//					VLBleServiceManager.getInstance().bindService(getApplication(),new BraceletGattAttributes());
+//					
+//					*/
+//				}
+//				
+//				break;
+//
+//			case BleCallBack.TASK_FAILED:
+//				ToastUtil.toast(MainApplication.context, R.string.scan_failed);
+//				
+//				waitClose();
+//				
+//				if(processbar_searching != null) {
+//					processbar_searching.setVisibility(View.INVISIBLE);	
+//				}
+//				if(textview_searching != null) {
+//					textview_searching.setText(R.string.searching_failed);
+//				}
+//				scanTask=null;
+//				break;
+//			}
+//		}
+//	};
 
 	private void startScan(){
-		if(scanTask==null){
-			if(devices==null){
-				devices	= new Vector<BluetoothDeviceBean>();
-			}else{
-				devices.removeAllElements();
-			}
-		
-		scanDeviceCallBack = new BleCallBack(scanBleDeviceHandler);
-		scanTask = new BleScanDeviceTask(ScanActivity.this, scanDeviceCallBack);
- 		scanTask.execute(0);
-		}
+   	 if(sdk.isScanning()==false){
+   		 if (devices == null) {
+   			 devices = new Vector<BluetoothDeviceBean>();
+   		 } else {
+   			 devices.removeAllElements();
+   		 }
+//   		adapter.clearAllDevieceItem();
+   		sdk.startScanDevice(scanDeviceListener);
+      }
 	}
+	
+	private AntsBeltSDK sdk;
+	private ScanDeviceListener scanDeviceListener = new ScanDeviceListener() {
+		
+		@Override
+		public void startScan() {
+			showDeviceSelDialog();
+			adapter.clearAllDevieceItem();
+			
+		}
+		
+		@Override
+		public void scanFinish() {
+			// TODO Auto-generated method stub
+			stopScan();
+			if(processbar_searching != null) {
+				processbar_searching.setVisibility(View.INVISIBLE);	
+			}
+			if(textview_searching != null) {
+				textview_searching.setText(R.string.select_devices);
+			}
+			if(devices.size()==0){
+				waitClose();
+				ToastUtil.toast(MainApplication.context, R.string.no_device);
+			}
+		}
+		
+		@Override
+		public void scanFindOneDevice(BluetoothDeviceBean device) {
+			adapter.addDeviceItem(device);
+			
+		}
+	};
 	
 	private void stopScan(){
 		
-		if(scanTask!=null){
-        	scanTask.stopScanTask();
-        	scanTask=null;
-        	
+    	if(sdk.isScanning()){
+        	sdk.stopScanDevice();
         }
 	}
 	
 	private void initReciver(){
-		intentFilter.addAction(VLBleService.ACTION_GATT_CONNECTED);
-		intentFilter.addAction(VLBleService.ACTION_GATT_DISCONNECTED);
-		intentFilter.addAction(VLBleService.ACTION_GATT_SERVICES_DISCOVERED);
-		intentFilter.addAction(VLBleService.ACTION_USER_HAD_CLICK_DEVICE);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_CONNECTED);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_DISCONNECTED);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_SERVICES_DISCOVERED);
+//		intentFilter.addAction(VLBleService.ACTION_USER_HAD_CLICK_DEVICE);
 		
 		intentFilter.addAction(BluetoothLeService.ACTION_GATT_CONNECTED);
 		intentFilter.addAction(BluetoothLeService.ACTION_GATT_DISCONNECTED);
@@ -301,20 +328,23 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 			
 			String action = intent.getAction();
 			Log.i("sino","onReceive:action="+action);
-			if(action.equals(VLBleService.ACTION_GATT_SERVICES_DISCOVERED)){
-				try {
-					BleSyncParamsTask task = getBleSyncParamsTask();
-					task.work();
-				} catch (Exception e) {
-					MobclickAgent.reportError(ScanActivity.this, e);
-				}
-			}else if(action.equals(VLBleService.ACTION_USER_HAD_CLICK_DEVICE)){
-				connectHandler.sendEmptyMessage(USER_HAS_CLICK_DEVICE);				
-			}else if(action.equals(VLBleService.ACTION_GATT_DISCONNECTED)){
-				connectHandler.sendEmptyMessage(DEVICE_DISCONNECTED);
-			}else if(action.equals(VLBleService.ACTION_GATT_CONNECTED)){				
-				connectHandler.sendEmptyMessage(DEVICE_CONNECTED);
-			}else if(action.equals(BluetoothLeService.ACTION_GATT_CONNECTED)) {
+//			if(action.equals(VLBleService.ACTION_GATT_SERVICES_DISCOVERED)){
+//				try {
+//					BleSyncParamsTask task = getBleSyncParamsTask();
+//					task.work();
+//				} catch (Exception e) {
+//					MobclickAgent.reportError(ScanActivity.this, e);
+//				}
+//			}else if(action.equals(VLBleService.ACTION_USER_HAD_CLICK_DEVICE)){
+//				connectHandler.sendEmptyMessage(USER_HAS_CLICK_DEVICE);				
+//			}else if(action.equals(VLBleService.ACTION_GATT_DISCONNECTED)){
+//				connectHandler.sendEmptyMessage(DEVICE_DISCONNECTED);
+//			}else if(action.equals(VLBleService.ACTION_GATT_CONNECTED)){				
+//				connectHandler.sendEmptyMessage(DEVICE_CONNECTED);
+//			}else
+				
+				
+			if(action.equals(BluetoothLeService.ACTION_GATT_CONNECTED)) {
 				connectHandler.sendEmptyMessage(E3A_DEVICE_HAS_CONNECTED);
 			}else if(action.equals(BluetoothLeService.ACTION_GATT_DISCONNECTED)) {
 				connectHandler.sendEmptyMessage(E3A_DEVICE_HAS_DISCONNECTED);
@@ -328,50 +358,50 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
-			case DEVICE_CONNECTED:
-			//	show_connect_info_tv.setText(getString(R.string.menu_connect));
-				setWaitMessage(getString(R.string.device_has_connected));
-				break;
-
-			case DEVICE_DISCONNECTED:
-				waitClose();
-				VLBleServiceManager.getInstance().unBindService(getApplication());
-				if (isConnecting) {
-					closeAllDialog();
-					//ToastUtil.toast("设备已断开连接");
-					showBindFailDialog();
-					isConnecting = false;
-				}
-				Log.e(TAG, "ScanActivity 收到了DEVICE_DISCONNECTED的广播");
-				break;	
-			case DEVICE_SYNCPARAMSDONE:
-				BaseDeviceProduct deviceProduct = DeviceProductFactory.createDeviceProduct(Keeper.getDeviceType(getApplicationContext()));
-				if(deviceProduct.bindDeviceWay==BaseDeviceProduct.CLICK_BIND_DEVICE_WAY){			
-					BleRequestBindDevice bleRequestBindDevice = new BleRequestBindDevice(getApplicationContext(), requestBindDeviceCallBack);
-					bleRequestBindDevice.work();					
-				}else{
-					
-					waitClose();
-					closeAllDialog();
-					ToastUtil.toast(R.string.device_bind_success);
-					Keeper.setUserHasBindBand(getApplicationContext(), true);
-					MainActivity.gotoActivity(ScanActivity.this);
-					ScanActivity.this.finish();
-				}
-				break;
-			
-			case USER_HAS_CLICK_DEVICE:
-				BleAppConfirmBindSuccess appConfirmBindSuccess = new BleAppConfirmBindSuccess(getApplicationContext(), new BleCallBack(new Handler()));
-				appConfirmBindSuccess.work();
-				Keeper.setUserHasBindBand(getApplicationContext(), true);				
-					
-				waitClose();
-				closeAllDialog();
-				ToastUtil.toast(R.string.device_bind_success);
-				
-				MainActivity.gotoActivity(ScanActivity.this);
-				ScanActivity.this.finish();
-				break;
+//			case DEVICE_CONNECTED:
+//			//	show_connect_info_tv.setText(getString(R.string.menu_connect));
+//				setWaitMessage(getString(R.string.device_has_connected));
+//				break;
+//
+//			case DEVICE_DISCONNECTED:
+//				waitClose();
+//				VLBleServiceManager.getInstance().unBindService(getApplication());
+//				if (isConnecting) {
+//					closeAllDialog();
+//					//ToastUtil.toast("设备已断开连接");
+//					showBindFailDialog();
+//					isConnecting = false;
+//				}
+//				Log.e(TAG, "ScanActivity 收到了DEVICE_DISCONNECTED的广播");
+//				break;	
+//			case DEVICE_SYNCPARAMSDONE:
+//				BaseDeviceProduct deviceProduct = DeviceProductFactory.createDeviceProduct(Keeper.getDeviceType(getApplicationContext()));
+//				if(deviceProduct.bindDeviceWay==BaseDeviceProduct.CLICK_BIND_DEVICE_WAY){			
+//					BleRequestBindDevice bleRequestBindDevice = new BleRequestBindDevice(getApplicationContext(), requestBindDeviceCallBack);
+//					bleRequestBindDevice.work();					
+//				}else{
+//					
+//					waitClose();
+//					closeAllDialog();
+//					ToastUtil.toast(R.string.device_bind_success);
+//					Keeper.setUserHasBindBand(getApplicationContext(), true);
+//					MainActivity.gotoActivity(ScanActivity.this);
+//					ScanActivity.this.finish();
+//				}
+//				break;
+//			
+//			case USER_HAS_CLICK_DEVICE:
+//				BleAppConfirmBindSuccess appConfirmBindSuccess = new BleAppConfirmBindSuccess(getApplicationContext(), new BleCallBack(new Handler()));
+//				appConfirmBindSuccess.work();
+//				Keeper.setUserHasBindBand(getApplicationContext(), true);				
+//					
+//				waitClose();
+//				closeAllDialog();
+//				ToastUtil.toast(R.string.device_bind_success);
+//				
+//				MainActivity.gotoActivity(ScanActivity.this);
+//				ScanActivity.this.finish();
+//				break;
 			case E3A_DEVICE_HAS_CONNECTED:
 				LostOnlyMainActivity.gotoActivity(ScanActivity.this);
 				if (connectingDialog != null) {
@@ -386,78 +416,78 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		}
 	};
 	
-	public BleSyncParamsTask getBleSyncParamsTask() {
-		
-		User user = mainApplication.user;
-		
-		int targetStep = user.step;
-		int wearLocation = 0;
-		int sport_mode = 1;
-		int sex = user.sex;
-		int year= user.year;
-		int nowYear = Calendar.getInstance().get(Calendar.YEAR);
-		int age = nowYear-year;
-		float height = user.height;
-		float weight = user.weight;
-		int distanceUnit = 0;
-		boolean keptOnOffblean = false;
-		int keptOnOff = keptOnOffblean==true?1:0;
-		BleUserInfoBean bean = new BleUserInfoBean(targetStep, wearLocation, sport_mode, sex, age, weight, height, distanceUnit, keptOnOff);
-		BleSyncParamsTask bleSyncParamsTask = new BleSyncParamsTask(this, syncParmasCallBack, bean);
-		return bleSyncParamsTask;
-	}
-	
-	Handler syncParamHandler = new Handler(){
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				
-				break;
-			case BleCallBack.TASK_PROGRESS:				
-				break;
-			case BleCallBack.TASK_FINISH:
-				connectHandler.sendEmptyMessage(DEVICE_SYNCPARAMSDONE);
-				break;
-			case BleCallBack.TASK_FAILED:
-				BleSyncParamsTask task = getBleSyncParamsTask();
-				task.work();
-				break;
-			}
-		}
-		
-	};
-	
-	BleCallBack syncParmasCallBack = new BleCallBack(syncParamHandler);
-
-	Handler requestBindDeviceHandler = new Handler(){
-		
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-
-				break;
-
-			case BleCallBack.TASK_PROGRESS:
-				
-				break;	
-			case BleCallBack.TASK_FINISH:
-				//这里提示用户敲击手环进行绑定
-				//setWaitMessage("请您敲击皮带头进行绑定确认");
-				waitClose();
-				showClickDeviceDialog();
-				break;
-			case BleCallBack.TASK_FAILED:
-				waitClose();
-				closeAllDialog();
-				break;
-			}
-		}
-		
-	};
-	
-	BleCallBack requestBindDeviceCallBack = new BleCallBack(requestBindDeviceHandler);
+//	public BleSyncParamsTask getBleSyncParamsTask() {
+//		
+//		User user = mainApplication.user;
+//		
+//		int targetStep = user.step;
+//		int wearLocation = 0;
+//		int sport_mode = 1;
+//		int sex = user.sex;
+//		int year= user.year;
+//		int nowYear = Calendar.getInstance().get(Calendar.YEAR);
+//		int age = nowYear-year;
+//		float height = user.height;
+//		float weight = user.weight;
+//		int distanceUnit = 0;
+//		boolean keptOnOffblean = false;
+//		int keptOnOff = keptOnOffblean==true?1:0;
+//		BleUserInfoBean bean = new BleUserInfoBean(targetStep, wearLocation, sport_mode, sex, age, weight, height, distanceUnit, keptOnOff);
+//		BleSyncParamsTask bleSyncParamsTask = new BleSyncParamsTask(this, syncParmasCallBack, bean);
+//		return bleSyncParamsTask;
+//	}
+//	
+//	Handler syncParamHandler = new Handler(){
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//			case BleCallBack.TASK_START:
+//				
+//				break;
+//			case BleCallBack.TASK_PROGRESS:				
+//				break;
+//			case BleCallBack.TASK_FINISH:
+//				connectHandler.sendEmptyMessage(DEVICE_SYNCPARAMSDONE);
+//				break;
+//			case BleCallBack.TASK_FAILED:
+//				BleSyncParamsTask task = getBleSyncParamsTask();
+//				task.work();
+//				break;
+//			}
+//		}
+//		
+//	};
+//	
+//	BleCallBack syncParmasCallBack = new BleCallBack(syncParamHandler);
+//
+//	Handler requestBindDeviceHandler = new Handler(){
+//		
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//			case BleCallBack.TASK_START:
+//
+//				break;
+//
+//			case BleCallBack.TASK_PROGRESS:
+//				
+//				break;	
+//			case BleCallBack.TASK_FINISH:
+//				//这里提示用户敲击手环进行绑定
+//				//setWaitMessage("请您敲击皮带头进行绑定确认");
+//				waitClose();
+//				showClickDeviceDialog();
+//				break;
+//			case BleCallBack.TASK_FAILED:
+//				waitClose();
+//				closeAllDialog();
+//				break;
+//			}
+//		}
+//		
+//	};
+//	
+//	BleCallBack requestBindDeviceCallBack = new BleCallBack(requestBindDeviceHandler);
 	
 	
 	AlertDialog clickDeviceDialog = null;
@@ -516,69 +546,55 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 	}
 	
 	
-	public void showClickDeviceDialog() {
-		
-		if(clickDeviceDialog!=null&&clickDeviceDialog.isShowing()){
-			return;
-		}
-		
-		clickDeviceDialog = new AlertDialog.Builder(this).create();
-		Window view = clickDeviceDialog.getWindow();
-		clickDeviceDialog.show();
-		clickDeviceDialog.setContentView(R.layout.popup_qiaoji);
-
-		ImageView imageView = (ImageView) view
-				.findViewById(R.id.id_imageview_popup);
-//		AnimationDrawable qiaojiAnimation = (AnimationDrawable) getResources().getDrawable(R.drawable.animation_qiaoji);
-//		try {
-//			imageView.setBackgroundResource(R.drawable.animation_qiaoji);
-//			AnimationDrawable qiaojiAnimation = (AnimationDrawable) imageView.getBackground();
-//			if (qiaojiAnimation != null) {
-//				if (qiaojiAnimation.isRunning()) {
-//					qiaojiAnimation.stop();
-//				} else {
-//					qiaojiAnimation.start();
+//	public void showClickDeviceDialog() {
+//		
+//		if(clickDeviceDialog!=null&&clickDeviceDialog.isShowing()){
+//			return;
+//		}
+//		
+//		clickDeviceDialog = new AlertDialog.Builder(this).create();
+//		Window view = clickDeviceDialog.getWindow();
+//		clickDeviceDialog.show();
+//		clickDeviceDialog.setContentView(R.layout.popup_qiaoji);
+//
+//		ImageView imageView = (ImageView) view
+//				.findViewById(R.id.id_imageview_popup);
+//		
+//		TextView cancle_textView = (TextView) view.findViewById(R.id.id_textview_cancel_at_qiaoji);
+//		
+//		clickDeviceDialog.setCancelable(false);
+//		
+//		class PopupClickListener implements OnClickListener {
+//
+//			AlertDialog alertDialog;
+//
+//			public PopupClickListener(AlertDialog alertDialog) {
+//				this.alertDialog = alertDialog;
+//			}
+//
+//			@Override
+//			public void onClick(View v) {
+//				switch (v.getId()) {
+//
+//				case R.id.id_imageview_popup:
+//
+//					break;
+//				case R.id.id_textview_cancel_at_qiaoji:
+//					VLBleServiceManager.getInstance().unBindService(getApplication());
+//					if (alertDialog != null) {
+//						alertDialog.dismiss();
+//					}
+//					alertDialog = null;
+//					break;
 //				}
 //			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			imageView.setBackgroundResource(R.drawable.qiaoji);
 //		}
-		TextView cancle_textView = (TextView) view.findViewById(R.id.id_textview_cancel_at_qiaoji);
-		
-		clickDeviceDialog.setCancelable(false);
-		
-		class PopupClickListener implements OnClickListener {
-
-			AlertDialog alertDialog;
-
-			public PopupClickListener(AlertDialog alertDialog) {
-				this.alertDialog = alertDialog;
-			}
-
-			@Override
-			public void onClick(View v) {
-				switch (v.getId()) {
-
-				case R.id.id_imageview_popup:
-
-					break;
-				case R.id.id_textview_cancel_at_qiaoji:
-					VLBleServiceManager.getInstance().unBindService(getApplication());
-					if (alertDialog != null) {
-						alertDialog.dismiss();
-					}
-					alertDialog = null;
-					break;
-				}
-			}
-		}
-
-		PopupClickListener clicklistener = new PopupClickListener(clickDeviceDialog);
-
-		imageView.setOnClickListener(clicklistener);
-		cancle_textView.setOnClickListener(clicklistener);
-	}
+//
+//		PopupClickListener clicklistener = new PopupClickListener(clickDeviceDialog);
+//
+//		imageView.setOnClickListener(clicklistener);
+//		cancle_textView.setOnClickListener(clicklistener);
+//	}
 
 	
 	
@@ -694,7 +710,9 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 				switch (v.getId()) {
 
 				case R.id.id_textview_cancel_at_connecting:
-					VLBleServiceManager.getInstance().unBindService(getApplication());
+//					VLBleServiceManager.getInstance().unBindService(getApplication());
+//					sdk.unBindDevice(null);
+					sdk.disConnectDevice();
 					E3AKeeper.getInstance().unBinderDevice(getApplication());
 					if (connectingDialog != null) {
 						connectingDialog.dismiss();
@@ -735,16 +753,13 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		
 	}
 		 
-	public static void gotoActivity(Context context) {
-		Intent intent = new Intent();
-		intent.setClass(context, ScanActivity.class);
-		context.startActivity(intent);
-	}
+
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		if(scanTask != null) stopScan();
+//		if(scanTask != null) stopScan();
+		stopScan();
 		
 		if(deviceSelDialog!=null){
 			deviceSelDialog.dismiss();
@@ -756,8 +771,8 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 		
 		Log.i("sino","开始绑定");
 		
-		String addr = device.getDevice_address();
-		String name = device.getDevice_name();
+		String addr = device.getAddress();
+		String name = device.getName();
 		
 		ShowConnectingDialog();
 
@@ -768,16 +783,75 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 //	        intent.putExtra(LostOnlyMainActivity.EXTRAS_DEVICE_ADDRESS, device.getDevice_address());
 //	        startActivity(intent);
 //	        return ;
-			E3AKeeper.getInstance().setRemoteDevice(device.getDevice_name(), device.getDevice_address());
+			E3AKeeper.getInstance().setRemoteDevice(device.getName(), device.getAddress());
 			E3AKeeper.getInstance().binderDevice(getApplication());
 			return;
 		}
 
+		Log.e(TAG, "address = " + addr);
+		Log.e(TAG, "name = " + name);
 		Keeper.setBindDeviceMacAddress(ScanActivity.this, addr);
 		Keeper.setBindDeviceName(ScanActivity.this, name);
 											
-		VLBleServiceManager.getInstance().bindService(getApplication(),new BraceletGattAttributes());
+		sdk.bindDevice(Keeper.getBindDeviceName(ScanActivity.this), Keeper.getBindDeviceMacAddress(ScanActivity.this), bindDeviceListener);
+		sdk.registerDeviceStateObserver(new DeviceStateObserver() {
+			
+			@Override
+			public void disConnected() {
+				Log.e(TAG, "断开连接");
+			} 
+			
+			@Override
+			public void connecting() {
+				Log.e(TAG, "正在连接");
+
+			}
+			
+			@Override
+			public void connected() {
+				Log.e(TAG, "连接成功");
+			}
+			
+			@Override
+			public void blueToothClose() {
+				// TODO Auto-generated method stub
+				
+			}
+		});		
 		isConnecting = true;
 	}
 	
+	private BindDeviceListener bindDeviceListener = new BindDeviceListener() {
+		
+		@Override
+		public void onFail(String errormessge) {
+			Log.e(TAG, "连接失败");
+		}
+		
+		@Override
+		public void onComplete() {
+			Keeper.setUserHasBindBand(getApplicationContext(), true);				
+			
+			waitClose();
+			closeAllDialog();
+			ToastUtil.toast(R.string.device_bind_success);
+		
+			MainActivity.gotoActivity(ScanActivity.this);
+			ScanActivity.this.finish();
+			
+		}
+		
+		@Override
+		public void onClickToBind() {			
+		}
+	};
+	
+	public static void gotoActivity(Context context) {
+		Intent intent = new Intent();
+		intent.setClass(context, ScanActivity.class);
+		context.startActivity(intent);
+	}
+	
+	
 }
+

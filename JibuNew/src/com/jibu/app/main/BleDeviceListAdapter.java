@@ -22,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jibu.app.R;
-import com.veclink.bracelet.bean.BluetoothDeviceBean;
+import com.szants.bracelet.bean.BluetoothDeviceBean;
 
 /**
  * @author Allen
@@ -89,11 +89,11 @@ public class BleDeviceListAdapter  extends BaseAdapter{
 			holder = (ViewHolder) contentView.getTag();
 		}
 		
-		holder.name_view.setText(device.getDevice_name());
-		holder.address_view.setText(device.getDevice_address());
-		holder.rssi_view.setText(String.valueOf(device.getDevice_rssi()));
-		
-		int xinhao = device.getDevice_rssi();
+		holder.name_view.setText(device.getName());
+		holder.address_view.setText(device.getAddress());
+		holder.rssi_view.setText(String.valueOf(device.getRssi()));
+	
+		int xinhao = device.getRssi();
 		
 		if(xinhao<-90){
 			holder.signal_view.setBackgroundResource(R.drawable.xinhao_1);
