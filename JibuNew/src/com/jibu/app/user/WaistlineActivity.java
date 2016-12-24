@@ -8,9 +8,8 @@ import com.jibu.app.main.MainApplication;
 import com.jibu.app.main.ScanActivity;
 import com.jibu.app.view.ObservableHorizontalScrollView;
 import com.jibu.app.view.ObservableHorizontalScrollView.OnScrollStopListner;
+import com.szants.hw.bleservice.util.Keeper;
 import com.umeng.analytics.MobclickAgent;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
 
 import android.app.Activity;
 import android.content.Context;
@@ -121,7 +120,7 @@ public class WaistlineActivity extends Activity implements OnClickListener {
 			userService.updateUser(mainApplication.user);
 			if(entryMode == ENTRY_MODE_INIT){
 				if(Keeper.getUserHasBindBand(this)){
-					VLBleServiceManager.getInstance().bindService(getApplication());
+//					VLBleServiceManager.getInstance().bindService(getApplication());
 					MainActivity.gotoActivity(this);
 				}else{
 					ScanActivity.gotoActivity(this);

@@ -6,13 +6,7 @@ import java.util.TimerTask;
 
 import com.jibu.app.main.ApplicationSharedPreferences;
 import com.jibu.app.main.NoAlarmAreaActivity;
-import com.veclink.bracelet.bean.BleUserInfoBean;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleSyncParamsTask;
-import com.veclink.bracelet.bletask.BleTask;
-import com.veclink.hw.bleservice.VLBleService;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
+
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -93,58 +87,58 @@ public class AntiLostPhoneService extends Service {
 		@Override
 		public void onReceive(Context arg0, Intent intent) {
 			String action = intent.getAction();
-			if (action.equals(VLBleService.ACTION_GATT_SERVICES_DISCOVERED)){
-//				connectHandler.sendEmptyMessage(DEVICE_SERVERDISCOVER);
-				Log.e(TAG, "已可以同步数据");
-			} else if(action.equals(VLBleService.ACTION_GATT_DISCONNECTED)){
-//				showMsgView.setText("设备信号强度：" + RSSI);
-//				Log.e(TAG, "设备已断开");
-//				Log.e(TAG, "设备信号强度：" + RSSI);
-				if (isConnected && Keeper.getUserHasBindBand(getBaseContext())) {
-					phoneNotify();
-//					isConnected = false;
-					clearAllRssi();
-				}
-				syncParams();
-				isConnected = false;
-			} else if(action.equals(VLBleService.ACTION_GATT_CONNECTED)){
-				Log.e(TAG, "设备已连接");
-			} else if(action.equals(AntiLostNotification.NOTIFICATION_DELETED_ACTION)){
-				AntiLostNotification.getInstance(getBaseContext()).setFlag(true);
-				Log.e(TAG, "通知栏被取消");
-			} else if(action.equals(VLBleService.ACTION_GATT_RSSI)){
-				if (!isConnected) {
-					isConnected = true;
-				}
-//				Log.e(getPackageName() , "设备收到了信号强度的广播");
-				int rssi = intent.getIntExtra(VLBleService.EXTRA_DATA, 0);
-				
-				if (count >= count_max){
-					int rssi_now = calculate(rssi_array);
-					Log.e(TAG, "average rssi_array " + rssi_now);
-					count = 0;
-					mySendBroadCast(ACTION, rssi_now);
-					//连续两次信号值过弱
-					if (Math.abs(rssi_now) > -REMIND_RSSI) {					
-						if (is_away_once) {
-							phoneNotify();
-							is_away_once = false;
-						} else {
-							is_away_once = true;
-						}
-					} else {
-						is_away_once = false;
-					}
-				} else {
-					rssi_array[count] = rssi;
-					count++;
-				}
-				
-				
-				
-			} else {
-//				showMsgView.setText("收到了未知广播" + action);
-			}
+//			if (action.equals(VLBleService.ACTION_GATT_SERVICES_DISCOVERED)){
+////				connectHandler.sendEmptyMessage(DEVICE_SERVERDISCOVER);
+//				Log.e(TAG, "已可以同步数据");
+//			} else if(action.equals(VLBleService.ACTION_GATT_DISCONNECTED)){
+////				showMsgView.setText("设备信号强度：" + RSSI);
+////				Log.e(TAG, "设备已断开");
+////				Log.e(TAG, "设备信号强度：" + RSSI);
+//				if (isConnected && Keeper.getUserHasBindBand(getBaseContext())) {
+//					phoneNotify();
+////					isConnected = false;
+//					clearAllRssi();
+//				}
+//				syncParams();
+//				isConnected = false;
+//			} else if(action.equals(VLBleService.ACTION_GATT_CONNECTED)){
+//				Log.e(TAG, "设备已连接");
+//			} else if(action.equals(AntiLostNotification.NOTIFICATION_DELETED_ACTION)){
+//				AntiLostNotification.getInstance(getBaseContext()).setFlag(true);
+//				Log.e(TAG, "通知栏被取消");
+//			} else if(action.equals(VLBleService.ACTION_GATT_RSSI)){
+//				if (!isConnected) {
+//					isConnected = true;
+//				}
+////				Log.e(getPackageName() , "设备收到了信号强度的广播");
+//				int rssi = intent.getIntExtra(VLBleService.EXTRA_DATA, 0);
+//				
+//				if (count >= count_max){
+//					int rssi_now = calculate(rssi_array);
+//					Log.e(TAG, "average rssi_array " + rssi_now);
+//					count = 0;
+//					mySendBroadCast(ACTION, rssi_now);
+//					//连续两次信号值过弱
+//					if (Math.abs(rssi_now) > -REMIND_RSSI) {					
+//						if (is_away_once) {
+//							phoneNotify();
+//							is_away_once = false;
+//						} else {
+//							is_away_once = true;
+//						}
+//					} else {
+//						is_away_once = false;
+//					}
+//				} else {
+//					rssi_array[count] = rssi;
+//					count++;
+//				}
+//				
+//				
+//				
+//			} else {
+////				showMsgView.setText("收到了未知广播" + action);
+//			}
 			
 		}
 		
@@ -158,10 +152,10 @@ public class AntiLostPhoneService extends Service {
 	}
 	private void initReciver(){
 		IntentFilter intentFilter = new IntentFilter();
-		intentFilter.addAction(VLBleService.ACTION_GATT_SERVICES_DISCOVERED);
-		intentFilter.addAction(VLBleService.ACTION_GATT_CONNECTED);
-		intentFilter.addAction(VLBleService.ACTION_GATT_DISCONNECTED);	
-		intentFilter.addAction(VLBleService.ACTION_GATT_RSSI);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_SERVICES_DISCOVERED);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_CONNECTED);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_DISCONNECTED);	
+//		intentFilter.addAction(VLBleService.ACTION_GATT_RSSI);
 		intentFilter.addAction(AntiLostNotification.NOTIFICATION_DELETED_ACTION);
 		registerReceiver(getdeviceMessageReceiver, intentFilter);
 	}
@@ -171,7 +165,7 @@ public class AntiLostPhoneService extends Service {
     TimerTask task = new TimerTask( ) {
 
         public void run () {
-        	VLBleServiceManager.getInstance().readRssi();
+//        	VLBleServiceManager.getInstance().readRssi();
         }
 
     };
@@ -224,7 +218,7 @@ public class AntiLostPhoneService extends Service {
             mTimerTask = new TimerTask() {  
                 @Override  
                 public void run() {  
-                    VLBleServiceManager.getInstance().readRssi();
+//                    VLBleServiceManager.getInstance().readRssi();
                 }  
             };  
         }  
@@ -307,58 +301,58 @@ public class AntiLostPhoneService extends Service {
 	}
 	
 	private AntiLostBinder myBinder = new AntiLostBinder();
-	Handler syncParamsHandler =  new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				Log.e(TAG, "syncParams TASK_START");
-				break;
-
-			case BleCallBack.TASK_PROGRESS:
-				Log.e(TAG, "syncParams TASK_PROGRESS");
-				break;
-
-			case BleCallBack.TASK_FINISH:
-				break;
-
-			case BleCallBack.TASK_FAILED:
-				syncParamsHandler.postDelayed(new Runnable() {
-					
-					@Override
-					public void run() {
-						syncParams();
-					}
-				}, 1000);
-				break;
-			};
-		}
-	};
-	BleCallBack syncParamsCallback = new BleCallBack(syncParamsHandler);
-	
-	public BleSyncParamsTask getBleSyncParamsTask(BleCallBack syncParmasCallBack) {
-		int targetStep = 100;
-		int wearLocation = 0;
-		int sport_mode = 1;
-		int sex = 0;
-		int year= 1990;
-		int nowYear = Calendar.getInstance().get(Calendar.YEAR);
-		int age = nowYear-year;
-		float height = 169;
-		float weight = 58;
-		int distanceUnit = 0;
-		boolean keptOnOffblean = false;
-		int keptOnOff = keptOnOffblean==true?1:0;
-		BleUserInfoBean bean = new BleUserInfoBean(targetStep, wearLocation, sport_mode, sex, age, weight, height, distanceUnit, keptOnOff);
-		BleSyncParamsTask bleSyncParamsTask = new BleSyncParamsTask(this, syncParmasCallBack, bean);
-		return bleSyncParamsTask;
-	}
-	
-	private void syncParams() {
-		BleTask task = null;
-		task = getBleSyncParamsTask(syncParamsCallback);
-		if(null !=  task) {
-			task.work();
-		}
-	}
+//	Handler syncParamsHandler =  new Handler() {
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//			case BleCallBack.TASK_START:
+//				Log.e(TAG, "syncParams TASK_START");
+//				break;
+//
+//			case BleCallBack.TASK_PROGRESS:
+//				Log.e(TAG, "syncParams TASK_PROGRESS");
+//				break;
+//
+//			case BleCallBack.TASK_FINISH:
+//				break;
+//
+//			case BleCallBack.TASK_FAILED:
+//				syncParamsHandler.postDelayed(new Runnable() {
+//					
+//					@Override
+//					public void run() {
+//						syncParams();
+//					}
+//				}, 1000);
+//				break;
+//			};
+//		}
+//	};
+//	BleCallBack syncParamsCallback = new BleCallBack(syncParamsHandler);
+//	
+//	public BleSyncParamsTask getBleSyncParamsTask(BleCallBack syncParmasCallBack) {
+//		int targetStep = 100;
+//		int wearLocation = 0;
+//		int sport_mode = 1;
+//		int sex = 0;
+//		int year= 1990;
+//		int nowYear = Calendar.getInstance().get(Calendar.YEAR);
+//		int age = nowYear-year;
+//		float height = 169;
+//		float weight = 58;
+//		int distanceUnit = 0;
+//		boolean keptOnOffblean = false;
+//		int keptOnOff = keptOnOffblean==true?1:0;
+//		BleUserInfoBean bean = new BleUserInfoBean(targetStep, wearLocation, sport_mode, sex, age, weight, height, distanceUnit, keptOnOff);
+//		BleSyncParamsTask bleSyncParamsTask = new BleSyncParamsTask(this, syncParmasCallBack, bean);
+//		return bleSyncParamsTask;
+//	}
+//	
+//	private void syncParams() {
+//		BleTask task = null;
+//		task = getBleSyncParamsTask(syncParamsCallback);
+//		if(null !=  task) {
+//			task.work();
+//		}
+//	}
 }

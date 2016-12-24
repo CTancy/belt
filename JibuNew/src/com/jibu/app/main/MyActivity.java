@@ -17,10 +17,9 @@ import com.jibu.app.user.HeightActivity;
 import com.jibu.app.user.WaistlineActivity;
 import com.jibu.app.user.WeightActivity;
 import com.szants.hw.bleservice.util.Keeper;
+import com.szants.sdk.AntsBeltSDK;
+import com.szants.sdk.UnBindDeviceListener;
 import com.umeng.update.UmengUpdateAgent;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Debug;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -228,8 +227,20 @@ public class MyActivity extends WaitingActivity implements OnClickListener{
 	}
 	
 	private void unBindDevice(){
-		Keeper.clearBindDeviceMessage(this);
-		VLBleServiceManager.getInstance().unBindService(getApplication());
+		AntsBeltSDK.getInstance().unBindDevice(new UnBindDeviceListener() {
+			
+			@Override
+			public void onFail(String arg0) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void onComplete() {
+				// TODO Auto-generated method stub
+				Keeper.clearBindDeviceMessage(MyActivity.this);
+
+			}
+		});
 		
 	}
 	
@@ -471,45 +482,45 @@ public class MyActivity extends WaitingActivity implements OnClickListener{
 	
 	
 	
-	Handler syncStepDataHandler = new Handler(){
-
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				break;
-
-			case BleCallBack.TASK_PROGRESS:
-				if(msg.obj!=null){
-					int progress = (Integer) msg.obj;
-//					Log.e(TAG , "progress = " + progress);
-					changeWaitMsg(getString(R.string.sync_complete)  + progress + "%" );
-				}
-				break;
-
-			case BleCallBack.TASK_FINISH:
-				if(msg.obj!=null){
-					Gson gon = new Gson();
-					String result = gon.toJson( msg.obj);
-					MoveData.hdlrSyncStepData(user,new MoveDataService(MyActivity.this),result);
-					Debug.logBleByTag("sync result is ", result);
-				}
-				/*通知主界面更新数据*/
-				sendSyncDataFinishedBroadCast();
-				waitClose();
-				ToastUtil.toast(R.string.sync_complete);
-				break;
-
-			case BleCallBack.TASK_FAILED:
-				ToastUtil.toast(R.string.sync_fail_try_again); 
-				waitClose();
-				break;
-			}
-		}
-		
-	};
-	
-	BleCallBack syncStepDataCallBack = new BleCallBack(syncStepDataHandler);
+//	Handler syncStepDataHandler = new Handler(){
+//
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//			case BleCallBack.TASK_START:
+//				break;
+//
+//			case BleCallBack.TASK_PROGRESS:
+//				if(msg.obj!=null){
+//					int progress = (Integer) msg.obj;
+////					Log.e(TAG , "progress = " + progress);
+//					changeWaitMsg(getString(R.string.sync_complete)  + progress + "%" );
+//				}
+//				break;
+//
+//			case BleCallBack.TASK_FINISH:
+//				if(msg.obj!=null){
+//					Gson gon = new Gson();
+//					String result = gon.toJson( msg.obj);
+//					MoveData.hdlrSyncStepData(user,new MoveDataService(MyActivity.this),result);
+//					Debug.logBleByTag("sync result is ", result);
+//				}
+//				/*通知主界面更新数据*/
+//				sendSyncDataFinishedBroadCast();
+//				waitClose();
+//				ToastUtil.toast(R.string.sync_complete);
+//				break;
+//
+//			case BleCallBack.TASK_FAILED:
+//				ToastUtil.toast(R.string.sync_fail_try_again); 
+//				waitClose();
+//				break;
+//			}
+//		}
+//		
+//	};
+//	
+//	BleCallBack syncStepDataCallBack = new BleCallBack(syncStepDataHandler);
 	
 	private void sendSyncDataFinishedBroadCast() {
 		Intent intent = new Intent();

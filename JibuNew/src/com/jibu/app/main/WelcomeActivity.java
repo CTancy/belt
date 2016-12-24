@@ -31,8 +31,6 @@ import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-
 
 
 import android.annotation.SuppressLint;
@@ -393,7 +391,7 @@ public class WelcomeActivity extends Activity  {
 					this.finish();
 				}else{
 					if(Keeper.getUserHasBindBand(this)){
-						VLBleServiceManager.getInstance().bindService(getApplication());
+//						VLBleServiceManager.getInstance().bindService(getApplication());
 						MainActivity.gotoActivity(this);
 					}else if (E3AKeeper.getInstance().hasBindDevice(this)){
 						
@@ -495,7 +493,7 @@ public class WelcomeActivity extends Activity  {
 		}else{
 			initUmengUpdate();
 			if(Keeper.getUserHasBindBand(this)){
-				VLBleServiceManager.getInstance().bindService(getApplication());
+//				VLBleServiceManager.getInstance().bindService(getApplication());
 				MainActivity.gotoActivity(this);
 			}else if (E3AKeeper.getInstance().hasBindDevice(this)){
 				

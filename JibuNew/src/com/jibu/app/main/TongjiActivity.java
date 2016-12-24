@@ -15,21 +15,7 @@ import com.jibu.app.entity.User;
 import com.jibu.app.view.HistogramView;
 import com.jibu.app.view.RoundProgressBar;
 import com.umeng.analytics.MobclickAgent;
-import com.veclink.bracelet.bean.BleUserInfoBean;
-import com.veclink.bracelet.bean.BluetoothDeviceBean;
-import com.veclink.bracelet.bean.DeviceInfo;
-import com.veclink.bracelet.bean.DeviceSleepData;
-import com.veclink.bracelet.bean.DeviceSportAndSleepData;
-import com.veclink.bracelet.bean.DeviceSportData;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleScanDeviceTask;
-import com.veclink.bracelet.bletask.BleSyncNewDeviceDataTask;
-import com.veclink.bracelet.bletask.BleSyncParamsTask;
-import com.veclink.bracelet.bletask.BleTask;
-import com.veclink.hw.bledevice.BraceletNewDevice;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Debug;
-import com.veclink.hw.bleservice.util.Keeper;
+
 
 import android.os.AsyncTask;
 import android.os.Build;

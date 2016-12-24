@@ -18,22 +18,6 @@ import com.jibu.app.view.HistogramView;
 import com.jibu.app.view.NoMoveTongJiView;
 import com.jibu.app.view.RoundProgressBar;
 import com.umeng.analytics.MobclickAgent;
-import com.veclink.bracelet.bean.BleUserInfoBean;
-import com.veclink.bracelet.bean.BluetoothDeviceBean;
-import com.veclink.bracelet.bean.DeviceInfo;
-import com.veclink.bracelet.bean.DeviceSleepData;
-import com.veclink.bracelet.bean.DeviceSportAndSleepData;
-import com.veclink.bracelet.bean.DeviceSportData;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleScanDeviceTask;
-import com.veclink.bracelet.bletask.BleSyncNewDeviceDataTask;
-import com.veclink.bracelet.bletask.BleSyncParamsTask;
-import com.veclink.bracelet.bletask.BleTask;
-import com.veclink.hw.bledevice.BraceletNewDevice;
-import com.veclink.hw.bleservice.VLBleService;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Debug;
-import com.veclink.hw.bleservice.util.Keeper;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -496,7 +480,7 @@ public class Tongji2Activity extends WaitingActivity implements OnClickListener,
 	
 	private void initReciver(){
 		IntentFilter intentFilter = new IntentFilter();
-		intentFilter.addAction(VLBleService.ACTION_LONGSIITING_REMIND);	
+//		intentFilter.addAction(VLBleService.ACTION_LONGSIITING_REMIND);	
 		registerReceiver(RemindMessageReceiver, intentFilter);
 		
 		
@@ -506,13 +490,13 @@ public class Tongji2Activity extends WaitingActivity implements OnClickListener,
 		@Override
 		public void onReceive(Context arg0, Intent  intent) {
 			String action = intent.getAction();
-			if(action.equals(VLBleService.ACTION_LONGSIITING_REMIND)){				
-				Log.e(TAG, "ACTION_LONGSIITING_REMIND + 设备已发送久坐提醒");
-				MyNotification notification = new MyNotification(Tongji2Activity.this);
-				if (null != notification) {
-					notification.sendRemindNotification();
-				}
-			}
+//			if(action.equals(VLBleService.ACTION_LONGSIITING_REMIND)){				
+//				Log.e(TAG, "ACTION_LONGSIITING_REMIND + 设备已发送久坐提醒");
+//				MyNotification notification = new MyNotification(Tongji2Activity.this);
+//				if (null != notification) {
+//					notification.sendRemindNotification();
+//				}
+//			}
 		}
 		
 	};

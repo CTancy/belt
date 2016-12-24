@@ -10,23 +10,27 @@ import com.jibu.app.entity.MoveData;
 import com.jibu.app.entity.User;
 import com.jibu.app.main.MainApplication;
 import com.jibu.app.main.ToastUtil;
-import com.veclink.bracelet.bean.BleUserInfoBean;
-import com.veclink.bracelet.bean.DeviceSportAndSleepData;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleSyncNewDeviceDataTask;
-import com.veclink.bracelet.bletask.BleSyncParamsTask;
-import com.veclink.bracelet.bletask.BleTask;
-import com.veclink.hw.bledevice.BraceletNewDevice;
-import com.veclink.hw.bleservice.util.Keeper;
+import com.szants.bracelet.bean.BeltDeviceInfo;
+import com.szants.bracelet.bean.BleDeviceData;
+import com.szants.bracelet.bean.BleUserInfoBean;
+import com.szants.bracelet.bean.DeviceSportAndSleepData;
+import com.szants.bracelet.bletask.BleCallBack;
+import com.szants.bracelet.bletask.BleProgressCallback;
+import com.szants.hw.bleservice.util.Keeper;
+import com.szants.sdk.AntsBeltSDK;
 
 import android.app.IntentService;
+import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 
-public class AutoSyncService extends IntentService {
+public class AutoSyncService extends Service {
+
+
 
 	private static final String TAG = "AutoSyncService";
 	
@@ -51,11 +55,7 @@ public class AutoSyncService extends IntentService {
 	User user;
 	
     Intent broadcastIntent = new Intent(); 
-    
 
-	public AutoSyncService() {
-		super("AutoSyncService");
-	}
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
@@ -70,13 +70,21 @@ public class AutoSyncService extends IntentService {
 	}
 
 	@Override
-	protected void onHandleIntent(Intent intent) {
-		// TODO Auto-generated method stub
+	public int onStartCommand(Intent intent, int flags, int startId) {
 		if (!isAutoSync) {
 			autoSyncParams();
 		}
-		
+		return super.onStartCommand(intent, flags, startId);
 	}
+
+//		@Override
+//	protected void onHandleIntent(Intent intent) {
+//		// TODO Auto-generated method stub
+//		if (!isAutoSync) {
+//			autoSyncParams();
+//		}
+//		
+//	}
 	@Override
 	public void onDestroy() {
 		// TODO Auto-generated method stub
@@ -109,40 +117,49 @@ public class AutoSyncService extends IntentService {
 			}
 		}
 	};
-	Handler syncParamsBeforeStepHandler =  new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				Log.e(TAG, "syncParams start");
-//				if (null != titleTextView) {
-//					titleTextView.setText(R.string.refreshing);
-//				}
-				break;
+	
+	public void syncUserInfoToDevice() {
 
-			case BleCallBack.TASK_PROGRESS:
-				Log.e(TAG, "syncParams TASK_PROGRESS");
-				break;
-
-			case BleCallBack.TASK_FINISH:
-				Log.e(TAG, "syncParams TASK_FINISH");
+		
+	}
+	
+	private void syncParamsBeforeStep() {
+//		BleTask task = null;
+//		task = getBleSyncParamsTask(syncParamsBeforeStepCallback);
+//		if(null !=  task) {
+//			task.work();
+//		}
+		int targetStep = 100;
+		int wearLocation = 0;
+		int sport_mode = 1;
+		int sex = 0;
+		int year= 1990;
+		int nowYear = Calendar.getInstance().get(Calendar.YEAR);
+		int age = nowYear-year;
+		float height = 169;
+		float weight = 58;
+		int distanceUnit = 0;
+		boolean keptOnOffblean = false;
+		int keptOnOff = keptOnOffblean==true?1:0;
+		BleUserInfoBean bean = new BleUserInfoBean(targetStep, wearLocation, sport_mode, sex, age, weight, height, distanceUnit, keptOnOff);
+		AntsBeltSDK.getInstance().syncParams(bean, new BleCallBack() {
+			
+			@Override
+			public void onStart(Object startObject) {
+			    Log.e(TAG, "开始自动同步参数");	
+			}
+			
+			@Override
+			public void onFinish(Object result) {
+				BeltDeviceInfo deviceInfo = (BeltDeviceInfo)result;
 				mHandler.sendEmptyMessage(CONNECT_SUCCEED);
-//				if (null != titleTextView) {
-//					titleTextView.setText(R.string.refresh_succeed);
-//				}
-				new Handler()
-				{
-					@Override
-					public void handleMessage(Message msg)
-					{
-//						isAutoSync = false;
-						autoSyncStep();
-					}
-				}.sendEmptyMessageDelayed(0, 300);
-				break;
-
-			case BleCallBack.TASK_FAILED:
-				Log.e(TAG, "syncParams TASK_FAILED");
+			    Log.e(TAG, "同步参数成功");	
+			    autoSyncStep();
+			}
+			
+			@Override
+			public void onFailed(Object error) {
+				Log.e(TAG, "同步参数失败");
 				if (syncParamsTimes < 3) {
 					syncParamsTimes++;
 //					titleTextView.setText(R.string.refreshing);
@@ -159,36 +176,8 @@ public class AutoSyncService extends IntentService {
 //					titleTextView.setText(R.string.refresh_fail);
 					mHandler.sendEmptyMessage(CONNECTED_FAILD);
 				}
-				break;
 			}
-		}
-	};
-	BleCallBack syncParamsBeforeStepCallback = new BleCallBack(syncParamsBeforeStepHandler);
-	
-	public BleSyncParamsTask getBleSyncParamsTask(BleCallBack syncParmasCallBack) {
-		int targetStep = 100;
-		int wearLocation = 0;
-		int sport_mode = 1;
-		int sex = 0;
-		int year= 1990;
-		int nowYear = Calendar.getInstance().get(Calendar.YEAR);
-		int age = nowYear-year;
-		float height = 169;
-		float weight = 58;
-		int distanceUnit = 0;
-		boolean keptOnOffblean = false;
-		int keptOnOff = keptOnOffblean==true?1:0;
-		BleUserInfoBean bean = new BleUserInfoBean(targetStep, wearLocation, sport_mode, sex, age, weight, height, distanceUnit, keptOnOff);
-		BleSyncParamsTask bleSyncParamsTask = new BleSyncParamsTask(this, syncParmasCallBack, bean);
-		return bleSyncParamsTask;
-	}
-	
-	private void syncParamsBeforeStep() {
-		BleTask task = null;
-		task = getBleSyncParamsTask(syncParamsBeforeStepCallback);
-		if(null !=  task) {
-			task.work();
-		}
+		});
 	}
 	private  void autoSyncParams() {
 		if(Keeper.getUserHasBindBand(getApplicationContext())){
@@ -215,61 +204,36 @@ public class AutoSyncService extends IntentService {
 			} 
 		}
 	}
-	Handler syncStepDataHandler = new Handler(){
 
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				Log.e(TAG, "syncStepData start" );
-//				titleTextView.setText("正在同步中...0%");
-				mHandler.sendEmptyMessage(SYNC_STEP);
-				break;
+	
+	private void syncSportDataByUpdateTime(long updateTime){
+		
+		AntsBeltSDK.getInstance().syncStepData(updateTime, System.currentTimeMillis(), new BleProgressCallback() {
+			
+			@Override
+			public void onStart(Object startObject) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onFinish(Object res) {
 
-			case BleCallBack.TASK_PROGRESS:
-				if(msg.obj!=null) {
-					int progress = (Integer) msg.obj;
-//					titleTextView.setText("正在同步中..." + progress + "%");
-					Message  MSG = Message.obtain();
-					Bundle buddle = new Bundle();
-					buddle.putInt(PROGRESS, progress);
-					MSG.what = SYNC_STEP;
-					MSG.setData(buddle);
-					mHandler.sendMessage(MSG);
-				}
-				break;
-
-			case BleCallBack.TASK_FINISH:
 				int step = -1;
-				if(msg.obj!=null){
-					DeviceSportAndSleepData deviceSportAndSleepData= (DeviceSportAndSleepData) msg.obj;	
-					
+				if(res != null){
+//					DeviceSportAndSleepData deviceSportAndSleepData= (DeviceSportAndSleepData) res;	
 					Gson gon = new Gson();
-					String result = gon.toJson( msg.obj);
+					String result = gon.toJson(res);
 					Log.i("log","result="+result);
 					MoveData.hdlrSyncStepData(user,moveDataService,result);
 					
 				}
 				if(isAutoSync) {
 					isAutoSync = false;
-//					showMoveData.removeAllElements();
 					long currTime = System.currentTimeMillis();
 					
-//					MoveData todayMoveData = moveDataService.queryMoveDataByUserSpecDay(user.userId,currTime);
-//					
-//					if(todayMoveData!=null){
-//						showMoveData.add(todayMoveData);
-//					}else{
-//						todayMoveData = new MoveData(user.userId, currTime);
-//						moveDataService.insertMoveData(todayMoveData);
-//						showMoveData.add(todayMoveData);
-//					}
-//					currShowMoveData = todayMoveData;
-//					setTitle(currShowMoveData);
 					user.updateTime = System.currentTimeMillis();
 					userService.updateUser(user);
-//					initMainFlipper();
-//					setUpdateTime();
 				}
 				
 				Message  MSG = Message.obtain();
@@ -279,30 +243,29 @@ public class AutoSyncService extends IntentService {
 				MSG.setData(buddle);
 				
 				mHandler.sendMessage(MSG);
-				break;
-
-			case BleCallBack.TASK_FAILED:
+				
+			}
+			
+			@Override
+			public void onFailed(Object error) {
 				ToastUtil.toast(R.string.sync_fail_try_again);				
 				isAutoSync = false;
 				mHandler.sendEmptyMessage(SYNC_FAILD);
-//				int index = mainFlipper.getDisplayedChild() >=0 ? mainFlipper.getDisplayedChild() : 0;
-//				currShowMoveData = showMoveData.elementAt(index);
-//				setTitle(currShowMoveData);
-//				setUpdateTime();
-				break;
 			}
-		}
-		
-	};
-	BleCallBack syncStepDataCallBack = new BleCallBack(syncStepDataHandler);
-	
-	private void syncSportDataByUpdateTime(long updateTime){
-		
-			BleTask task = null;
-			task = new BleSyncNewDeviceDataTask(this, syncStepDataCallBack,BraceletNewDevice.SPORT_DATA,new Date(updateTime),new Date(System.currentTimeMillis()));
-			if(task!=null){
-				task.work();
+			
+			@Override
+			public void onProgress(Object pro) {
+
+				int progress = (Integer) pro;
+				Message  MSG = Message.obtain();
+				Bundle buddle = new Bundle();
+				buddle.putInt(PROGRESS, progress);
+				MSG.what = SYNC_STEP;
+				MSG.setData(buddle);
+				mHandler.sendMessage(MSG);
+							
 			}
+		});
 	}
 	private  void autoSyncStep() {
 		Log.e(TAG, "autoSyncStep start");
@@ -317,6 +280,11 @@ public class AutoSyncService extends IntentService {
 				}
 //			}
 		}
+	}
+	@Override
+	public IBinder onBind(Intent intent) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

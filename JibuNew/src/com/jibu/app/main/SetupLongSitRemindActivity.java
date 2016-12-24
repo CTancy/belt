@@ -4,10 +4,10 @@ package com.jibu.app.main;
  * æ√◊¯Ã·–—…Ë÷√activity
  */
 import com.jibu.app.R;
-import com.veclink.bracelet.bean.BleLongSittingRemindParam;
-import com.veclink.bracelet.bletask.BleCallBack;
-import com.veclink.bracelet.bletask.BleSettingRemindParamsTask;
-import com.veclink.bracelet.bletask.BleTask;
+import com.szants.bracelet.bean.BleLongSittingRemindParam;
+import com.szants.bracelet.bletask.BleCallBack;
+import com.szants.sdk.AntsBeltSDK;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -229,64 +229,64 @@ public class SetupLongSitRemindActivity extends WaitingActivity implements  OnCl
 		}
 	}
 	
-	Handler openRemindHandler = new Handler(){
-
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				
-				break;
-
-			case BleCallBack.TASK_FINISH:
-				waitClose();
-				ApplicationSharedPreferences.setRemindStatus(SetupLongSitRemindActivity.this, true);
-				imageView_no_move.setBackgroundResource(R.drawable.open_remind);
-				ToastUtil.toast(R.string.setup_longsit_success);
-				SetupLongSitRemindActivity.this.finish();
-				break;
-
-			case BleCallBack.TASK_FAILED:
-				waitClose();
-				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_normal);
-				ToastUtil.toast(R.string.setup_longsit_open_fail);
-				break;
-			}
-		}
-		
-	};
-	
-	Handler closeRemindHandler = new Handler(){
-
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case BleCallBack.TASK_START:
-				
-				break;
-
-			case BleCallBack.TASK_FINISH:
-				//showMsgView.setText("set remind success,return result is "+msg.obj);
-				waitClose();
-				ApplicationSharedPreferences.setRemindStatus(SetupLongSitRemindActivity.this, false);
-				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_normal);
-				ToastUtil.toast(R.string.longsit_setup_close_success);
-				SetupLongSitRemindActivity.this.finish();
-				break;
-
-			case BleCallBack.TASK_FAILED:
-				waitClose();
-				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_selected);
-				ToastUtil.toast(R.string.longsit_setup_close_fail);
-				break;
-			}
-		}
-		
-	};
-
-	BleCallBack closeRemindCallBack = new BleCallBack(closeRemindHandler);
-	
-	BleCallBack openRemindCallBack = new BleCallBack(openRemindHandler);
+//	Handler openRemindHandler = new Handler(){
+//
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//			case BleCallBack.TASK_START:
+//				
+//				break;
+//
+//			case BleCallBack.TASK_FINISH:
+//				waitClose();
+//				ApplicationSharedPreferences.setRemindStatus(SetupLongSitRemindActivity.this, true);
+//				imageView_no_move.setBackgroundResource(R.drawable.open_remind);
+//				ToastUtil.toast(R.string.setup_longsit_success);
+//				SetupLongSitRemindActivity.this.finish();
+//				break;
+//
+//			case BleCallBack.TASK_FAILED:
+//				waitClose();
+//				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_normal);
+//				ToastUtil.toast(R.string.setup_longsit_open_fail);
+//				break;
+//			}
+//		}
+//		
+//	};
+//	
+//	Handler closeRemindHandler = new Handler(){
+//
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//			case BleCallBack.TASK_START:
+//				
+//				break;
+//
+//			case BleCallBack.TASK_FINISH:
+//				//showMsgView.setText("set remind success,return result is "+msg.obj);
+//				waitClose();
+//				ApplicationSharedPreferences.setRemindStatus(SetupLongSitRemindActivity.this, false);
+//				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_normal);
+//				ToastUtil.toast(R.string.longsit_setup_close_success);
+//				SetupLongSitRemindActivity.this.finish();
+//				break;
+//
+//			case BleCallBack.TASK_FAILED:
+//				waitClose();
+//				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_selected);
+//				ToastUtil.toast(R.string.longsit_setup_close_fail);
+//				break;
+//			}
+//		}
+//		
+//	};
+//
+//	BleCallBack closeRemindCallBack = new BleCallBack(closeRemindHandler);
+//	
+//	BleCallBack openRemindCallBack = new BleCallBack(openRemindHandler);
 	
 	private void openRemind(){
 		
@@ -303,29 +303,75 @@ public class SetupLongSitRemindActivity extends WaitingActivity implements  OnCl
 		int hour_end = (int) end_time/3600;
 		int min_end =  (int) end_time%3600/60;
 		
+		int openflag = 1;
 		Log.e("TAG", hour_interval +"\n" + min_interval +"\n"+ hour_begin+"\n" + min_begin+"\n" + hour_end +"\n" + min_end);
-		BleTask task = null;
+		BleLongSittingRemindParam sittingRemindParam = new BleLongSittingRemindParam(hour_interval,min_interval,hour_begin,min_begin,hour_end,min_end,BleLongSittingRemindParam.OPEN_REMIND);
 		
-		BleLongSittingRemindParam bleLongSittingRemindParam = new BleLongSittingRemindParam(hour_interval, min_interval,
-				hour_begin, min_begin, hour_end, min_end,BleLongSittingRemindParam.OPEN_REMIND);
-		
-		task = new BleSettingRemindParamsTask(this, openRemindCallBack, bleLongSittingRemindParam);
-		
-		if(task!=null){
-			task.work();	
-		}
+		AntsBeltSDK.getInstance().setLongSittingRemind(new BleCallBack() {
+			
+			@Override
+			public void onStart(Object startObject) { 
+				  
+				
+			}
+			
+			@Override
+			public void onFinish(Object result) {
+				waitClose();
+				ApplicationSharedPreferences.setRemindStatus(SetupLongSitRemindActivity.this, true);
+				imageView_no_move.setBackgroundResource(R.drawable.open_remind);
+				ToastUtil.toast(R.string.setup_longsit_success);
+				SetupLongSitRemindActivity.this.finish();
+			}
+			
+			@Override
+			public void onFailed(Object error) {
+				waitClose();
+				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_selected);
+				ToastUtil.toast(R.string.longsit_setup_close_fail);
+			}
+		}, sittingRemindParam);
 	}
 	
 	private void closeRemind(){
 		
-		BleTask task = null;
-		BleLongSittingRemindParam bleLongSittingRemindParam = new BleLongSittingRemindParam(1, 0,
+//		BleTask task = null;
+//		BleLongSittingRemindParam bleLongSittingRemindParam = new BleLongSittingRemindParam(1, 0,
+//				7, 0, 23, 59,BleLongSittingRemindParam.CLOSE_REMIND);
+//		task = new BleSettingRemindParamsTask(this, closeRemindCallBack, bleLongSittingRemindParam);
+//		
+//		if(task!=null){
+//			task.work();
+//		}
+//		
+		int openflag = 0;
+		BleLongSittingRemindParam sittingRemindParam = new BleLongSittingRemindParam(1, 0,
 				7, 0, 23, 59,BleLongSittingRemindParam.CLOSE_REMIND);
-		task = new BleSettingRemindParamsTask(this, closeRemindCallBack, bleLongSittingRemindParam);
 		
-		if(task!=null){
-			task.work();
-		}
+		AntsBeltSDK.getInstance().setLongSittingRemind(new BleCallBack() {
+			
+			@Override
+			public void onStart(Object startObject) { 
+				  
+				
+			}
+			
+			@Override
+			public void onFinish(Object result) {
+				waitClose();
+				ApplicationSharedPreferences.setRemindStatus(SetupLongSitRemindActivity.this, false);
+				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_normal);
+				ToastUtil.toast(R.string.longsit_setup_close_success);
+				SetupLongSitRemindActivity.this.finish();
+			}
+			
+			@Override
+			public void onFailed(Object error) {
+				waitClose();
+				imageView_no_move.setBackgroundResource(R.drawable.btn_toggle_selected);
+				ToastUtil.toast(R.string.longsit_setup_close_fail);
+			}
+		}, sittingRemindParam);
 	}
 	
 

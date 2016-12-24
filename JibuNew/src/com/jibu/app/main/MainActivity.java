@@ -54,10 +54,14 @@ import com.jibu.app.server.AntiLostPhoneService;
 import com.jibu.app.server.AutoSyncService;
 import com.jibu.app.view.RoundProgressBar;
 import com.nineoldandroids.view.ViewHelper;
-import com.veclink.hw.bleservice.VLBleService;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.VLBleServiceManager;
-import com.veclink.hw.bleservice.util.Keeper;
+import com.szants.bracelet.bean.BeltDeviceInfo;
+import com.szants.bracelet.bean.BleUserInfoBean;
+import com.szants.bracelet.bletask.BleCallBack;
+import com.szants.hw.bleservice.util.Keeper;
+import com.szants.sdk.AntsBeltSDK;
+import com.szants.sdk.DeviceStateObserver;
+import com.szants.sdk.SittingRemindObserver;
+import com.szants.sdk.StepObserver;
 
 public class MainActivity extends WaitingActivity implements OnClickListener, 
 								 PanelSlideListener{
@@ -68,6 +72,8 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 	private final int DEVICE_SERVERDISCOVER = 0x63;
 	private static final int REQUEST_ENABLE_BT = 3;
 	
+	private AntsBeltSDK sdk;
+
 	/**
 	 * 设置自动更新时间间隔
 	 */
@@ -175,6 +181,8 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 		activity = this;
 		mainApplication = (MainApplication) this.getApplication();
 		mainApplication.addActivity(this);
+		
+		registerBeltObesever();
 		initReciver();
 		
 		
@@ -229,6 +237,54 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 	}
 	
 
+	private void registerBeltObesever() {
+        sdk = AntsBeltSDK.getInstance();
+        
+        sdk.registerDeviceStateObserver(new DeviceStateObserver() {
+			
+			@Override
+			public void disConnected() {
+				
+			}
+			
+			@Override
+			public void connecting() {
+				
+			}
+			
+			@Override
+			public void connected() {
+				
+			}
+			
+			@Override
+			public void blueToothClose() {
+				
+			}
+		});
+        
+        sdk.registerStepObserver(new StepObserver() {
+			
+			@Override
+			public void stepCountChange(int totalStep) {
+//				total_step_tv.setText("总步数："+totalStep);
+			}
+		});
+        
+        sdk.registerSittingRemindObserver(new SittingRemindObserver() {
+			
+			@Override
+			public void onReceiveSittingRemind() {
+				Log.e(TAG, "ACTION_LONGSIITING_REMIND + 设备已发送久坐提醒");
+				MyNotification notification = new MyNotification(MainActivity.this);
+				if (null != notification) {
+					notification.sendRemindNotification();
+				}
+			}
+		});
+	}
+
+
 	@Override
 	protected void onStart() {
 
@@ -265,6 +321,10 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			activity = this;
 		}
 		
+		if (!sdk.isConnected()) {
+			sdk.reConnectDevice();
+		}
+		
 		//更新同步时间
 		if (!AutoSyncService.isAutoSync || !Keeper.getUserHasBindBand(this)) {
 			setUpdateTime();
@@ -289,7 +349,6 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
 		super.onDestroy();
 		unregisterReceiver(getdeviceMessageReceiver);
 		activity = null;
@@ -298,7 +357,6 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		
 		case R.id.id_linearlayout_title_left:
@@ -411,12 +469,12 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 	
 	private void initReciver(){
 		IntentFilter intentFilter = new IntentFilter();
-		intentFilter.addAction(VLBleService.ACTION_GATT_SERVICES_DISCOVERED);
-		intentFilter.addAction(VLBleService.ACTION_GATT_CONNECTED);
-		intentFilter.addAction(VLBleService.ACTION_GATT_DISCONNECTED);	
-		intentFilter.addAction(VLBleService.ACTION_SHORT_SPORT_DATA);
-		intentFilter.addAction(VLBleService.ACTION_POWER_CHANGE_DATA);	
-		intentFilter.addAction(VLBleService.ACTION_LONGSIITING_REMIND);	
+//		intentFilter.addAction(VLBleService.ACTION_GATT_SERVICES_DISCOVERED);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_CONNECTED);
+//		intentFilter.addAction(VLBleService.ACTION_GATT_DISCONNECTED);	
+//		intentFilter.addAction(VLBleService.ACTION_SHORT_SPORT_DATA);
+//		intentFilter.addAction(VLBleService.ACTION_POWER_CHANGE_DATA);	
+//		intentFilter.addAction(VLBleService.ACTION_LONGSIITING_REMIND);	
 		
 		intentFilter.addAction(StepSettingActivity.ACTION_STEP_CHANGE);
 		intentFilter.addAction(AutoSyncService.ACTION_STATE);
@@ -431,33 +489,35 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 		@Override
 		public void onReceive(Context arg0, Intent intent) {
 			String action = intent.getAction();
-			if(action.equals(VLBleService.ACTION_GATT_SERVICES_DISCOVERED)){
-				Log.e(TAG, "ACTION_GATT_SERVICES_DISCOVERED + 可以执行同步数据广播");
-				connectHandler.postDelayed(new Runnable() {					
-					@Override
-					public void run() {
-						VLBleServiceManager.setAutoReConnect(true);
-						if (ApplicationSharedPreferences.getHasOpenAntiLostRemind(getApplicationContext())) {
-							MainActivity.this.startService(new Intent(MainActivity.this, AntiLostPhoneService.class));
-						}
-					}
-				}, 2000);
-			}else if(action.equals(VLBleService.ACTION_GATT_DISCONNECTED)){
-				Log.e(TAG, "ACTION_GATT_DISCONNECTED + 设备已断开连接广播");
-			}else if(action.equals(VLBleService.ACTION_GATT_CONNECTED)){				
-				Log.e(TAG, "ACTION_GATT_CONNECTED + 设备已连接广播");
-			}else if(action.equals(VLBleService.ACTION_SHORT_SPORT_DATA)){
-				int sportSteps = intent.getIntExtra(VLBleService.EXTRA_DATA, 0);	
-			}else if(action.equals(VLBleService.ACTION_POWER_CHANGE_DATA)){
-				int powerValue = intent.getIntExtra(VLBleService.EXTRA_DATA, 0);	
-				ApplicationSharedPreferences.setDcValue(MainActivity.this, powerValue);
-			}else if(action.equals(VLBleService.ACTION_LONGSIITING_REMIND)){				
-				Log.e(TAG, "ACTION_LONGSIITING_REMIND + 设备已发送久坐提醒");
-				MyNotification notification = new MyNotification(MainActivity.this);
-				if (null != notification) {
-					notification.sendRemindNotification();
-				}
-			}else if(action.equals(AutoSyncService.ACTION_STATE)) {
+//			if(action.equals(VLBleService.ACTION_GATT_SERVICES_DISCOVERED)){
+//				Log.e(TAG, "ACTION_GATT_SERVICES_DISCOVERED + 可以执行同步数据广播");
+//				connectHandler.postDelayed(new Runnable() {					
+//					@Override
+//					public void run() {
+//						VLBleServiceManager.setAutoReConnect(true);
+//						if (ApplicationSharedPreferences.getHasOpenAntiLostRemind(getApplicationContext())) {
+//							MainActivity.this.startService(new Intent(MainActivity.this, AntiLostPhoneService.class));
+//						}
+//					}
+//				}, 2000);
+//			}else if(action.equals(VLBleService.ACTION_GATT_DISCONNECTED)){
+//				Log.e(TAG, "ACTION_GATT_DISCONNECTED + 设备已断开连接广播");
+//			}else if(action.equals(VLBleService.ACTION_GATT_CONNECTED)){				
+//				Log.e(TAG, "ACTION_GATT_CONNECTED + 设备已连接广播");
+//			}else if(action.equals(VLBleService.ACTION_SHORT_SPORT_DATA)){
+//				int sportSteps = intent.getIntExtra(VLBleService.EXTRA_DATA, 0);	
+//			}else if(action.equals(VLBleService.ACTION_POWER_CHANGE_DATA)){
+//				int powerValue = intent.getIntExtra(VLBleService.EXTRA_DATA, 0);	
+//				ApplicationSharedPreferences.setDcValue(MainActivity.this, powerValue);
+//			}else if(action.equals(VLBleService.ACTION_LONGSIITING_REMIND)){				
+//				Log.e(TAG, "ACTION_LONGSIITING_REMIND + 设备已发送久坐提醒");
+//				MyNotification notification = new MyNotification(MainActivity.this);
+//				if (null != notification) {
+//					notification.sendRemindNotification();
+//				}
+//			}else 
+			
+			if(action.equals(AutoSyncService.ACTION_STATE)) {
 				Log.e(TAG, "设备收到来自自动同步参数的广播");
 				int state = intent.getIntExtra(AutoSyncService.ACTION_STATE, -1);
 				int progress = intent.getIntExtra(AutoSyncService.PROGRESS, -1);
@@ -559,13 +619,12 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			
 			@Override
 			public void onDrawerStateChanged(int arg0) {
-				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void onDrawerSlide(View drawerView, float slideOffset) {
-				// TODO Auto-generated method stub
+				
                 View mContent = mDrawerLayout.getChildAt(0);  
                 View mMenu = drawerView;  
                 float scale = 1 - slideOffset;  
@@ -593,13 +652,11 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			
 			@Override
 			public void onDrawerOpened(View arg0) {
-				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void onDrawerClosed(View arg0) {
-				// TODO Auto-generated method stub
 				mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED,Gravity.LEFT);
 			}
 		});
@@ -915,5 +972,47 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			mAdapter.notifyDataSetChanged();
 			mAdapter.onPageSelected(mPager.getCurrentItem());
 		}
+	}
+	
+	
+	private void syncParamsBeforeStep() {
+//		BleTask task = null;
+//		task = getBleSyncParamsTask(syncParamsBeforeStepCallback);
+//		if(null !=  task) {
+//			task.work();
+//		}
+		int targetStep = 100;
+		int wearLocation = 0;
+		int sport_mode = 1;
+		int sex = 0;
+		int year= 1990;
+		int nowYear = Calendar.getInstance().get(Calendar.YEAR);
+		int age = nowYear-year;
+		float height = 169;
+		float weight = 58;
+		int distanceUnit = 0;
+		boolean keptOnOffblean = false;
+		int keptOnOff = keptOnOffblean==true?1:0;
+		BleUserInfoBean bean = new BleUserInfoBean(targetStep, wearLocation, sport_mode, sex, age, weight, height, distanceUnit, keptOnOff);
+		sdk.syncParams(bean, new BleCallBack() {
+			
+			@Override
+			public void onStart(Object startObject) {
+			    Log.e(TAG, "开始自动同步参数");	
+			}
+			
+			@Override
+			public void onFinish(Object result) {
+				BeltDeviceInfo deviceInfo = (BeltDeviceInfo)result;
+			    Log.e(TAG, "同步参数成功");	
+
+			}
+			
+			@Override
+			public void onFailed(Object error) {
+				Log.e(TAG, "同步参数失败");
+
+			}
+		});
 	}
 }
