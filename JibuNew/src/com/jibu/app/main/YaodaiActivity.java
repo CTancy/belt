@@ -51,9 +51,9 @@ public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 	
 	public final int REQUREST_UPDATEFIREWARE = 0xC;
 	
-	public static final String FIREWARE_NAME = "D013A_V43.img";
+	public static final String FIREWARE_NAME = "SMART_BELT_V4.img";
 	
-	private static int HW_VERION_BY_ASSERT = 43;
+	private static int HW_VERION_BY_ASSERT = 4;
 	
 	MainApplication mainApplication;
 	
@@ -899,37 +899,6 @@ public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 				if(filePath != null)
 				{					
 					showWait(getString(R.string.begin_update_fireware_version));
-					UpdateFirmwareUtil.update(this, new BleProgressCallback() {
-						
-						@Override
-						public void onStart(Object arg0) {
-							// TODO Auto-generated method stub
-							
-						}
-						
-						@Override
-						public void onFinish(Object arg0) {
-							changeWaitMsg(getString(R.string.update_progress)+100+"%");
-							Log.i("log",getString(R.string.update_progress)+100+"%");
-							waitClose();
-							ToastUtil.toast(R.string.update_fireware_complete);
-						}
-						
-						@Override
-						public void onFailed(Object arg0) {
-							waitClose();
-							ToastUtil.toast(R.string.update_fireware_fail);
-						}
-						
-						@Override
-						public void onProgress(Object arg0) {
-							if (arg0 != null) {
-								int progress = (Integer) arg0;
-								changeWaitMsg(getString(R.string.update_progress)+progress+"%");
-								Log.i("log",getString(R.string.update_progress)+progress+"%");
-							}
-						}
-					}, filePath);
 										
 				}
 			}

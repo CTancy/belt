@@ -4,10 +4,13 @@ import java.io.IOException;
 
 import com.jibu.app.R;
 import com.jibu.app.view.RoundProgressBar2;
+import com.szants.bracelet.bletask.BleProgressCallback;
+import com.szants.bracelet.bletask.UpdateFirmwareUtil;
 //import com.veclink.bracelet.bletask.BleCallBack;
 //import com.veclink.bracelet.bletask.UpdateFirmwareUtil;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -27,13 +30,13 @@ public class UpdateFirewareActivity extends Activity {
 		setContentView(R.layout.activity_update_fireware);
 
 		initView();
-//		try {
-//			updateHwVersion();
-//		} catch (IOException e){
-//			e.printStackTrace();
-//			setResult(RESULT_CANCELED);
-//			UpdateFirewareActivity.this.finish();
-//		}
+		try {
+			updateHwVersion();
+		} catch (IOException e){
+			e.printStackTrace();
+			setResult(RESULT_CANCELED);
+			UpdateFirewareActivity.this.finish();
+		}
 	}
 	private void initView() {
 		roundProgressBar = (RoundProgressBar2) findViewById(R.id.id_roundprogressbar_update_fireware);
@@ -86,4 +89,48 @@ public class UpdateFirewareActivity extends Activity {
 //		UpdateFirmwareUtil.update(this, updateCallBack, filePath);
 //		
 //	}
+	private void updateHwVersion() throws IOException{
+
+
+		String filePath = Environment.getExternalStorageDirectory().getPath()+"/"+YaodaiActivity.FIREWARE_NAME;
+		
+		YaodaiActivity.copyBigDataToSD(filePath);
+
+		
+		UpdateFirmwareUtil.update(this, new BleProgressCallback() {
+			
+			@Override
+			public void onStart(Object arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onFinish(Object arg0) {
+				// TODO Auto-generated method stub
+				setResult(RESULT_OK);
+				UpdateFirewareActivity.this.finish();
+			}
+			
+			@Override
+			public void onFailed(Object arg0) {
+				// TODO Auto-generated method stub
+				setResult(RESULT_CANCELED);
+				UpdateFirewareActivity.this.finish();
+			}
+			
+			@Override
+			public void onProgress(Object arg0) {
+				// TODO Auto-generated method stub
+				if (arg0 != null) {
+					int progress = (Integer)arg0;
+					String CompleteBfb = getString(R.string.update_progress) + progress + "%";
+					roundProgressBar.setProgress(progress);
+					textview_complete_bfb.setText(CompleteBfb);
+				}
+			}
+		}, filePath);
+		
+		
+	}
 }
