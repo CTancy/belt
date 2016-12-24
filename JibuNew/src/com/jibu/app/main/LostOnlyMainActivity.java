@@ -4,6 +4,7 @@ import java.util.Set;
 
 import mybleservice.BluetoothLeService;
 import mybleservice.E3AKeeper;
+import mybleservice.FindPhoneNotify;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
@@ -54,7 +55,7 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
             	
                 mCallTextView.setText("连接");
                 if (hasConnected) {
-                	phoneIfNotify();
+                	FindPhoneNotify.getInstance().phoneIfNotify(LostOnlyMainActivity.this);
                 }
             	hasConnected = false;
             	
@@ -66,10 +67,10 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
             	if (data != null) {
 		        	if (data.contains("B1 24")) { //单击
 //		            	ToastUtil.toast("单击了设备");
-		            	stopPhoneNotify();
+		            	FindPhoneNotify.getInstance().stopPhoneNotify(LostOnlyMainActivity.this);
 		        	} else if (data.contains("FD E8")) {
 //		            	ToastUtil.toast("双击了设备");
-		            	phoneNotify();
+		            	FindPhoneNotify.getInstance().phoneNotify(LostOnlyMainActivity.this);
 		        	}
             	}
             }
@@ -177,17 +178,7 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     	isCall = !isCall;
     }
     
-    private void phoneNotify() {
-    	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
-		if (null != notification) {
-			notification.setFlag(true);
-			notification.sendRemindNotification(true);
-		}
-    }
-    private void stopPhoneNotify() {
-    	AntiLostNotification notification = AntiLostNotification.getInstance(getBaseContext());
-    	notification.stopNotification();
-    }
+ 
     
     private void phoneIfNotify() {
     	final Set<String> selectedWifi = ApplicationSharedPreferences.getNoAlarmArea(getBaseContext());

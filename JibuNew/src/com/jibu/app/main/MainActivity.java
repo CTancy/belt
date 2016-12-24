@@ -6,6 +6,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Vector;
 
+import mybleservice.FindPhoneNotify;
+
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -50,6 +52,7 @@ import com.jibu.app.entity.MoveData;
 import com.jibu.app.entity.User;
 import com.jibu.app.entity.UserPersonalInfo;
 import com.jibu.app.fragment.SportDataFragment;
+import com.jibu.app.server.AntiLostNotification;
 import com.jibu.app.server.AntiLostPhoneService;
 import com.jibu.app.server.AutoSyncService;
 import com.jibu.app.view.RoundProgressBar;
@@ -60,6 +63,7 @@ import com.szants.bracelet.bletask.BleCallBack;
 import com.szants.hw.bleservice.util.Keeper;
 import com.szants.sdk.AntsBeltSDK;
 import com.szants.sdk.DeviceStateObserver;
+import com.szants.sdk.FindPhoneObserver;
 import com.szants.sdk.SittingRemindObserver;
 import com.szants.sdk.StepObserver;
 
@@ -71,6 +75,8 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 	private final int DEVICE_DISCONNECTED = 0x62;
 	private final int DEVICE_SERVERDISCOVER = 0x63;
 	private static final int REQUEST_ENABLE_BT = 3;
+	
+    private boolean hasConnected = false;
 	
 	private AntsBeltSDK sdk;
 
@@ -244,7 +250,11 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			
 			@Override
 			public void disConnected() {
-				
+//				ToastUtil.toast("断开了设备连接");
+                if (hasConnected) {
+                	FindPhoneNotify.getInstance().phoneIfNotify(MainActivity.this);
+                }
+            	hasConnected = false;
 			}
 			
 			@Override
@@ -254,12 +264,16 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			
 			@Override
 			public void connected() {
-				
+				ToastUtil.toast("已成功连接设备");
+				hasConnected = true;
 			}
 			
 			@Override
 			public void blueToothClose() {
-				
+	               if (hasConnected) {
+	                	FindPhoneNotify.getInstance().phoneIfNotify(MainActivity.this);
+	                }
+	            	hasConnected = false;
 			}
 		});
         
@@ -282,6 +296,20 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 				}
 			}
 		});
+        
+        sdk.registerFindPhoneObserver(new FindPhoneObserver() {
+			
+			@Override
+			public void onReceiveFindPhoneCmd(boolean arg0) {
+				// TODO Auto-generated method stub
+	        	if (!arg0) { 
+	            	FindPhoneNotify.getInstance().stopPhoneNotify(MainActivity.this);
+	        	} else {
+	            	FindPhoneNotify.getInstance().phoneNotify(MainActivity.this);
+	        	}
+			}
+		});
+        
 	}
 
 

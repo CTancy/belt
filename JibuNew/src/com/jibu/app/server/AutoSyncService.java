@@ -71,6 +71,9 @@ public class AutoSyncService extends Service {
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
+		if (!AntsBeltSDK.getInstance().isConnected()) {
+			AntsBeltSDK.getInstance().reConnectDevice();
+		}
 		if (!isAutoSync) {
 			autoSyncParams();
 		}

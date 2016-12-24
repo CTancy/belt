@@ -1,6 +1,9 @@
 package com.jibu.app.main;
 
 import com.jibu.app.R;
+import com.szants.bracelet.bletask.BleCallBack;
+import com.szants.sdk.AntsBeltSDK;
+import com.szants.sdk.FindPhoneObserver;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +15,9 @@ import android.view.View.OnClickListener;
 
 public class AntiLostNewActivity extends Activity implements OnClickListener {
 
+	private AntsBeltSDK sdk;
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -21,6 +27,9 @@ public class AntiLostNewActivity extends Activity implements OnClickListener {
 		findViewById(R.id.id_linearlayout_title_left).setOnClickListener(this);
 		findViewById(R.id.id_textview_call).setOnClickListener(this);
 		findViewById(R.id.id_textview_setup).setOnClickListener(this);
+		
+		sdk = AntsBeltSDK.getInstance();
+
 	}
 
 	@Override
@@ -44,6 +53,24 @@ public class AntiLostNewActivity extends Activity implements OnClickListener {
 			this.finish();
 			break;
 		case R.id.id_textview_call:
+			sdk.findDevice(new BleCallBack() {
+				
+				@Override
+				public void onStart(Object startObject) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onFinish(Object result) {
+					
+				}
+				
+				@Override
+				public void onFailed(Object error) {
+					ToastUtil.toast("查找不到设备");
+				}
+			});
 			break;
 		case R.id.id_textview_setup:
 			AntiLostActivity.gotoAntiLostActivity(AntiLostNewActivity.this);

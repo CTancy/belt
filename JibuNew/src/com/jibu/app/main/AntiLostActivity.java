@@ -2,7 +2,10 @@ package com.jibu.app.main;
 
 import com.jibu.app.R;
 import com.jibu.app.server.AntiLostPhoneService;
+import com.szants.bracelet.bletask.BleCallBack;
 import com.szants.hw.bleservice.util.Keeper;
+import com.szants.sdk.AntsBeltSDK;
+import com.szants.sdk.FindPhoneObserver;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -166,16 +169,41 @@ public class AntiLostActivity extends Activity implements OnClickListener, OnSee
 	}
 	
 	private void open_close_belt_remind() {
-		if (isOpenBeltLost) {
-			belt_remind_switch.setBackgroundResource(R.drawable.close_remind);
-			isOpenBeltLost = false;
-//			stopAntiLostService();
-		} else {
-			belt_remind_switch.setBackgroundResource(R.drawable.open_remind);
-			isOpenBeltLost = true;
-//			startAntiLostService();
-		}
-		ApplicationSharedPreferences.setHasOpenAntiLostRemind(this, isOpenBeltLost);
+		AntsBeltSDK.getInstance().setKeptNonRemind(new BleCallBack() {
+			
+			@Override
+			public void onStart(Object startObject) {
+				
+				
+			}
+			
+			@Override
+			public void onFinish(Object result) {
+				if (isOpenBeltLost) {
+					belt_remind_switch.setBackgroundResource(R.drawable.close_remind);
+				} else {
+					belt_remind_switch.setBackgroundResource(R.drawable.open_remind);
+				}
+				isOpenBeltLost = !isOpenBeltLost;
+				ApplicationSharedPreferences.setHasOpenAntiLostRemind(AntiLostActivity.this, isOpenBeltLost);
+			}
+			
+			@Override
+			public void onFailed(Object error) {
+				ToastUtil.toast("…Ë÷√∆§¥¯Ã·–— ß∞‹");
+			}
+		}, !isOpenBeltLost);
+		
+//		if (isOpenBeltLost) {
+//			belt_remind_switch.setBackgroundResource(R.drawable.close_remind);
+//			isOpenBeltLost = false;
+////			stopAntiLostService();
+//		} else {
+//			belt_remind_switch.setBackgroundResource(R.drawable.open_remind);
+//			isOpenBeltLost = true;
+////			startAntiLostService();
+//		}
+//		ApplicationSharedPreferences.setHasOpenAntiLostRemind(this, isOpenBeltLost);
 		
 	}
 	private void set_antilost_ring() {
