@@ -53,7 +53,7 @@ public class AntiLostNotification {
 		String[] strs =  mContext.getResources().getStringArray(R.array.anti_lost_phone_remind_message);
 		
 		notification.setLatestEventInfo(mContext,
-				mContext.getString(R.string.anti_lost_remind),  strs[get_random(strs.length)], pendingIntent);
+				mContext.getString(R.string.anti_lost_remind),  "手机检测到与腰带断开了连接", pendingIntent);
 		
 		//声音和震动单独提取
 		

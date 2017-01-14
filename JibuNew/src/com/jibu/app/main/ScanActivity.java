@@ -616,7 +616,7 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 			//窗口消失就要停止扫描任务
 			@Override
 			public void onDismiss(DialogInterface dialog) {
-				if (scanTask != null) stopScan();
+				 stopScan();
 			}
 		});
 		
@@ -667,7 +667,7 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 						deviceSelDialog.dismiss();
 					}
 					deviceSelDialog = null;
-					
+					waitClose();
 					break;
 				}
 			}
@@ -712,6 +712,7 @@ public class ScanActivity extends WaitingActivity implements OnClickListener, On
 				case R.id.id_textview_cancel_at_connecting:
 //					VLBleServiceManager.getInstance().unBindService(getApplication());
 //					sdk.unBindDevice(null);
+					waitClose();
 					sdk.disConnectDevice();
 					E3AKeeper.getInstance().unBinderDevice(getApplication());
 					if (connectingDialog != null) {

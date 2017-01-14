@@ -251,6 +251,7 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			@Override
 			public void disConnected() {
 //				ToastUtil.toast("断开了设备连接");
+				Log.e(TAG, "断开了设备连接");
                 if (hasConnected) {
                 	FindPhoneNotify.getInstance().phoneIfNotify(MainActivity.this);
                 }
@@ -264,7 +265,8 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			
 			@Override
 			public void connected() {
-				ToastUtil.toast("已成功连接设备");
+//				ToastUtil.toast("已成功连接设备");
+				Log.e(TAG, "已成功连接设备");
 				hasConnected = true;
 			}
 			

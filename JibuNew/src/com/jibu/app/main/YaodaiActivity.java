@@ -21,6 +21,7 @@ import com.szants.bracelet.bean.BleDeviceData;
 import com.szants.bracelet.bean.BleUserInfoBean;
 import com.szants.bracelet.bletask.BleCallBack;
 import com.szants.bracelet.bletask.BleProgressCallback;
+import com.szants.bracelet.bletask.BleQueryPowerValueTask;
 import com.szants.bracelet.bletask.BleReBootOrResetParamsDeviceRask;
 import com.szants.bracelet.bletask.UpdateFirmwareUtil;
 import com.szants.hw.bledevice.BraceletNewDevice;
@@ -47,13 +48,15 @@ import android.widget.TextView;
 
 public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 
+	private final String TAG = "YaodaiActivity";
+	
 	public static YaodaiActivity activity = null;
 	
 	public final int REQUREST_UPDATEFIREWARE = 0xC;
 	
-	public static final String FIREWARE_NAME = "SMART_BELT_V4.img";
+	public static final String FIREWARE_NAME = "SMART_BELT_V6.img";
 	
-	private static int HW_VERION_BY_ASSERT = 4;
+	private static int HW_VERION_BY_ASSERT = 6;
 	
 	MainApplication mainApplication;
 	
@@ -96,7 +99,7 @@ public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 			userService = new UserService(this);
 		
 //		syncParams(user);
-//			queryPower();
+			queryPower();
 			initView();
 
 		}
@@ -182,19 +185,19 @@ public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 			break;
 		case R.id.id_roundProgressBar2:
 			
-			if(!isShowSync){
-				
-//				long timeJiange = System.currentTimeMillis()-user.updateTime;
-//				if(timeJiange>=(15*60*1000)){
-				
-					isShowSync = true;
-					
-					textViewUpdateTime.setText(R.string.syncing);
-					syncSportDataByUpdateTime(user.updateTime);
-//				}else{
-//					ToastUtil.toast("您已同步，请稍后在同步数据！");
-//				}
-			}
+//			if(!isShowSync){
+//				
+////				long timeJiange = System.currentTimeMillis()-user.updateTime;
+////				if(timeJiange>=(15*60*1000)){
+//				
+//					isShowSync = true;
+//					
+//					textViewUpdateTime.setText(R.string.syncing);
+//					syncSportDataByUpdateTime(user.updateTime);
+////				}else{
+////					ToastUtil.toast("您已同步，请稍后在同步数据！");
+////				}
+//			}
 			
 			break;
 		}
@@ -650,6 +653,7 @@ public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 			imageViewDc.setBackgroundResource(R.drawable.dc_100);
 		}
 		
+		
 	}
 //	
 //	Handler queryPowerHandler = new Handler(){
@@ -674,13 +678,38 @@ public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 //	BleCallBack queryPowerCallBack = new BleCallBack(queryPowerHandler);
 //	
 //	
-//	private void queryPower(){
+	private void queryPower(){
 //		BleTask task = null;
 //		task = new BleQueryPowerValueTask(this, queryPowerCallBack);
 //		if(task!=null){
 //			task.work();
 //		}
-//	}
+		AntsBeltSDK.getInstance().queryDevicePower(new BleCallBack() {
+			
+			@Override
+			public void onStart(Object arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onFinish(Object arg0) {
+				// TODO Auto-generated method stub
+				int powerValue = (Integer) arg0; 
+				Log.e(TAG, "查询的电量为：" + powerValue);
+				ApplicationSharedPreferences.setDcValue(YaodaiActivity.this, powerValue);
+				showDc(powerValue);
+			}
+			
+			@Override
+			public void onFailed(Object arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	
+		
+	}
 	
 	
 //	Handler updateHandler = new Handler(){
@@ -858,29 +887,49 @@ public class YaodaiActivity extends WaitingActivity implements OnClickListener{
 	
 	private void reset(){
 		showWait();
-		new BleReBootOrResetParamsDeviceRask(this, new BleCallBack() {
+//		new BleReBootOrResetParamsDeviceRask(this, new BleCallBack() {
+//			
+//			@Override
+//			public void onStart(Object arg0) {
+//				// TODO Auto-generated method stub
+//
+//			}
+//			
+//			@Override
+//			public void onFinish(Object arg0) {
+//				// TODO Auto-generated method stub
+//				waitClose();
+//				ToastUtil.toast(R.string.revert_factory_set_success);
+//			}
+//			
+//			@Override
+//			public void onFailed(Object arg0) {
+//				// TODO Auto-generated method stub
+//				waitClose();
+//				ToastUtil.toast(R.string.revert_factory_set_fail);
+//				
+//			}
+//		}, BraceletNewDevice.RESET_ALL_CONTENT_AND_REBOOT);
+		AntsBeltSDK.getInstance().factoryReset(new BleCallBack() {
 			
 			@Override
-			public void onStart(Object arg0) {
-				// TODO Auto-generated method stub
-
+			public void onStart(Object startObject) {
+				
 			}
 			
 			@Override
-			public void onFinish(Object arg0) {
-				// TODO Auto-generated method stub
+			public void onFinish(Object result) {
 				waitClose();
-				ToastUtil.toast(R.string.revert_factory_set_success);
+				ToastUtil.toast(R.string.revert_factory_set_success);				
 			}
 			
 			@Override
-			public void onFailed(Object arg0) {
-				// TODO Auto-generated method stub
+			public void onFailed(Object error) {
 				waitClose();
 				ToastUtil.toast(R.string.revert_factory_set_fail);
 				
 			}
-		}, BraceletNewDevice.RESET_ALL_CONTENT_AND_REBOOT);
+		});
 	}	
 	
 	

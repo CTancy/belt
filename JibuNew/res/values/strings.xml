@@ -257,7 +257,8 @@
     <string name="setup_begin_time">设置开始时间</string>
     <string name="setup_end_time">设置结束时间</string>
     <!-- activity_anti_lost.xml -->
-    <string name="anti_lost_remind">手机防丢提醒</string>
+    <string name="anti_lost_remind">手机响铃提醒</string>
+    <string name="ebelt_lost_remind">皮带蜂鸣提醒</string>
     <string name="anti_lost">手机防丢</string>
     <string name="setup_antilost_distance">设置防丢距离</string>
     <string name="default_path">默认</string>
@@ -408,4 +409,6 @@
 	<string name="auth_error">授权错误</string>
 	<string name="auth_cancel">授权取消</string>
 	<string name="logining">正在登录</string>
+	
+	<string name="anti_lost_persist_run">使用手机防丢功能,建议设置应用长时间后台运行</string>
 </resources>

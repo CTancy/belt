@@ -47,7 +47,7 @@
                     android:layout_height="50.0dp"
                     android:background="#fff"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_below="@+id/id_linearlayout_title"
                      >
 
@@ -70,14 +70,23 @@
                         android:textColor="#25222a"
                         android:textSize="16.0dp" />
                 </RelativeLayout>
-                
+                       <TextView
+                    android:id = "@+id/id_textview_close_remind_no_recive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:alpha="0.25"
+                    android:text="@string/anti_lost_persist_run"
+                    android:textSize="12sp"
+                    ></TextView>
     			<!--  -->
     			<RelativeLayout
                     android:id="@+id/id_relativelayout_anti_lost_belt"
                     android:layout_width="match_parent"
                     android:layout_height="50.0dp"
                     android:background="#fff"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginBottom="10dp"
                      >
 
@@ -96,7 +105,7 @@
                         android:layout_marginLeft="10.0dp"
                         android:layout_marginTop="17.0dp"
                         android:layout_alignParentLeft="true"
-                        android:text="皮带提醒"
+                        android:text="@string/ebelt_lost_remind"
                         android:textColor="#25222a"
                         android:textSize="16.0dp" />
                 </RelativeLayout>

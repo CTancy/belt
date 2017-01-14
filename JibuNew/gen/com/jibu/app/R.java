@@ -896,15 +896,15 @@ containing a value of this type.
         public static final int current_time_tv=0x7f060151;
         public static final int disabled=0x7f060005;
         public static final int distance=0x7f060157;
-        public static final int dragView=0x7f060068;
+        public static final int dragView=0x7f060069;
         public static final int expanded=0x7f060011;
         public static final int file_icon=0x7f0600ec;
-        public static final int file_select_display_path=0x7f06003b;
-        public static final int file_select_list=0x7f06003c;
+        public static final int file_select_display_path=0x7f06003c;
+        public static final int file_select_list=0x7f06003d;
         public static final int file_text=0x7f0600ed;
         public static final int fl_inner=0x7f060142;
         public static final int flip=0x7f06000b;
-        public static final int fragmentContainer=0x7f06004a;
+        public static final int fragmentContainer=0x7f06004b;
         public static final int gridview=0x7f060000;
         public static final int head_contentLayout=0x7f060104;
         public static final int head_lastUpdatedTextView=0x7f060107;
@@ -921,67 +921,67 @@ containing a value of this type.
         public static final int id_bfbview=0x7f060125;
         public static final int id_button_cancel=0x7f0600f8;
         public static final int id_button_edit=0x7f0600f7;
-        public static final int id_button_kaishiceju=0x7f060039;
+        public static final int id_button_kaishiceju=0x7f06003a;
         public static final int id_button_share=0x7f0600c8;
         public static final int id_checkBox1=0x7f0600fb;
         public static final int id_checkBox_selected=0x7f0600f2;
-        public static final int id_drawerlayout=0x7f06005a;
-        public static final int id_edittext_code=0x7f060042;
+        public static final int id_drawerlayout=0x7f06005b;
+        public static final int id_edittext_code=0x7f060043;
         public static final int id_edittext_fix_info=0x7f060102;
         public static final int id_edittext_info=0x7f0600f6;
-        public static final int id_edittext_name=0x7f060085;
-        public static final int id_edittext_phone=0x7f060040;
-        public static final int id_edittext_pwd=0x7f060045;
+        public static final int id_edittext_name=0x7f060086;
+        public static final int id_edittext_phone=0x7f060041;
+        public static final int id_edittext_pwd=0x7f060046;
         public static final int id_histogramview=0x7f06010f;
-        public static final int id_imageview_anti_lost_belt_switch=0x7f060020;
+        public static final int id_imageview_anti_lost_belt_switch=0x7f060021;
         public static final int id_imageview_anti_lost_switch=0x7f06001e;
         public static final int id_imageview_begin_time=0x7f0600b0;
         public static final int id_imageview_begin_time_next=0x7f0600b1;
-        public static final int id_imageview_code=0x7f060041;
-        public static final int id_imageview_data_revert=0x7f060057;
-        public static final int id_imageview_data_revert_next=0x7f060058;
+        public static final int id_imageview_code=0x7f060042;
+        public static final int id_imageview_data_revert=0x7f060058;
+        public static final int id_imageview_data_revert_next=0x7f060059;
         public static final int id_imageview_dc=0x7f0600da;
         public static final int id_imageview_device_xinhao=0x7f060100;
         public static final int id_imageview_end_time=0x7f0600b4;
         public static final int id_imageview_end_time_next=0x7f0600b5;
         public static final int id_imageview_event_icon=0x7f060129;
-        public static final int id_imageview_eye=0x7f060044;
+        public static final int id_imageview_eye=0x7f060045;
         public static final int id_imageview_huifu=0x7f0600de;
         public static final int id_imageview_loading=0x7f060109;
-        public static final int id_imageview_more_anti_lost=0x7f06007e;
-        public static final int id_imageview_more_long_sit=0x7f06007c;
-        public static final int id_imageview_move=0x7f06006d;
-        public static final int id_imageview_my=0x7f06007d;
+        public static final int id_imageview_more_anti_lost=0x7f06007f;
+        public static final int id_imageview_more_long_sit=0x7f06007d;
+        public static final int id_imageview_move=0x7f06006e;
+        public static final int id_imageview_my=0x7f06007e;
         public static final int id_imageview_my_head=0x7f06008a;
-        public static final int id_imageview_my_next=0x7f060026;
-        public static final int id_imageview_my_no_move=0x7f060084;
+        public static final int id_imageview_my_next=0x7f060027;
+        public static final int id_imageview_my_no_move=0x7f060085;
         public static final int id_imageview_my_no_move_next=0x7f0600a2;
         public static final int id_imageview_my_sex=0x7f06008c;
         public static final int id_imageview_my_shock_remind=0x7f0600a9;
-        public static final int id_imageview_my_step=0x7f060081;
-        public static final int id_imageview_my_step_next=0x7f060082;
-        public static final int id_imageview_no_alarm_switch=0x7f060087;
-        public static final int id_imageview_no_alert_next=0x7f06002a;
-        public static final int id_imageview_no_move=0x7f060070;
-        public static final int id_imageview_phone=0x7f06003e;
+        public static final int id_imageview_my_step=0x7f060082;
+        public static final int id_imageview_my_step_next=0x7f060083;
+        public static final int id_imageview_no_alarm_switch=0x7f060088;
+        public static final int id_imageview_no_alert_next=0x7f06002b;
+        public static final int id_imageview_no_move=0x7f060071;
+        public static final int id_imageview_phone=0x7f06003f;
         public static final int id_imageview_pidai=0x7f0600b8;
         public static final int id_imageview_popup=0x7f06013c;
         public static final int id_imageview_popup_icon=0x7f060138;
-        public static final int id_imageview_pwd=0x7f060043;
+        public static final int id_imageview_pwd=0x7f060044;
         public static final int id_imageview_ring=0x7f0600a5;
         public static final int id_imageview_ring_next=0x7f0600a6;
         public static final int id_imageview_sex_man=0x7f060134;
         public static final int id_imageview_sex_woman=0x7f060133;
-        public static final int id_imageview_share=0x7f06007f;
+        public static final int id_imageview_share=0x7f060080;
         public static final int id_imageview_shock_remind=0x7f0600a8;
         public static final int id_imageview_time_next=0x7f0600ad;
         public static final int id_imageview_time_setup=0x7f0600ac;
         public static final int id_imageview_unbind=0x7f0600e0;
         public static final int id_imageview_update=0x7f0600df;
-        public static final int id_imageview_user_head=0x7f06005e;
+        public static final int id_imageview_user_head=0x7f06005f;
         public static final int id_imageview_wifi_icon=0x7f0600f9;
-        public static final int id_imageview_yaodai=0x7f06007a;
-        public static final int id_left_menu=0x7f06005b;
+        public static final int id_imageview_yaodai=0x7f06007b;
+        public static final int id_left_menu=0x7f06005c;
         public static final int id_linearlayout=0x7f0600fc;
         public static final int id_linearlayout_biaodu_1=0x7f060110;
         public static final int id_linearlayout_biaodu_2=0x7f060112;
@@ -991,15 +991,15 @@ containing a value of this type.
         public static final int id_linearlayout_biaodu_6=0x7f06011a;
         public static final int id_linearlayout_biaodu_7=0x7f06011c;
         public static final int id_linearlayout_devices=0x7f060135;
-        public static final int id_linearlayout_drawview=0x7f06006b;
+        public static final int id_linearlayout_drawview=0x7f06006c;
         public static final int id_linearlayout_loading=0x7f060108;
-        public static final int id_linearlayout_main=0x7f060077;
-        public static final int id_linearlayout_menu_ceju=0x7f060062;
-        public static final int id_linearlayout_menu_long_sit=0x7f060060;
-        public static final int id_linearlayout_menu_my_ebelt=0x7f060063;
-        public static final int id_linearlayout_menu_phone_antilost=0x7f060061;
-        public static final int id_linearlayout_menu_setup=0x7f060066;
-        public static final int id_linearlayout_menu_share=0x7f060065;
+        public static final int id_linearlayout_main=0x7f060078;
+        public static final int id_linearlayout_menu_ceju=0x7f060063;
+        public static final int id_linearlayout_menu_long_sit=0x7f060061;
+        public static final int id_linearlayout_menu_my_ebelt=0x7f060064;
+        public static final int id_linearlayout_menu_phone_antilost=0x7f060062;
+        public static final int id_linearlayout_menu_setup=0x7f060067;
+        public static final int id_linearlayout_menu_share=0x7f060066;
         public static final int id_linearlayout_my_height=0x7f06008d;
         public static final int id_linearlayout_my_waist=0x7f060091;
         public static final int id_linearlayout_my_weight=0x7f06008f;
@@ -1009,41 +1009,41 @@ containing a value of this type.
         public static final int id_linearlayout_title_center=0x7f060016;
         public static final int id_linearlayout_title_left=0x7f060014;
         public static final int id_linearlayout_title_right=0x7f060018;
-        public static final int id_linearlayout_tongji=0x7f060072;
-        public static final int id_list=0x7f060074;
+        public static final int id_linearlayout_tongji=0x7f060073;
+        public static final int id_list=0x7f060075;
         public static final int id_listView_device_list=0x7f060141;
         public static final int id_listView_upload_list=0x7f06014e;
         public static final int id_listview=0x7f0601c0;
-        public static final int id_listview_ceju_history=0x7f06003a;
+        public static final int id_listview_ceju_history=0x7f06003b;
         public static final int id_listview_wifi=0x7f0600ba;
         public static final int id_ll1=0x7f06010b;
         public static final int id_ll2=0x7f06010c;
-        public static final int id_ll_ceju_info=0x7f060033;
-        public static final int id_ll_ceju_ing=0x7f060030;
+        public static final int id_ll_ceju_info=0x7f060034;
+        public static final int id_ll_ceju_ing=0x7f060031;
         public static final int id_ll_icon=0x7f060127;
         public static final int id_ll_info=0x7f0600f5;
-        public static final int id_ll_juli=0x7f06002d;
+        public static final int id_ll_juli=0x7f06002e;
         public static final int id_ll_number_picker=0x7f060161;
         public static final int id_ll_share=0x7f060159;
         public static final int id_ll_time_setting=0x7f0600aa;
         public static final int id_nomovetongjiview=0x7f060126;
         public static final int id_popup_info=0x7f060137;
-        public static final int id_processbar_refreshing=0x7f060075;
+        public static final int id_processbar_refreshing=0x7f060076;
         public static final int id_processbar_searching=0x7f060140;
         public static final int id_progressbar_=0x7f0600ea;
         public static final int id_progressview=0x7f0600cc;
-        public static final int id_pull_refresh_viewpager=0x7f060078;
+        public static final int id_pull_refresh_viewpager=0x7f060079;
         public static final int id_relativelayout=0x7f0600fd;
         public static final int id_relativelayout_anti_lost=0x7f06001d;
-        public static final int id_relativelayout_anti_lost_belt=0x7f06001f;
+        public static final int id_relativelayout_anti_lost_belt=0x7f060020;
         public static final int id_relativelayout_begin_time=0x7f0600af;
-        public static final int id_relativelayout_data_revert=0x7f060056;
+        public static final int id_relativelayout_data_revert=0x7f060057;
         public static final int id_relativelayout_end_time=0x7f0600b3;
         public static final int id_relativelayout_longsit=0x7f0600c4;
-        public static final int id_relativelayout_my_no_move=0x7f060053;
-        public static final int id_relativelayout_my_step=0x7f060080;
-        public static final int id_relativelayout_no_alarm=0x7f060086;
-        public static final int id_relativelayout_no_alert_area=0x7f060029;
+        public static final int id_relativelayout_my_no_move=0x7f060054;
+        public static final int id_relativelayout_my_step=0x7f060081;
+        public static final int id_relativelayout_no_alarm=0x7f060087;
+        public static final int id_relativelayout_no_alert_area=0x7f06002a;
         public static final int id_relativelayout_no_alert_select_wifi=0x7f060089;
         public static final int id_relativelayout_ring_remind=0x7f0600a4;
         public static final int id_relativelayout_shock_remind=0x7f0600a7;
@@ -1054,22 +1054,22 @@ containing a value of this type.
         public static final int id_relativelayout_welcome=0x7f0600d8;
         public static final int id_revert=0x7f060015;
         public static final int id_rg=0x7f0600bb;
-        public static final int id_rl_ceju=0x7f06002c;
+        public static final int id_rl_ceju=0x7f06002d;
         public static final int id_rl_ebelt_website=0x7f060019;
-        public static final int id_rl_juliyuanjin=0x7f060021;
-        public static final int id_rl_ring_set=0x7f060025;
-        public static final int id_rl_setup_distance=0x7f060023;
+        public static final int id_rl_juliyuanjin=0x7f060022;
+        public static final int id_rl_ring_set=0x7f060026;
+        public static final int id_rl_setup_distance=0x7f060024;
         public static final int id_rl_to_score=0x7f06001c;
-        public static final int id_roundProgressBar=0x7f06005c;
+        public static final int id_roundProgressBar=0x7f06005d;
         public static final int id_roundProgressBar2=0x7f0600dc;
-        public static final int id_roundProgressBar3=0x7f060051;
+        public static final int id_roundProgressBar3=0x7f060052;
         public static final int id_roundprogressbar_update_fireware=0x7f0600d6;
-        public static final int id_seekbar_rssi=0x7f060024;
+        public static final int id_seekbar_rssi=0x7f060025;
         public static final int id_smartview_sport_bg=0x7f0600c0;
         public static final int id_textView_one_year=0x7f0600a1;
         public static final int id_textView_title=0x7f060160;
         public static final int id_textview_app_version=0x7f06001b;
-        public static final int id_textview_app_version_state=0x7f060054;
+        public static final int id_textview_app_version_state=0x7f060055;
         public static final int id_textview_begin_time=0x7f0600b2;
         public static final int id_textview_biaodu_1=0x7f060111;
         public static final int id_textview_biaodu_2=0x7f060113;
@@ -1078,18 +1078,18 @@ containing a value of this type.
         public static final int id_textview_biaodu_5=0x7f060119;
         public static final int id_textview_biaodu_6=0x7f06011b;
         public static final int id_textview_biaodu_7=0x7f06011d;
-        public static final int id_textview_buchang=0x7f060038;
-        public static final int id_textview_bushu=0x7f060034;
+        public static final int id_textview_buchang=0x7f060039;
+        public static final int id_textview_bushu=0x7f060035;
         public static final int id_textview_cal=0x7f0600cb;
-        public static final int id_textview_call=0x7f06004f;
+        public static final int id_textview_call=0x7f060050;
         public static final int id_textview_cancel=0x7f0600be;
         public static final int id_textview_cancel_at_connecting=0x7f0600eb;
         public static final int id_textview_cancel_at_qiaoji=0x7f06013d;
         public static final int id_textview_cancel_upload=0x7f06014f;
-        public static final int id_textview_ceju1=0x7f060031;
-        public static final int id_textview_ceju2=0x7f060032;
+        public static final int id_textview_ceju1=0x7f060032;
+        public static final int id_textview_ceju2=0x7f060033;
         public static final int id_textview_ceju_m=0x7f06010d;
-        public static final int id_textview_close_remind_no_recive=0x7f060088;
+        public static final int id_textview_close_remind_no_recive=0x7f06001f;
         public static final int id_textview_complete_bfb=0x7f0600d7;
         public static final int id_textview_connect_at_scan=0x7f0600b9;
         public static final int id_textview_connecting_title=0x7f0600e9;
@@ -1103,15 +1103,15 @@ containing a value of this type.
         public static final int id_textview_end_time=0x7f0600b6;
         public static final int id_textview_fireware_version=0x7f06001a;
         public static final int id_textview_fix_data=0x7f060103;
-        public static final int id_textview_forget=0x7f06004b;
-        public static final int id_textview_getcode=0x7f06003f;
-        public static final int id_textview_has_new_version=0x7f060055;
-        public static final int id_textview_juli1=0x7f06002e;
-        public static final int id_textview_juli2=0x7f06002f;
-        public static final int id_textview_juliyuanjin=0x7f060022;
+        public static final int id_textview_forget=0x7f06004c;
+        public static final int id_textview_getcode=0x7f060040;
+        public static final int id_textview_has_new_version=0x7f060056;
+        public static final int id_textview_juli1=0x7f06002f;
+        public static final int id_textview_juli2=0x7f060030;
+        public static final int id_textview_juliyuanjin=0x7f060023;
         public static final int id_textview_length=0x7f0600ca;
         public static final int id_textview_lianxudabiaotianshu=0x7f06009b;
-        public static final int id_textview_login=0x7f060048;
+        public static final int id_textview_login=0x7f060049;
         public static final int id_textview_longest_sit_day=0x7f060093;
         public static final int id_textview_longest_sit_day_year=0x7f060094;
         public static final int id_textview_longest_sit_time=0x7f060095;
@@ -1119,36 +1119,36 @@ containing a value of this type.
         public static final int id_textview_longest_sport_day_year=0x7f060097;
         public static final int id_textview_longest_sport_step=0x7f060098;
         public static final int id_textview_message=0x7f06010a;
-        public static final int id_textview_move_time_bfb=0x7f06006c;
-        public static final int id_textview_move_time_total=0x7f06006e;
-        public static final int id_textview_my_belt=0x7f060052;
-        public static final int id_textview_my_ebelt=0x7f060064;
-        public static final int id_textview_my_exit=0x7f060059;
+        public static final int id_textview_move_time_bfb=0x7f06006d;
+        public static final int id_textview_move_time_total=0x7f06006f;
+        public static final int id_textview_my_belt=0x7f060053;
+        public static final int id_textview_my_ebelt=0x7f060065;
+        public static final int id_textview_my_exit=0x7f06005a;
         public static final int id_textview_my_height=0x7f06008e;
         public static final int id_textview_my_name=0x7f06008b;
-        public static final int id_textview_my_step=0x7f060083;
+        public static final int id_textview_my_step=0x7f060084;
         public static final int id_textview_my_waist=0x7f060092;
         public static final int id_textview_my_weight=0x7f060090;
-        public static final int id_textview_no_alert_switch=0x7f06002b;
-        public static final int id_textview_no_move=0x7f06005d;
-        public static final int id_textview_no_move_time_bfb=0x7f06006f;
-        public static final int id_textview_no_move_time_total=0x7f060071;
-        public static final int id_textview_ok=0x7f060046;
-        public static final int id_textview_phone_reg=0x7f060049;
-        public static final int id_textview_pinlv=0x7f060037;
+        public static final int id_textview_no_alert_switch=0x7f06002c;
+        public static final int id_textview_no_move=0x7f06005e;
+        public static final int id_textview_no_move_time_bfb=0x7f060070;
+        public static final int id_textview_no_move_time_total=0x7f060072;
+        public static final int id_textview_ok=0x7f060047;
+        public static final int id_textview_phone_reg=0x7f06004a;
+        public static final int id_textview_pinlv=0x7f060038;
         public static final int id_textview_popup_cannel=0x7f06013e;
         public static final int id_textview_popup_info=0x7f06013a;
         public static final int id_textview_popup_ok=0x7f06013b;
         public static final int id_textview_popup_title=0x7f060139;
-        public static final int id_textview_qq_login=0x7f06004d;
-        public static final int id_textview_reg=0x7f06004e;
+        public static final int id_textview_qq_login=0x7f06004e;
+        public static final int id_textview_reg=0x7f06004f;
         public static final int id_textview_resel=0x7f060136;
-        public static final int id_textview_ring_filename=0x7f060028;
-        public static final int id_textview_ring_type=0x7f060027;
+        public static final int id_textview_ring_filename=0x7f060029;
+        public static final int id_textview_ring_type=0x7f060028;
         public static final int id_textview_save_data=0x7f06010e;
         public static final int id_textview_searching=0x7f06013f;
         public static final int id_textview_select_head=0x7f06014d;
-        public static final int id_textview_setup=0x7f060050;
+        public static final int id_textview_setup=0x7f060051;
         public static final int id_textview_shang_xian=0x7f060128;
         public static final int id_textview_share=0x7f06015a;
         public static final int id_textview_sit_time=0x7f0600c5;
@@ -1156,14 +1156,14 @@ containing a value of this type.
         public static final int id_textview_sit_time_total_title=0x7f06009f;
         public static final int id_textview_sport_distance_total_title=0x7f06009c;
         public static final int id_textview_sport_info=0x7f06012c;
-        public static final int id_textview_sport_stastic_value=0x7f060073;
+        public static final int id_textview_sport_stastic_value=0x7f060074;
         public static final int id_textview_sport_step=0x7f0600c3;
         public static final int id_textview_sport_time_perid=0x7f06012b;
         public static final int id_textview_sport_type=0x7f0600c6;
         public static final int id_textview_sport_value=0x7f0600c7;
         public static final int id_textview_step=0x7f0600f4;
         public static final int id_textview_step_or_time=0x7f0600c2;
-        public static final int id_textview_sudu=0x7f060036;
+        public static final int id_textview_sudu=0x7f060037;
         public static final int id_textview_sync_time=0x7f0600ce;
         public static final int id_textview_time_interval=0x7f0600ae;
         public static final int id_textview_timestamp=0x7f0600f3;
@@ -1172,7 +1172,7 @@ containing a value of this type.
         public static final int id_textview_title_tongji_day=0x7f0600d0;
         public static final int id_textview_title_tongji_month=0x7f0600d2;
         public static final int id_textview_title_tongji_week=0x7f0600d1;
-        public static final int id_textview_title_update_time=0x7f060076;
+        public static final int id_textview_title_update_time=0x7f060077;
         public static final int id_textview_tongji_cal=0x7f060124;
         public static final int id_textview_tongji_length=0x7f060123;
         public static final int id_textview_tongji_move=0x7f060121;
@@ -1181,23 +1181,23 @@ containing a value of this type.
         public static final int id_textview_tongji_step=0x7f060122;
         public static final int id_textview_tongji_time=0x7f06011e;
         public static final int id_textview_totoal_distance=0x7f06009d;
-        public static final int id_textview_update_time=0x7f060079;
+        public static final int id_textview_update_time=0x7f06007a;
         public static final int id_textview_updating_fireware=0x7f0600d4;
         public static final int id_textview_updating_info=0x7f0600d5;
-        public static final int id_textview_user_name=0x7f06005f;
+        public static final int id_textview_user_name=0x7f060060;
         public static final int id_textview_version=0x7f0600d9;
         public static final int id_textview_wifi_name=0x7f0600fa;
-        public static final int id_textview_wx_login=0x7f06004c;
+        public static final int id_textview_wx_login=0x7f06004d;
         public static final int id_textview_xia_xian=0x7f06012a;
         public static final int id_textview_xinghao=0x7f0600dd;
-        public static final int id_textview_yaodai=0x7f06007b;
-        public static final int id_textview_yongshi=0x7f060035;
+        public static final int id_textview_yaodai=0x7f06007c;
+        public static final int id_textview_yongshi=0x7f060036;
         public static final int id_timepicker=0x7f0600cf;
         public static final int id_viewflipper_main=0x7f0600d3;
-        public static final int id_waveview=0x7f06006a;
+        public static final int id_waveview=0x7f06006b;
         public static final int info1=0x7f060132;
         public static final int itemDataTv=0x7f0601c1;
-        public static final int list=0x7f060069;
+        public static final int list=0x7f06006a;
         public static final int listView=0x7f06017e;
         public static final int ll1=0x7f060153;
         public static final int loading=0x7f06015f;
@@ -1205,7 +1205,7 @@ containing a value of this type.
         public static final int loadmore_view=0x7f06012d;
         public static final int loadstate_iv=0x7f060131;
         public static final int loadstate_tv=0x7f060130;
-        public static final int login_bottom=0x7f060047;
+        public static final int login_bottom=0x7f060048;
         public static final int manualOnly=0x7f060006;
         public static final int minuteicker=0x7f060163;
         public static final int next_btn=0x7f0600e7;
@@ -1227,7 +1227,7 @@ containing a value of this type.
         public static final int rb0=0x7f0600bc;
         public static final int rb1=0x7f0600bd;
         public static final int refreshing_icon=0x7f06014a;
-        public static final int reg_content=0x7f06003d;
+        public static final int reg_content=0x7f06003e;
         public static final int rotate=0x7f06000c;
         public static final int scrollview=0x7f060002;
         public static final int search_text=0x7f06017d;
@@ -1237,7 +1237,7 @@ containing a value of this type.
         public static final int share_data=0x7f060155;
         public static final int sit=0x7f060156;
         public static final int slideBar=0x7f06017f;
-        public static final int sliding_layout=0x7f060067;
+        public static final int sliding_layout=0x7f060068;
         public static final int sportshare_rll=0x7f060150;
         public static final int state_iv=0x7f06014c;
         public static final int state_tv=0x7f06014b;
@@ -1438,28 +1438,29 @@ containing a value of this type.
         public static final int main=0x7f0b0000;
     }
     public static final class string {
-        public static final int UMAppUpdate=0x7f070185;
-        public static final int UMBreak_Network=0x7f07017d;
-        public static final int UMDialog_InstallAPK=0x7f070189;
-        public static final int UMGprsCondition=0x7f070183;
-        public static final int UMIgnore=0x7f070187;
-        public static final int UMNewVersion=0x7f07017f;
-        public static final int UMNotNow=0x7f070186;
-        public static final int UMTargetSize=0x7f070182;
-        public static final int UMToast_IsUpdating=0x7f070188;
-        public static final int UMUpdateCheck=0x7f07018a;
-        public static final int UMUpdateContent=0x7f070180;
-        public static final int UMUpdateNow=0x7f070184;
-        public static final int UMUpdateSize=0x7f070181;
-        public static final int UMUpdateTitle=0x7f07017e;
+        public static final int UMAppUpdate=0x7f070187;
+        public static final int UMBreak_Network=0x7f07017f;
+        public static final int UMDialog_InstallAPK=0x7f07018b;
+        public static final int UMGprsCondition=0x7f070185;
+        public static final int UMIgnore=0x7f070189;
+        public static final int UMNewVersion=0x7f070181;
+        public static final int UMNotNow=0x7f070188;
+        public static final int UMTargetSize=0x7f070184;
+        public static final int UMToast_IsUpdating=0x7f07018a;
+        public static final int UMUpdateCheck=0x7f07018c;
+        public static final int UMUpdateContent=0x7f070182;
+        public static final int UMUpdateNow=0x7f070186;
+        public static final int UMUpdateSize=0x7f070183;
+        public static final int UMUpdateTitle=0x7f070180;
         public static final int about=0x7f070040;
         /**  about_us.xml 
  about_us.xml 
          */
         public static final int about_us=0x7f070022;
         public static final int action_settings=0x7f070007;
-        public static final int already_complete=0x7f0700f0;
-        public static final int anti_lost=0x7f0700c9;
+        public static final int already_complete=0x7f0700f1;
+        public static final int anti_lost=0x7f0700ca;
+        public static final int anti_lost_persist_run=0x7f070135;
         /**  activity_anti_lost.xml 
  activity_anti_lost.xml 
          */
@@ -1471,46 +1472,46 @@ containing a value of this type.
         public static final int at_yesterday_hh_mm_sync=0x7f070082;
         /**  LoginAndRegActivity.java 
          */
-        public static final int auth_begin=0x7f07012f;
-        public static final int auth_cancel=0x7f070132;
-        public static final int auth_complete=0x7f070130;
-        public static final int auth_error=0x7f070131;
-        public static final int b_sit=0x7f0700ed;
-        public static final int b_sport=0x7f0700ea;
+        public static final int auth_begin=0x7f070130;
+        public static final int auth_cancel=0x7f070133;
+        public static final int auth_complete=0x7f070131;
+        public static final int auth_error=0x7f070132;
+        public static final int b_sit=0x7f0700ee;
+        public static final int b_sport=0x7f0700eb;
         public static final int back_will_lost_unsave_settings=0x7f0700ad;
-        public static final int begin_ceju=0x7f07010c;
+        public static final int begin_ceju=0x7f07010d;
         public static final int begin_update_fireware_version=0x7f0700b8;
-        public static final int bind_failed=0x7f0700df;
+        public static final int bind_failed=0x7f0700e0;
         public static final int binding_device=0x7f0700a4;
         public static final int born_unit=0x7f07000c;
-        public static final int buchang=0x7f070115;
-        public static final int bushu=0x7f070111;
+        public static final int buchang=0x7f070116;
+        public static final int bushu=0x7f070112;
         public static final int caluly=0x7f070051;
         public static final int can_not_find_version_name=0x7f070025;
         public static final int cancel=0x7f070020;
         /**  activity_ceju 
          */
-        public static final int ceju=0x7f07010b;
-        public static final int ceju_ing=0x7f07010d;
-        public static final int ceju_ing_info=0x7f070110;
+        public static final int ceju=0x7f07010c;
+        public static final int ceju_ing=0x7f07010e;
+        public static final int ceju_ing_info=0x7f070111;
         public static final int check_connecting=0x7f07006a;
-        public static final int check_device_close_phone_to_ebelt=0x7f0700e0;
+        public static final int check_device_close_phone_to_ebelt=0x7f0700e1;
         public static final int check_version=0x7f070045;
         public static final int choose_picture=0x7f070092;
         /**  timepickerdialog.xml 
  timepickerdialog.xml 
          */
-        public static final int choose_start_time=0x7f0700e3;
+        public static final int choose_start_time=0x7f0700e4;
         public static final int click_ebelt_scan=0x7f07004d;
-        public static final int click_to_add_wi_fi=0x7f0700d1;
+        public static final int click_to_add_wi_fi=0x7f0700d2;
         /**  popup_bind_fail.xml 
  popup_bind_fail.xml 
          */
-        public static final int click_to_bind_ebelt=0x7f0700de;
-        public static final int clock=0x7f0700e4;
-        public static final int close=0x7f0700cf;
-        public static final int close_ceju=0x7f070119;
-        public static final int close_ceju_failed=0x7f07011a;
+        public static final int click_to_bind_ebelt=0x7f0700df;
+        public static final int clock=0x7f0700e5;
+        public static final int close=0x7f0700d0;
+        public static final int close_ceju=0x7f07011a;
+        public static final int close_ceju_failed=0x7f07011b;
         public static final int close_remind_no_recive=0x7f070065;
         public static final int code=0x7f07001b;
         public static final int code_has_send=0x7f070097;
@@ -1522,7 +1523,7 @@ containing a value of this type.
         public static final int conect_time_out=0x7f070047;
         public static final int confirm=0x7f07001d;
         public static final int confirm_back=0x7f0700ac;
-        public static final int confirm_delete_ceju_item=0x7f070124;
+        public static final int confirm_delete_ceju_item=0x7f070125;
         /**  activity main 
  activity main 
          */
@@ -1541,19 +1542,19 @@ containing a value of this type.
         public static final int connect_ebelt=0x7f07004a;
         public static final int connect_success_sycn=0x7f070035;
         public static final int connecting=0x7f070034;
-        public static final int dabiaozongtianshu=0x7f0700fc;
+        public static final int dabiaozongtianshu=0x7f0700fd;
         public static final int data_revert=0x7f070043;
         /**  activity_main.xml 
  activity_main.xml 
          */
         public static final int date=0x7f070033;
-        public static final int date_week=0x7f0700d8;
+        public static final int date_week=0x7f0700d9;
         /**  activity_tongji.xml 
  activity_tongji.xml 
          */
         public static final int day=0x7f070052;
-        public static final int default_path=0x7f0700cb;
-        public static final int delete=0x7f070134;
+        public static final int default_path=0x7f0700cc;
+        public static final int delete=0x7f070136;
         public static final int device_bind_success=0x7f0700a3;
         /**  scanActivity.java 
  scanActivity.java 
@@ -1564,18 +1565,19 @@ containing a value of this type.
          */
         public static final int disclaimer=0x7f070049;
         public static final int distance=0x7f070012;
-        public static final int download_yet=0x7f070128;
+        public static final int download_yet=0x7f070129;
         public static final int e_belt=0x7f07002b;
-        public static final int earth_around=0x7f0700f8;
+        public static final int earth_around=0x7f0700f9;
+        public static final int ebelt_lost_remind=0x7f0700c9;
         /**  activity_update_fireware 
  activity_update_fireware 
          */
-        public static final int ebelt_updating_fireware=0x7f0700ee;
-        public static final int ebelt_updating_fireware_info=0x7f0700ef;
+        public static final int ebelt_updating_fireware=0x7f0700ef;
+        public static final int ebelt_updating_fireware_info=0x7f0700f0;
         public static final int ebelt_website=0x7f070026;
         public static final int ebelt_website_address=0x7f070029;
-        public static final int edit=0x7f070121;
-        public static final int end_ceju=0x7f07010e;
+        public static final int edit=0x7f070122;
+        public static final int end_ceju=0x7f07010f;
         public static final int end_time_not_earlier_than_start_time=0x7f0700ab;
         public static final int exit_account=0x7f070042;
         public static final int exit_not_recive_message=0x7f07008a;
@@ -1588,11 +1590,11 @@ containing a value of this type.
         public static final int fireware_version=0x7f070024;
         public static final int fireware_version_value=0x7f070028;
         public static final int five=0x7f07007c;
-        public static final int fix_input_ps=0x7f07011e;
+        public static final int fix_input_ps=0x7f07011f;
         /**  NameActivity 
  NameActivity 
          */
-        public static final int fix_name=0x7f070108;
+        public static final int fix_name=0x7f070109;
         public static final int fix_password_success=0x7f070096;
         public static final int forget_password=0x7f070031;
         public static final int four=0x7f07007b;
@@ -1600,20 +1602,20 @@ containing a value of this type.
         /**  personalActivity 
  personalActivity 
          */
-        public static final int gandeibucuo=0x7f0700ff;
+        public static final int gandeibucuo=0x7f070100;
         /**  activity_forget.xml 
  activity_forget.xml 
          */
         public static final int get_code=0x7f070019;
-        public static final int get_scode_error=0x7f07012b;
-        public static final int ground_around=0x7f0700fa;
+        public static final int get_scode_error=0x7f07012c;
+        public static final int ground_around=0x7f0700fb;
         public static final int has_new_version=0x7f070048;
         /**  pushToRefresh 
  pushToRefresh 
          */
         public static final int head=0x7f070067;
         public static final int healthy_life=0x7f070015;
-        public static final int healthy_statistics=0x7f0700f2;
+        public static final int healthy_statistics=0x7f0700f3;
         /**  activity_my.xml 
  activity_my.xml 
          */
@@ -1621,49 +1623,49 @@ containing a value of this type.
         public static final int height_unit=0x7f070010;
         public static final int hello_world=0x7f070008;
         public static final int hh_mm_update=0x7f07009e;
-        public static final int history_distance=0x7f070123;
-        public static final int history_record=0x7f070122;
+        public static final int history_distance=0x7f070124;
+        public static final int history_record=0x7f070123;
         /**  SetupLongSitRemindActivity.java 
  SetupLongSitRemindActivity.java 
          */
         public static final int hour=0x7f0700a5;
-        public static final int input_ps=0x7f07011d;
-        public static final int invalid_name=0x7f070109;
-        public static final int invalid_name_length=0x7f07010a;
+        public static final int input_ps=0x7f07011e;
+        public static final int invalid_name=0x7f07010a;
+        public static final int invalid_name_length=0x7f07010b;
         public static final int is_lastest_data=0x7f07006f;
         public static final int is_lastest_version=0x7f070046;
-        public static final int juli=0x7f07011c;
-        public static final int juli_m=0x7f070116;
-        public static final int kilometer=0x7f0700f7;
+        public static final int juli=0x7f07011d;
+        public static final int juli_m=0x7f070117;
+        public static final int kilometer=0x7f0700f8;
         public static final int let_phone_close_to_ebelt=0x7f07004c;
-        public static final int lianxudabiaotianshu=0x7f0700fd;
+        public static final int lianxudabiaotianshu=0x7f0700fe;
         public static final int loading=0x7f070090;
         public static final int login=0x7f07001e;
         public static final int login_fail_phone_number_password_wrong=0x7f070099;
         public static final int login_success=0x7f070098;
-        public static final int logining=0x7f070133;
+        public static final int logining=0x7f070134;
         public static final int long_sit=0x7f070011;
         /**  myNotification.java 
  myNotification.java 
          */
         public static final int long_sit_remind=0x7f0700a0;
-        public static final int long_sit_time=0x7f070101;
-        public static final int longest_sit_day=0x7f0700f3;
-        public static final int longest_sport_day=0x7f0700f4;
+        public static final int long_sit_time=0x7f070102;
+        public static final int longest_sit_day=0x7f0700f4;
+        public static final int longest_sport_day=0x7f0700f5;
         public static final int longsit_remind=0x7f07003f;
         public static final int longsit_setting=0x7f070060;
         public static final int longsit_setup_close_fail=0x7f0700a9;
         public static final int longsit_setup_close_success=0x7f0700aa;
-        public static final int longsit_times_total=0x7f0700f6;
-        public static final int m_sit=0x7f0700ec;
-        public static final int m_sport=0x7f0700e9;
+        public static final int longsit_times_total=0x7f0700f7;
+        public static final int m_sit=0x7f0700ed;
+        public static final int m_sport=0x7f0700ea;
         public static final int main_title=0x7f070009;
         public static final int man=0x7f070058;
         public static final int me=0x7f070038;
         /**  popup_info 
  popup_info 
          */
-        public static final int message_check_fail=0x7f0700e2;
+        public static final int message_check_fail=0x7f0700e3;
         public static final int min=0x7f07005f;
         public static final int minutes=0x7f0700a6;
         public static final int mm_month_dd_day=0x7f07009f;
@@ -1673,34 +1675,34 @@ containing a value of this type.
         public static final int monday=0x7f070071;
         public static final int month=0x7f070054;
         public static final int my_ebelt=0x7f070037;
-        public static final int n_meter=0x7f070120;
-        public static final int name=0x7f07011b;
+        public static final int n_meter=0x7f070121;
+        public static final int name=0x7f07011c;
         /**  syncDataToYunActivity 
          */
-        public static final int net_error=0x7f070125;
+        public static final int net_error=0x7f070126;
         public static final int net_wrong=0x7f07009c;
         public static final int new_password=0x7f07001c;
         public static final int next=0x7f07000d;
-        public static final int no_alert_area=0x7f0700cc;
-        public static final int no_alert_message=0x7f0700cd;
+        public static final int no_alert_area=0x7f0700cd;
+        public static final int no_alert_message=0x7f0700ce;
         /**  ScanActivity.java 
  ScanActivity.java 
          */
         public static final int no_device=0x7f07005a;
         public static final int not_remind=0x7f07008c;
         public static final int one=0x7f070078;
-        public static final int one_day=0x7f0700fb;
-        public static final int one_year=0x7f0700f9;
-        public static final int open=0x7f0700ce;
-        public static final int open_ceju=0x7f070117;
-        public static final int open_ceju_failed=0x7f070118;
+        public static final int one_day=0x7f0700fc;
+        public static final int one_year=0x7f0700fa;
+        public static final int open=0x7f0700cf;
+        public static final int open_ceju=0x7f070118;
+        public static final int open_ceju_failed=0x7f070119;
         public static final int open_longsit_remind=0x7f070063;
         public static final int open_soon=0x7f07009a;
         public static final int password=0x7f070030;
         /**  activity_personal_info 
  activity_personal_info 
          */
-        public static final int personal_info=0x7f0700f1;
+        public static final int personal_info=0x7f0700f2;
         public static final int personalinfo_title=0x7f07000a;
         public static final int personalinfo_warning=0x7f07000b;
         /**  activity_login.xml 
@@ -1715,7 +1717,7 @@ containing a value of this type.
         public static final int phone_number_password_code_null=0x7f070093;
         public static final int phone_number_password_null=0x7f070094;
         public static final int phone_register=0x7f070032;
-        public static final int pinlv=0x7f070114;
+        public static final int pinlv=0x7f070115;
         public static final int pre_sync_at=0x7f07007f;
         public static final int pull_to_refresh=0x7f070068;
         /**  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
@@ -1727,15 +1729,15 @@ containing a value of this type.
         public static final int pull_to_refresh_pull_label=0x7f070000;
         public static final int pull_to_refresh_refreshing_label=0x7f070002;
         public static final int pull_to_refresh_release_label=0x7f070001;
-        public static final int pull_to_refresh_tap_label=0x7f070145;
+        public static final int pull_to_refresh_tap_label=0x7f070147;
         /**  linearlayout_sync.xml 
  linearlayout_sync.xml 
          */
-        public static final int push_up=0x7f0700d6;
+        public static final int push_up=0x7f0700d7;
         public static final int qq_login=0x7f07002e;
         public static final int qurey_fireware_version=0x7f0700b7;
         public static final int reacquire_code=0x7f070021;
-        public static final int rechoose=0x7f0700e1;
+        public static final int rechoose=0x7f0700e2;
         public static final int refresh_fail=0x7f07006d;
         public static final int refresh_succeed=0x7f07006c;
         public static final int refreshing=0x7f07006b;
@@ -1748,14 +1750,14 @@ containing a value of this type.
         public static final int revert_factory_set_fail=0x7f0700ba;
         public static final int revert_factory_set_success=0x7f0700b9;
         public static final int ring=0x7f07005d;
-        public static final int s_sit=0x7f0700eb;
+        public static final int s_sit=0x7f0700ec;
         /**  MoveData.java 
  MoveData.java 
          */
-        public static final int s_sport=0x7f0700e8;
+        public static final int s_sport=0x7f0700e9;
         public static final int saturday=0x7f070076;
-        public static final int save=0x7f07011f;
-        public static final int save_ceju=0x7f07010f;
+        public static final int save=0x7f070120;
+        public static final int save_ceju=0x7f070110;
         /**  getPhoto.java 
  getPhoto.java 
          */
@@ -1768,23 +1770,23 @@ containing a value of this type.
         public static final int searching_devices=0x7f070016;
         public static final int searching_failed=0x7f070055;
         public static final int select_devices=0x7f070017;
-        public static final int select_xinren_wifi=0x7f0700d3;
+        public static final int select_xinren_wifi=0x7f0700d4;
         /**  activity_main_menu.xml 
  activity_main_menu.xml 
          */
-        public static final int setup=0x7f0700e7;
+        public static final int setup=0x7f0700e8;
         /**  born.xml 
  born.xml 
          */
-        public static final int setup_age=0x7f0700d4;
-        public static final int setup_already=0x7f0700d2;
-        public static final int setup_antilost_distance=0x7f0700ca;
+        public static final int setup_age=0x7f0700d5;
+        public static final int setup_already=0x7f0700d3;
+        public static final int setup_antilost_distance=0x7f0700cb;
         public static final int setup_begin_time=0x7f0700c6;
         public static final int setup_end_time=0x7f0700c7;
         /**  height.xml 
  height.xml 
          */
-        public static final int setup_height=0x7f0700d5;
+        public static final int setup_height=0x7f0700d6;
         public static final int setup_longsit_open_fail=0x7f0700a8;
         public static final int setup_longsit_success=0x7f0700a7;
         /**  TimerPickerActivity.java 
@@ -1798,11 +1800,11 @@ containing a value of this type.
         /**  waistline.xml 
  waistline.xml 
          */
-        public static final int setup_waistline=0x7f0700e5;
+        public static final int setup_waistline=0x7f0700e6;
         /**  weight.xml 
  weight.xml 
          */
-        public static final int setup_weight=0x7f0700e6;
+        public static final int setup_weight=0x7f0700e7;
         public static final int several_hours_ago=0x7f070081;
         public static final int several_minutes_ago=0x7f070080;
         public static final int share=0x7f070039;
@@ -1818,35 +1820,35 @@ containing a value of this type.
          */
         public static final int share_url=0x7f0700c1;
         public static final int shock=0x7f07005e;
-        public static final int sit=0x7f0700dc;
-        public static final int sit_event_stastic_value=0x7f070105;
-        public static final int sit_time=0x7f0700d9;
-        public static final int sit_time_period=0x7f0700dd;
+        public static final int sit=0x7f0700dd;
+        public static final int sit_event_stastic_value=0x7f070106;
+        public static final int sit_time=0x7f0700da;
+        public static final int sit_time_period=0x7f0700de;
         public static final int six=0x7f07007d;
-        public static final int sport_distances_total=0x7f0700f5;
-        public static final int sport_event_stastic_value=0x7f070104;
-        public static final int sport_stastic=0x7f070102;
-        public static final int sport_stastic_value=0x7f070103;
+        public static final int sport_distances_total=0x7f0700f6;
+        public static final int sport_event_stastic_value=0x7f070105;
+        public static final int sport_stastic=0x7f070103;
+        public static final int sport_stastic_value=0x7f070104;
         /**  activity_share.xml 
  activity_share.xml 
          */
-        public static final int sport_type_longsit=0x7f070106;
-        public static final int sport_type_sport=0x7f070107;
+        public static final int sport_type_longsit=0x7f070107;
+        public static final int sport_type_sport=0x7f070108;
         /**  linearlayout_tongji2.xml 
  linearlayout_tongji2.xml 
          */
-        public static final int sports=0x7f0700db;
-        public static final int sports_time=0x7f0700d7;
-        public static final int sports_time_min=0x7f0700da;
+        public static final int sports=0x7f0700dc;
+        public static final int sports_time=0x7f0700d8;
+        public static final int sports_time_min=0x7f0700db;
         public static final int step=0x7f070013;
         public static final int step_number=0x7f07003e;
         public static final int step_over=0x7f07004b;
         public static final int step_unit=0x7f070050;
-        public static final int sudu=0x7f070113;
+        public static final int sudu=0x7f070114;
         public static final int sunday=0x7f070077;
         public static final int sync_complete=0x7f0700b2;
         public static final int sync_data=0x7f07008f;
-        public static final int sync_date_format=0x7f07012e;
+        public static final int sync_date_format=0x7f07012f;
         public static final int sync_fail=0x7f07006e;
         public static final int sync_fail_try_again=0x7f070087;
         /**  MainActivity.java 
@@ -1855,17 +1857,17 @@ containing a value of this type.
         public static final int sync_over_just=0x7f07007e;
         public static final int sync_over_yet_try_late=0x7f070070;
         public static final int sync_success=0x7f07008e;
-        public static final int sync_toyun=0x7f07012a;
+        public static final int sync_toyun=0x7f07012b;
         /**   
          */
-        public static final int sync_update_time=0x7f07012c;
+        public static final int sync_update_time=0x7f07012d;
         public static final int syncing=0x7f070088;
         public static final int syncing_now=0x7f07008d;
         public static final int target=0x7f07003d;
-        public static final int tb_munion_tip_download_prefix=0x7f070135;
+        public static final int tb_munion_tip_download_prefix=0x7f070137;
         public static final int three=0x7f07007a;
         public static final int thrusday=0x7f070074;
-        public static final int tian=0x7f0700fe;
+        public static final int tian=0x7f0700ff;
         /**  activity_remind_setup.xml 
  activity_remind_setup.xml 
          */
@@ -1875,82 +1877,82 @@ containing a value of this type.
         public static final int today_step=0x7f070086;
         public static final int tuesday=0x7f070072;
         public static final int two=0x7f070079;
-        public static final int umeng_common_action_cancel=0x7f07013a;
-        public static final int umeng_common_action_continue=0x7f070139;
-        public static final int umeng_common_action_info_exist=0x7f070136;
-        public static final int umeng_common_action_pause=0x7f070138;
-        public static final int umeng_common_download_failed=0x7f070140;
-        public static final int umeng_common_download_finish=0x7f070141;
-        public static final int umeng_common_download_notification_prefix=0x7f07013b;
-        public static final int umeng_common_icon=0x7f070144;
-        public static final int umeng_common_info_interrupt=0x7f070137;
-        public static final int umeng_common_network_break_alert=0x7f07013f;
-        public static final int umeng_common_patch_finish=0x7f070142;
-        public static final int umeng_common_pause_notification_prefix=0x7f07013c;
-        public static final int umeng_common_silent_download_finish=0x7f070143;
-        public static final int umeng_common_start_download_notification=0x7f07013d;
-        public static final int umeng_common_start_patch_notification=0x7f07013e;
-        public static final int umeng_example_home_btn_plus=0x7f070176;
-        public static final int umeng_socialize_back=0x7f070149;
-        public static final int umeng_socialize_cancel_btn_str=0x7f070179;
-        public static final int umeng_socialize_comment=0x7f070147;
-        public static final int umeng_socialize_comment_detail=0x7f070148;
-        public static final int umeng_socialize_content_hint=0x7f070178;
-        public static final int umeng_socialize_friends=0x7f07014b;
-        public static final int umeng_socialize_img_des=0x7f07017b;
-        public static final int umeng_socialize_login=0x7f070156;
-        public static final int umeng_socialize_login_qq=0x7f070155;
-        public static final int umeng_socialize_msg_hor=0x7f070151;
-        public static final int umeng_socialize_msg_min=0x7f070150;
-        public static final int umeng_socialize_msg_sec=0x7f07014f;
-        public static final int umeng_socialize_near_At=0x7f07014a;
-        public static final int umeng_socialize_network_break_alert=0x7f070146;
-        public static final int umeng_socialize_send=0x7f07014c;
-        public static final int umeng_socialize_send_btn_str=0x7f07017a;
-        public static final int umeng_socialize_share=0x7f07017c;
-        public static final int umeng_socialize_share_content=0x7f070154;
-        public static final int umeng_socialize_text_add_custom_platform=0x7f070175;
-        public static final int umeng_socialize_text_authorize=0x7f070158;
-        public static final int umeng_socialize_text_choose_account=0x7f070157;
-        public static final int umeng_socialize_text_comment_hint=0x7f07015c;
-        public static final int umeng_socialize_text_douban_key=0x7f070172;
-        public static final int umeng_socialize_text_friend_list=0x7f07015d;
-        public static final int umeng_socialize_text_loading_message=0x7f07016c;
-        public static final int umeng_socialize_text_login_fail=0x7f07015b;
-        public static final int umeng_socialize_text_qq_key=0x7f07016f;
-        public static final int umeng_socialize_text_qq_zone_key=0x7f070170;
-        public static final int umeng_socialize_text_renren_key=0x7f070171;
-        public static final int umeng_socialize_text_sina_key=0x7f07016e;
+        public static final int umeng_common_action_cancel=0x7f07013c;
+        public static final int umeng_common_action_continue=0x7f07013b;
+        public static final int umeng_common_action_info_exist=0x7f070138;
+        public static final int umeng_common_action_pause=0x7f07013a;
+        public static final int umeng_common_download_failed=0x7f070142;
+        public static final int umeng_common_download_finish=0x7f070143;
+        public static final int umeng_common_download_notification_prefix=0x7f07013d;
+        public static final int umeng_common_icon=0x7f070146;
+        public static final int umeng_common_info_interrupt=0x7f070139;
+        public static final int umeng_common_network_break_alert=0x7f070141;
+        public static final int umeng_common_patch_finish=0x7f070144;
+        public static final int umeng_common_pause_notification_prefix=0x7f07013e;
+        public static final int umeng_common_silent_download_finish=0x7f070145;
+        public static final int umeng_common_start_download_notification=0x7f07013f;
+        public static final int umeng_common_start_patch_notification=0x7f070140;
+        public static final int umeng_example_home_btn_plus=0x7f070178;
+        public static final int umeng_socialize_back=0x7f07014b;
+        public static final int umeng_socialize_cancel_btn_str=0x7f07017b;
+        public static final int umeng_socialize_comment=0x7f070149;
+        public static final int umeng_socialize_comment_detail=0x7f07014a;
+        public static final int umeng_socialize_content_hint=0x7f07017a;
+        public static final int umeng_socialize_friends=0x7f07014d;
+        public static final int umeng_socialize_img_des=0x7f07017d;
+        public static final int umeng_socialize_login=0x7f070158;
+        public static final int umeng_socialize_login_qq=0x7f070157;
+        public static final int umeng_socialize_msg_hor=0x7f070153;
+        public static final int umeng_socialize_msg_min=0x7f070152;
+        public static final int umeng_socialize_msg_sec=0x7f070151;
+        public static final int umeng_socialize_near_At=0x7f07014c;
+        public static final int umeng_socialize_network_break_alert=0x7f070148;
+        public static final int umeng_socialize_send=0x7f07014e;
+        public static final int umeng_socialize_send_btn_str=0x7f07017c;
+        public static final int umeng_socialize_share=0x7f07017e;
+        public static final int umeng_socialize_share_content=0x7f070156;
+        public static final int umeng_socialize_text_add_custom_platform=0x7f070177;
+        public static final int umeng_socialize_text_authorize=0x7f07015a;
+        public static final int umeng_socialize_text_choose_account=0x7f070159;
+        public static final int umeng_socialize_text_comment_hint=0x7f07015e;
+        public static final int umeng_socialize_text_douban_key=0x7f070174;
+        public static final int umeng_socialize_text_friend_list=0x7f07015f;
+        public static final int umeng_socialize_text_loading_message=0x7f07016e;
+        public static final int umeng_socialize_text_login_fail=0x7f07015d;
+        public static final int umeng_socialize_text_qq_key=0x7f070171;
+        public static final int umeng_socialize_text_qq_zone_key=0x7f070172;
+        public static final int umeng_socialize_text_renren_key=0x7f070173;
+        public static final int umeng_socialize_text_sina_key=0x7f070170;
         /**  平台名称 
          */
-        public static final int umeng_socialize_text_tencent_key=0x7f07016d;
-        public static final int umeng_socialize_text_tencent_no_connection=0x7f07015f;
-        public static final int umeng_socialize_text_tencent_no_install=0x7f070162;
-        public static final int umeng_socialize_text_tencent_oauth_login_fail=0x7f070160;
-        public static final int umeng_socialize_text_tencent_version_no_match=0x7f070161;
-        public static final int umeng_socialize_text_ucenter=0x7f07015a;
-        public static final int umeng_socialize_text_unauthorize=0x7f070159;
-        public static final int umeng_socialize_text_visitor=0x7f07015e;
-        public static final int umeng_socialize_text_waitting=0x7f070163;
-        public static final int umeng_socialize_text_waitting_message=0x7f07016b;
-        public static final int umeng_socialize_text_waitting_qq=0x7f070168;
-        public static final int umeng_socialize_text_waitting_qzone=0x7f070169;
-        public static final int umeng_socialize_text_waitting_redirect=0x7f07016a;
-        public static final int umeng_socialize_text_waitting_share=0x7f070177;
-        public static final int umeng_socialize_text_waitting_weixin=0x7f070164;
-        public static final int umeng_socialize_text_waitting_weixin_circle=0x7f070165;
-        public static final int umeng_socialize_text_waitting_yixin=0x7f070166;
-        public static final int umeng_socialize_text_waitting_yixin_circle=0x7f070167;
-        public static final int umeng_socialize_text_weixin_circle_key=0x7f070174;
-        public static final int umeng_socialize_text_weixin_key=0x7f070173;
-        public static final int umeng_socialize_tip_blacklist=0x7f07014d;
-        public static final int umeng_socialize_tip_loginfailed=0x7f07014e;
-        public static final int umeng_socialize_ucenter_login_title_guide=0x7f070152;
-        public static final int umeng_socialize_ucenter_login_title_platform=0x7f070153;
-        public static final int un_sync_yet=0x7f070126;
+        public static final int umeng_socialize_text_tencent_key=0x7f07016f;
+        public static final int umeng_socialize_text_tencent_no_connection=0x7f070161;
+        public static final int umeng_socialize_text_tencent_no_install=0x7f070164;
+        public static final int umeng_socialize_text_tencent_oauth_login_fail=0x7f070162;
+        public static final int umeng_socialize_text_tencent_version_no_match=0x7f070163;
+        public static final int umeng_socialize_text_ucenter=0x7f07015c;
+        public static final int umeng_socialize_text_unauthorize=0x7f07015b;
+        public static final int umeng_socialize_text_visitor=0x7f070160;
+        public static final int umeng_socialize_text_waitting=0x7f070165;
+        public static final int umeng_socialize_text_waitting_message=0x7f07016d;
+        public static final int umeng_socialize_text_waitting_qq=0x7f07016a;
+        public static final int umeng_socialize_text_waitting_qzone=0x7f07016b;
+        public static final int umeng_socialize_text_waitting_redirect=0x7f07016c;
+        public static final int umeng_socialize_text_waitting_share=0x7f070179;
+        public static final int umeng_socialize_text_waitting_weixin=0x7f070166;
+        public static final int umeng_socialize_text_waitting_weixin_circle=0x7f070167;
+        public static final int umeng_socialize_text_waitting_yixin=0x7f070168;
+        public static final int umeng_socialize_text_waitting_yixin_circle=0x7f070169;
+        public static final int umeng_socialize_text_weixin_circle_key=0x7f070176;
+        public static final int umeng_socialize_text_weixin_key=0x7f070175;
+        public static final int umeng_socialize_tip_blacklist=0x7f07014f;
+        public static final int umeng_socialize_tip_loginfailed=0x7f070150;
+        public static final int umeng_socialize_ucenter_login_title_guide=0x7f070154;
+        public static final int umeng_socialize_ucenter_login_title_platform=0x7f070155;
+        public static final int un_sync_yet=0x7f070127;
         public static final int unbind=0x7f0700bd;
         public static final int unbind_ebelt_yet=0x7f070064;
-        public static final int unsync_yet=0x7f07012d;
+        public static final int unsync_yet=0x7f07012e;
         public static final int update_fireware=0x7f0700bc;
         public static final int update_fireware_complete=0x7f0700b4;
         public static final int update_fireware_fail=0x7f0700b5;
@@ -1963,7 +1965,7 @@ containing a value of this type.
  sel_upload_head_dialog.xml 
          */
         public static final int upload_head=0x7f070066;
-        public static final int upload_yet=0x7f070127;
+        public static final int upload_yet=0x7f070128;
         /**  activity_welcome.xml 
  activity_welcome.xml 
          */
@@ -1986,13 +1988,13 @@ containing a value of this type.
         public static final int without_authorization=0x7f0700c0;
         public static final int women=0x7f070057;
         public static final int xinghao_d013=0x7f0700b1;
-        public static final int xinren_wifi=0x7f0700d0;
-        public static final int xuanyaoyixia=0x7f070100;
+        public static final int xinren_wifi=0x7f0700d1;
+        public static final int xuanyaoyixia=0x7f070101;
         public static final int year=0x7f0700c4;
         public static final int yestoday=0x7f070085;
-        public static final int yongshi=0x7f070112;
+        public static final int yongshi=0x7f070113;
         public static final int you_sit_too_long=0x7f0700a1;
-        public static final int yun_tongbu=0x7f070129;
+        public static final int yun_tongbu=0x7f07012a;
     }
     public static final class style {
         /** 

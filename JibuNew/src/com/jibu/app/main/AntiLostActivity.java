@@ -169,6 +169,7 @@ public class AntiLostActivity extends Activity implements OnClickListener, OnSee
 	}
 	
 	private void open_close_belt_remind() {
+		final boolean isOpenBeltRemind = ApplicationSharedPreferences.getHasOpenBeltRemind(this);
 		AntsBeltSDK.getInstance().setKeptNonRemind(new BleCallBack() {
 			
 			@Override
@@ -179,20 +180,19 @@ public class AntiLostActivity extends Activity implements OnClickListener, OnSee
 			
 			@Override
 			public void onFinish(Object result) {
-				if (isOpenBeltLost) {
+				if (isOpenBeltRemind) {
 					belt_remind_switch.setBackgroundResource(R.drawable.close_remind);
 				} else {
 					belt_remind_switch.setBackgroundResource(R.drawable.open_remind);
 				}
-				isOpenBeltLost = !isOpenBeltLost;
-				ApplicationSharedPreferences.setHasOpenAntiLostRemind(AntiLostActivity.this, isOpenBeltLost);
+				ApplicationSharedPreferences.setHasOpenBeltRemind(AntiLostActivity.this, !isOpenBeltLost);
 			}
 			
 			@Override
 			public void onFailed(Object error) {
 				ToastUtil.toast("…Ë÷√∆§¥¯Ã·–— ß∞‹");
 			}
-		}, !isOpenBeltLost);
+		}, 120, !isOpenBeltRemind);
 		
 //		if (isOpenBeltLost) {
 //			belt_remind_switch.setBackgroundResource(R.drawable.close_remind);
