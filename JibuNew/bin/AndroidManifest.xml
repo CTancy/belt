@@ -314,6 +314,9 @@
             android:name="com.szants.hw.bleservice.AntsBleService"
             android:enabled="true">
         </service>
+        
+		<service
+		    android:name="com.jibu.app.server.AntiLostForeService"/>
     </application>
 
 </manifest>

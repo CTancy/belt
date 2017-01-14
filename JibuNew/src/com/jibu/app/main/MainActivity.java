@@ -52,6 +52,7 @@ import com.jibu.app.entity.MoveData;
 import com.jibu.app.entity.User;
 import com.jibu.app.entity.UserPersonalInfo;
 import com.jibu.app.fragment.SportDataFragment;
+import com.jibu.app.server.AntiLostForeService;
 import com.jibu.app.server.AntiLostNotification;
 import com.jibu.app.server.AntiLostPhoneService;
 import com.jibu.app.server.AutoSyncService;
@@ -240,44 +241,16 @@ public class MainActivity extends WaitingActivity implements OnClickListener,
 			initViewPager();
 		}
 
+		if (ApplicationSharedPreferences.getHasOpenBeltRemind(MainActivity.this)
+				|| ApplicationSharedPreferences.getHasOpenAntiLostRemind(MainActivity.this)) {
+			startService(new Intent(MainActivity.this, AntiLostForeService.class));
+		}
 	}
 	
 
 	private void registerBeltObesever() {
         sdk = AntsBeltSDK.getInstance();
         
-        sdk.registerDeviceStateObserver(new DeviceStateObserver() {
-			
-			@Override
-			public void disConnected() {
-//				ToastUtil.toast("断开了设备连接");
-				Log.e(TAG, "断开了设备连接");
-                if (hasConnected) {
-                	FindPhoneNotify.getInstance().phoneIfNotify(MainActivity.this);
-                }
-            	hasConnected = false;
-			}
-			
-			@Override
-			public void connecting() {
-				
-			}
-			
-			@Override
-			public void connected() {
-//				ToastUtil.toast("已成功连接设备");
-				Log.e(TAG, "已成功连接设备");
-				hasConnected = true;
-			}
-			
-			@Override
-			public void blueToothClose() {
-	               if (hasConnected) {
-	                	FindPhoneNotify.getInstance().phoneIfNotify(MainActivity.this);
-	                }
-	            	hasConnected = false;
-			}
-		});
         
         sdk.registerStepObserver(new StepObserver() {
 			

@@ -1,6 +1,9 @@
 package com.jibu.app.main;
 
+import java.util.List;
+
 import com.jibu.app.R;
+import com.jibu.app.server.AntiLostForeService;
 import com.jibu.app.server.AntiLostPhoneService;
 import com.szants.bracelet.bletask.BleCallBack;
 import com.szants.hw.bleservice.util.Keeper;
@@ -8,6 +11,8 @@ import com.szants.sdk.AntsBeltSDK;
 import com.szants.sdk.FindPhoneObserver;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +30,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-public class AntiLostActivity extends Activity implements OnClickListener, OnSeekBarChangeListener{
+public class AntiLostActivity extends WaitingActivity implements OnClickListener, OnSeekBarChangeListener{
 	
 	private final String TAG = "AntiLostActivity";
 	
@@ -158,14 +163,14 @@ public class AntiLostActivity extends Activity implements OnClickListener, OnSee
 		if (isOpenAntiLost) {
 			anti_lost_switch.setBackgroundResource(R.drawable.close_remind);
 			isOpenAntiLost = false;
-			stopAntiLostService();
+//			stopAntiLostService();
 		} else {
 			anti_lost_switch.setBackgroundResource(R.drawable.open_remind);
 			isOpenAntiLost = true;
-			startAntiLostService();
+//			startAntiLostService();
 		}
 		ApplicationSharedPreferences.setHasOpenAntiLostRemind(this, isOpenAntiLost);
-		
+		isCloseAntiLost();
 	}
 	
 	private void open_close_belt_remind() {
@@ -174,18 +179,22 @@ public class AntiLostActivity extends Activity implements OnClickListener, OnSee
 			
 			@Override
 			public void onStart(Object startObject) {
-				
-				
+				showWait("正在设置皮带提醒");
 			}
 			
 			@Override
 			public void onFinish(Object result) {
+				waitClose();
 				if (isOpenBeltRemind) {
 					belt_remind_switch.setBackgroundResource(R.drawable.close_remind);
+					ApplicationSharedPreferences.setHasOpenBeltRemind(AntiLostActivity.this, false);
 				} else {
 					belt_remind_switch.setBackgroundResource(R.drawable.open_remind);
+					ApplicationSharedPreferences.setHasOpenBeltRemind(AntiLostActivity.this, true);
+
 				}
-				ApplicationSharedPreferences.setHasOpenBeltRemind(AntiLostActivity.this, !isOpenBeltLost);
+				
+				isCloseAntiLost();
 			}
 			
 			@Override
@@ -375,6 +384,38 @@ public class AntiLostActivity extends Activity implements OnClickListener, OnSee
 	    }
 	    return data;
 	}
+	
+	private void isCloseAntiLost(){
+		Log.e(TAG, "hasOpenAntiLostRemind = " + ApplicationSharedPreferences.getHasOpenAntiLostRemind(this)
+				 + " hasOpenBeltRemind = " + ApplicationSharedPreferences.getHasOpenBeltRemind(this));
+		if (!ApplicationSharedPreferences.getHasOpenAntiLostRemind(this) 
+				&& !ApplicationSharedPreferences.getHasOpenBeltRemind(this)) {
+			stopService(new Intent(AntiLostActivity.this, AntiLostForeService.class));
+		} else {
+			if (!isServiceWork(this, "com.jibu.app.server.AntiLostForeService")) {
+				startService(new Intent(this, AntiLostForeService.class));
+			}
+		}
+	}
+	
+	 
+	 public boolean isServiceWork(Context mContext, String serviceName) {  
+	     boolean isWork = false;  
+	     ActivityManager myAM = (ActivityManager) mContext  
+	             .getSystemService(Context.ACTIVITY_SERVICE);  
+	     List<RunningServiceInfo> myList = myAM.getRunningServices(40);  
+	     if (myList.size() <= 0) {  
+	         return false;  
+	     }  
+	     for (int i = 0; i < myList.size(); i++) {  
+	         String mName = myList.get(i).service.getClassName().toString();  
+	         if (mName.equals(serviceName)) {  
+	             isWork = true;  
+	             break;  
+	         }  
+	     }  
+	     return isWork;  
+	 }  
 	
 	
 }
