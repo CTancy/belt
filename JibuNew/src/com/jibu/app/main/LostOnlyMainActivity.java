@@ -21,6 +21,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.jibu.app.R;
+import com.jibu.app.server.AntiLostE3AForeService;
+import com.jibu.app.server.AntiLostForeService;
 import com.jibu.app.server.AntiLostNotification;
 import com.jibu.app.view.RoundProgressBar3;
 
@@ -94,6 +96,9 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
         
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        
+		startService(new Intent(LostOnlyMainActivity.this, AntiLostE3AForeService.class));
+
 	}
 
 	@Override
@@ -125,6 +130,7 @@ public class LostOnlyMainActivity  extends Activity implements OnClickListener {
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(mGattUpdateReceiver);
+		stopService(new Intent(LostOnlyMainActivity.this, AntiLostE3AForeService.class));
     }
 
 

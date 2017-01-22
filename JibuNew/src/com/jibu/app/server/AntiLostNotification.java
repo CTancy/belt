@@ -33,10 +33,18 @@ public class AntiLostNotification {
 	}
 	
 	public void sendRemindNotification() {
-		sendRemindNotification(false);
+		sendRemindNotification(false, "手机检测到与腰带断开了连接");
+	}
+	
+	public void findPhoneNotification() {
+		sendRemindNotification(true, "设备正在查找手机");
+	}
+	
+	public void sendRemindNotification(boolean isNoStop) {
+		sendRemindNotification(isNoStop, "手机检测到与腰带断开了连接");
 	}
 
-	public void sendRemindNotification(boolean isNoStop){
+	public void sendRemindNotification(boolean isNoStop, String message){
 		if (null == mContext || !flag) return ;
 		
 		flag = false;
@@ -53,7 +61,7 @@ public class AntiLostNotification {
 		String[] strs =  mContext.getResources().getStringArray(R.array.anti_lost_phone_remind_message);
 		
 		notification.setLatestEventInfo(mContext,
-				mContext.getString(R.string.anti_lost_remind),  "手机检测到与腰带断开了连接", pendingIntent);
+				mContext.getString(R.string.anti_lost_remind),  message, pendingIntent);
 		
 		//声音和震动单独提取
 		

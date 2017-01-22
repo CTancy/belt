@@ -19,9 +19,11 @@ public class FindPhoneNotify {
     	AntiLostNotification notification = AntiLostNotification.getInstance(context);
 		if (null != notification) {
 			notification.setFlag(true);
-			notification.sendRemindNotification(true);
+			notification.findPhoneNotification();
 		}
     }
+  
+   
    public void stopPhoneNotify(Context context) {
     	AntiLostNotification notification = AntiLostNotification.getInstance(context);
     	notification.stopNotification();
